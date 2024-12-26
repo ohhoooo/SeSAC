@@ -21,16 +21,16 @@ final class JoinViewController: UIViewController {
     @IBOutlet weak var additionalInformationSwitch: UISwitch!
     
     private lazy var textFieldArray = [idTextField,
-                                passwordTextField,
-                                nicknameTextField,
-                                locationTextField,
-                                recommendationTextField]
+                                    passwordTextField,
+                                    nicknameTextField,
+                                    locationTextField,
+                                    recommendationTextField]
     
-    private let placeholderMap = [0: "이메일 주소 또는 전화번호",
-                            1: "비밀번호",
-                            2: "닉네임",
-                            3: "위치",
-                            4: "추천 코드 입력"]
+    private let placeholderArray = ["이메일 주소 또는 전화번호",
+                                "비밀번호",
+                                "닉네임",
+                                "위치",
+                                "추천 코드 입력"]
     
     // MARK: - life cycles
     override func viewDidLoad() {
@@ -59,7 +59,7 @@ final class JoinViewController: UIViewController {
             e?.textColor = .white
             e?.textAlignment = .center
             e?.backgroundColor = UIColor(red: 85/255, green: 85/255, blue: 85/255, alpha: 1)
-            e?.setPlaceholder(placeholder: placeholderMap.filter { $0.key == i }.values.first!, color: .white)
+            e?.setPlaceholder(placeholder: placeholderArray[i], color: .white)
         }
         
         passwordTextField.isSecureTextEntry = true
@@ -85,7 +85,7 @@ final class JoinViewController: UIViewController {
     }
 }
 
-// MARK: - extension
+// MARK: - extensions
 extension UITextField {
     func setPlaceholder(placeholder: String, color: UIColor) {
         attributedPlaceholder = NSAttributedString(string: placeholder,
