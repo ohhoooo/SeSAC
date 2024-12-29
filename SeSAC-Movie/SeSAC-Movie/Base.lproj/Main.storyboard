@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zm7-C0-2Ik">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NRd-jb-HfT">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
@@ -839,13 +839,13 @@
                     <connections>
                         <outlet property="additionalInformationLabel" destination="tve-HG-t9G" id="naf-0z-0Q8"/>
                         <outlet property="additionalInformationSwitch" destination="OqT-sQ-824" id="ibm-To-hd3"/>
-                        <outlet property="idTextField" destination="57c-FY-Hww" id="aJl-pd-DwI"/>
                         <outlet property="joinButton" destination="l6i-3P-w18" id="bBC-SG-GBH"/>
-                        <outlet property="locationTextField" destination="UBC-Ih-Tr9" id="4Kr-JX-oZT"/>
-                        <outlet property="nicknameTextField" destination="BU8-4L-H36" id="5ib-cB-NPq"/>
-                        <outlet property="passwordTextField" destination="HEE-Ig-QKF" id="nvP-cl-7gy"/>
-                        <outlet property="recommendationTextField" destination="ay2-Pp-mrx" id="B42-Oq-opd"/>
                         <outlet property="titleLabel" destination="Dts-3x-Wik" id="3CF-TG-kD7"/>
+                        <outletCollection property="textFieldArray" destination="57c-FY-Hww" collectionClass="NSMutableArray" id="d26-Ml-j4H"/>
+                        <outletCollection property="textFieldArray" destination="HEE-Ig-QKF" collectionClass="NSMutableArray" id="oD1-cC-Nay"/>
+                        <outletCollection property="textFieldArray" destination="BU8-4L-H36" collectionClass="NSMutableArray" id="A4T-Sb-eCo"/>
+                        <outletCollection property="textFieldArray" destination="UBC-Ih-Tr9" collectionClass="NSMutableArray" id="EhU-87-PDQ"/>
+                        <outletCollection property="textFieldArray" destination="ay2-Pp-mrx" collectionClass="NSMutableArray" id="b0c-DO-XKP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YXa-CP-c4k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
