@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NRd-jb-HfT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zm7-C0-2Ik">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
@@ -150,10 +150,10 @@
             </objects>
             <point key="canvasLocation" x="96.946564885496173" y="-27.464788732394368"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="p5k-LA-IN3">
             <objects>
-                <viewController id="Gq8-Ov-sTS" sceneMemberID="viewController">
+                <viewController id="Gq8-Ov-sTS" customClass="HomeViewController" customModule="SeSAC_Movie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nar-zH-sKH">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -169,12 +169,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="488" id="rOM-BD-d8C"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="12"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="IuE-9Y-Lii">
                                 <rect key="frame" x="40" y="541" width="313" height="36"/>
@@ -195,7 +189,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="Jfo-8F-B5z" kind="presentation" id="OjY-5u-OWs"/>
+                                            <action selector="tappedPlayButton:" destination="Gq8-Ov-sTS" eventType="touchUpInside" id="dw6-EC-x5W"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hlh-wV-mwZ">
@@ -213,6 +207,9 @@
                                                 <integer key="value" value="4"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="Jfo-8F-B5z" kind="presentation" id="mR2-cj-ekI"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -228,33 +225,66 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="b2r-7u-ItO">
                                 <rect key="frame" x="20" y="624.33333333333337" width="353" height="134.66666666666663"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="8lU-zk-qeM">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vkI-n1-KT3">
                                         <rect key="frame" x="0.0" y="0.0" width="111" height="134.66666666666666"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="4"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3" translatesAutoresizingMaskIntoConstraints="NO" id="MHj-0M-ihT">
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="8lU-zk-qeM">
+                                                <rect key="frame" x="0.0" y="0.0" width="111" height="134.66666666666666"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top10 badge" translatesAutoresizingMaskIntoConstraints="NO" id="HEc-HM-Cla">
+                                                <rect key="frame" x="94" y="0.0" width="17" height="24"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="HEc-HM-Cla" secondAttribute="trailing" id="7pU-fe-t3v"/>
+                                            <constraint firstAttribute="bottom" secondItem="8lU-zk-qeM" secondAttribute="bottom" id="YW3-8r-Xke"/>
+                                            <constraint firstItem="8lU-zk-qeM" firstAttribute="leading" secondItem="vkI-n1-KT3" secondAttribute="leading" id="alH-uR-mQs"/>
+                                            <constraint firstAttribute="trailing" secondItem="8lU-zk-qeM" secondAttribute="trailing" id="jg7-sX-K4u"/>
+                                            <constraint firstItem="HEc-HM-Cla" firstAttribute="top" secondItem="vkI-n1-KT3" secondAttribute="top" id="oBl-vy-zmZ"/>
+                                            <constraint firstItem="8lU-zk-qeM" firstAttribute="top" secondItem="vkI-n1-KT3" secondAttribute="top" id="tYU-Ov-eCq"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="25V-Zw-cxF">
                                         <rect key="frame" x="121" y="0.0" width="111" height="134.66666666666666"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="4"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="5" translatesAutoresizingMaskIntoConstraints="NO" id="4nO-pK-8Lw">
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3" translatesAutoresizingMaskIntoConstraints="NO" id="MHj-0M-ihT">
+                                                <rect key="frame" x="0.0" y="0.0" width="111" height="134.66666666666666"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top10 badge" translatesAutoresizingMaskIntoConstraints="NO" id="PJj-Sx-fSK">
+                                                <rect key="frame" x="94" y="0.0" width="17" height="24"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="MHj-0M-ihT" firstAttribute="leading" secondItem="25V-Zw-cxF" secondAttribute="leading" id="02y-z4-D8l"/>
+                                            <constraint firstAttribute="trailing" secondItem="MHj-0M-ihT" secondAttribute="trailing" id="BVS-c3-LmZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="PJj-Sx-fSK" secondAttribute="trailing" id="Udo-Wp-cG1"/>
+                                            <constraint firstItem="MHj-0M-ihT" firstAttribute="top" secondItem="25V-Zw-cxF" secondAttribute="top" id="mua-lF-V3q"/>
+                                            <constraint firstItem="PJj-Sx-fSK" firstAttribute="top" secondItem="25V-Zw-cxF" secondAttribute="top" id="rgg-Er-8Rq"/>
+                                            <constraint firstAttribute="bottom" secondItem="MHj-0M-ihT" secondAttribute="bottom" id="yWw-Ei-z0f"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VF5-qy-GNZ">
                                         <rect key="frame" x="242" y="0.0" width="111" height="134.66666666666666"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="4"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </imageView>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="5" translatesAutoresizingMaskIntoConstraints="NO" id="4nO-pK-8Lw">
+                                                <rect key="frame" x="0.0" y="0.0" width="111" height="134.66666666666666"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top10 badge" translatesAutoresizingMaskIntoConstraints="NO" id="14c-jk-iOl">
+                                                <rect key="frame" x="94" y="0.0" width="17" height="24"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="4nO-pK-8Lw" firstAttribute="leading" secondItem="VF5-qy-GNZ" secondAttribute="leading" id="60l-6C-yXB"/>
+                                            <constraint firstAttribute="bottom" secondItem="4nO-pK-8Lw" secondAttribute="bottom" id="Ckt-Gy-dIr"/>
+                                            <constraint firstAttribute="trailing" secondItem="4nO-pK-8Lw" secondAttribute="trailing" id="RTe-87-2CL"/>
+                                            <constraint firstItem="4nO-pK-8Lw" firstAttribute="top" secondItem="VF5-qy-GNZ" secondAttribute="top" id="UeU-8d-9t4"/>
+                                            <constraint firstItem="14c-jk-iOl" firstAttribute="top" secondItem="VF5-qy-GNZ" secondAttribute="top" id="UhQ-wA-vQ2"/>
+                                            <constraint firstAttribute="trailing" secondItem="14c-jk-iOl" secondAttribute="trailing" id="g8T-uC-EtY"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -279,6 +309,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WHd-S0-iKp"/>
+                    <connections>
+                        <outletCollection property="imageViewArray" destination="TVh-7T-0Pr" collectionClass="NSMutableArray" id="jCj-fu-JNT"/>
+                        <outletCollection property="imageViewArray" destination="8lU-zk-qeM" collectionClass="NSMutableArray" id="k6m-mn-OcD"/>
+                        <outletCollection property="imageViewArray" destination="MHj-0M-ihT" collectionClass="NSMutableArray" id="gHD-iE-87N"/>
+                        <outletCollection property="imageViewArray" destination="4nO-pK-8Lw" collectionClass="NSMutableArray" id="oIg-GY-Lug"/>
+                        <outletCollection property="viewArray" destination="vkI-n1-KT3" collectionClass="NSMutableArray" id="z1Q-Rb-IQh"/>
+                        <outletCollection property="viewArray" destination="25V-Zw-cxF" collectionClass="NSMutableArray" id="VHQ-Pt-Gu6"/>
+                        <outletCollection property="viewArray" destination="VF5-qy-GNZ" collectionClass="NSMutableArray" id="21k-JI-9Ny"/>
+                        <outletCollection property="top10ImageViewArray" destination="HEc-HM-Cla" collectionClass="NSMutableArray" id="7E6-YB-RlA"/>
+                        <outletCollection property="top10ImageViewArray" destination="PJj-Sx-fSK" collectionClass="NSMutableArray" id="LDW-8j-lMB"/>
+                        <outletCollection property="top10ImageViewArray" destination="14c-jk-iOl" collectionClass="NSMutableArray" id="OyG-SN-koQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xNJ-dc-Jfg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -881,6 +923,7 @@
         <image name="play_highlighted" width="99" height="28"/>
         <image name="play_normal" width="97" height="26"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="top10 badge" width="17" height="24"/>
         <image name="turquoise" width="24" height="24"/>
         <image name="노량" width="440" height="660"/>
         <image name="범죄도시3" width="440" height="660"/>
@@ -890,10 +933,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
