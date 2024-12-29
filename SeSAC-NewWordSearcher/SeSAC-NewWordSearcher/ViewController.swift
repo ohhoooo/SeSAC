@@ -57,4 +57,8 @@ final class ViewController: UIViewController {
     private func configureImageView() {
         resultBackgroundImageView.image = .background
     }
+    
+    @IBAction func tappedTapGestureRecognizer(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
 }
