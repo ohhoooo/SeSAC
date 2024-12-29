@@ -11,56 +11,16 @@ final class ViewController: UIViewController {
 
     // MARK: - properties
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var happyButton: UIButton!
-    @IBOutlet weak var loveButton: UIButton!
-    @IBOutlet weak var likeButton: UIButton!
-    @IBOutlet weak var embarrassedButton: UIButton!
-    @IBOutlet weak var upsetButton: UIButton!
-    @IBOutlet weak var gloomyButton: UIButton!
-    @IBOutlet weak var boredButton: UIButton!
-    @IBOutlet weak var sorryButton: UIButton!
-    @IBOutlet weak var sadButton: UIButton!
-    @IBOutlet weak var happyLabel: UILabel!
-    @IBOutlet weak var loveLabel: UILabel!
-    @IBOutlet weak var likeLabel: UILabel!
-    @IBOutlet weak var embarrassedLabel: UILabel!
-    @IBOutlet weak var upsetLabel: UILabel!
-    @IBOutlet weak var gloomyLabel: UILabel!
-    @IBOutlet weak var boredLabel: UILabel!
-    @IBOutlet weak var sorryLabel: UILabel!
-    @IBOutlet weak var sadLabel: UILabel!
+    @IBOutlet var buttonArray: [UIButton]!
+    @IBOutlet var labelArray: [UILabel]!
     
-    private lazy var buttonArray = [happyButton,
-                                loveButton,
-                                likeButton,
-                                embarrassedButton,
-                                upsetButton,
-                                gloomyButton,
-                                boredButton,
-                                sorryButton,
-                                sadButton]
+    private let imageArray: [UIImage] = [.monoSlime1, .monoSlime2, .monoSlime3,
+                                    .monoSlime4, .monoSlime5, .monoSlime6,
+                                    .monoSlime7, .monoSlime8, .monoSlime9]
     
-    private lazy var labelArray = [happyLabel,
-                                loveLabel,
-                                likeLabel,
-                                embarrassedLabel,
-                                upsetLabel,
-                                gloomyLabel,
-                                boredLabel,
-                                sorryLabel,
-                                sadLabel]
-    
-    private let imageArray: [UIImage] = [.monoSlime1,
-                                    .monoSlime2,
-                                    .monoSlime3,
-                                    .monoSlime4,
-                                    .monoSlime5,
-                                    .monoSlime6,
-                                    .monoSlime7,
-                                    .monoSlime8,
-                                    .monoSlime9]
-    
-    private let stringArray = ["행복해", "사랑해", "좋아해", "당황해", "속상해", "우울해", "심심해", "미안해", "슬퍼해"]
+    private let stringArray = ["행복해", "사랑해", "좋아해",
+                            "당황해", "속상해", "우울해",
+                            "심심해", "미안해", "슬퍼해"]
     
     private var countArray = Array(repeating: 0, count: 9)
     
@@ -72,25 +32,32 @@ final class ViewController: UIViewController {
     }
     
     // MARK: - methods
-    func configureUI() {
-        // View
+    private func configureUI() {
+        configureView()
+        configureLabel()
+        configureButton()
+    }
+    
+    private func configureView() {
         view.backgroundColor = UIColor(red: 220/255, green: 216/255, blue: 202/255, alpha: 1)
-        
-        // Label
+    }
+    
+    private func configureLabel() {
         titleLabel.text = "감정 다이어리"
         titleLabel.font = .systemFont(ofSize: 18, weight: .semibold)
         
         labelArray.enumerated().forEach { (i, e) in
-            e?.text = "\(stringArray[i]) 0"
-            e?.textAlignment = .center
-            e?.font = .systemFont(ofSize: 14, weight: .semibold)
+            e.text = "\(stringArray[i]) 0"
+            e.font = .systemFont(ofSize: 14, weight: .semibold)
+            e.textAlignment = .center
         }
-        
-        // Button
+    }
+    
+    private func configureButton() {
         buttonArray.enumerated().forEach { (i, e) in
             let image = imageArray[i].resize(width: 74, height: 70)
-            e?.setImage(image, for: .normal)
-            e?.setTitle("", for: .normal)
+            e.setTitle("", for: .normal)
+            e.setImage(image, for: .normal)
         }
     }
     
@@ -103,7 +70,7 @@ final class ViewController: UIViewController {
         countArray[sender.tag] += 1
         
         labelArray.enumerated().forEach { (i, e) in
-            e?.text = "\(stringArray[i]) \(countArray[i])"
+            e.text = "\(stringArray[i]) \(countArray[i])"
         }
     }
 }

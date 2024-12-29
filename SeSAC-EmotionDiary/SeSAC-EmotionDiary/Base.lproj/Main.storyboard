@@ -224,25 +224,25 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="boredButton" destination="ubF-1p-sgd" id="aNS-vr-vHJ"/>
-                        <outlet property="boredLabel" destination="YoY-zA-wCp" id="cgp-tq-T5Y"/>
-                        <outlet property="embarrassedButton" destination="4v7-OV-cqi" id="y8e-lp-gqg"/>
-                        <outlet property="embarrassedLabel" destination="Oxe-Kg-tGV" id="1DU-q2-Ht1"/>
-                        <outlet property="gloomyButton" destination="nFx-xz-Gro" id="nmN-0C-coA"/>
-                        <outlet property="gloomyLabel" destination="3s3-6A-DZt" id="aHu-96-9MH"/>
-                        <outlet property="happyButton" destination="Fy7-ji-WiV" id="I9B-yf-xIN"/>
-                        <outlet property="happyLabel" destination="gGS-24-9GX" id="i1H-fK-nrK"/>
-                        <outlet property="likeButton" destination="MA1-hy-d3N" id="h8C-WF-H0M"/>
-                        <outlet property="likeLabel" destination="8eI-3X-sGR" id="qhd-Xc-Lei"/>
-                        <outlet property="loveButton" destination="3LZ-gR-IT6" id="PnM-GK-sUE"/>
-                        <outlet property="loveLabel" destination="l4u-OO-TEy" id="HBd-6k-FUo"/>
-                        <outlet property="sadButton" destination="ETI-dc-raP" id="JFl-MK-tlN"/>
-                        <outlet property="sadLabel" destination="Re9-NJ-qZ4" id="VCf-bX-x3C"/>
-                        <outlet property="sorryButton" destination="HEF-kf-cwu" id="d3P-9U-Gm1"/>
-                        <outlet property="sorryLabel" destination="vgx-eb-FCs" id="Hir-3R-rYs"/>
                         <outlet property="titleLabel" destination="fTD-oT-yjx" id="hCq-Iz-TNy"/>
-                        <outlet property="upsetButton" destination="g6d-cM-1Bp" id="poa-pM-HnJ"/>
-                        <outlet property="upsetLabel" destination="4xv-Ln-Khm" id="ewD-1V-bTa"/>
+                        <outletCollection property="buttonArray" destination="Fy7-ji-WiV" collectionClass="NSMutableArray" id="ptV-wd-hjw"/>
+                        <outletCollection property="buttonArray" destination="3LZ-gR-IT6" collectionClass="NSMutableArray" id="0we-hs-jqV"/>
+                        <outletCollection property="buttonArray" destination="MA1-hy-d3N" collectionClass="NSMutableArray" id="j6d-ZV-xA7"/>
+                        <outletCollection property="buttonArray" destination="4v7-OV-cqi" collectionClass="NSMutableArray" id="w3X-BK-p5u"/>
+                        <outletCollection property="buttonArray" destination="g6d-cM-1Bp" collectionClass="NSMutableArray" id="lOi-lM-20T"/>
+                        <outletCollection property="buttonArray" destination="nFx-xz-Gro" collectionClass="NSMutableArray" id="cvH-E6-cvX"/>
+                        <outletCollection property="buttonArray" destination="ubF-1p-sgd" collectionClass="NSMutableArray" id="ax4-AA-7RL"/>
+                        <outletCollection property="buttonArray" destination="HEF-kf-cwu" collectionClass="NSMutableArray" id="Hhv-eK-KXH"/>
+                        <outletCollection property="buttonArray" destination="ETI-dc-raP" collectionClass="NSMutableArray" id="o6W-7m-y3s"/>
+                        <outletCollection property="labelArray" destination="gGS-24-9GX" collectionClass="NSMutableArray" id="Zzb-I4-obZ"/>
+                        <outletCollection property="labelArray" destination="l4u-OO-TEy" collectionClass="NSMutableArray" id="cwj-sR-43e"/>
+                        <outletCollection property="labelArray" destination="8eI-3X-sGR" collectionClass="NSMutableArray" id="U4H-oa-AaX"/>
+                        <outletCollection property="labelArray" destination="Oxe-Kg-tGV" collectionClass="NSMutableArray" id="e6n-Hy-tmB"/>
+                        <outletCollection property="labelArray" destination="4xv-Ln-Khm" collectionClass="NSMutableArray" id="ifF-r2-jC9"/>
+                        <outletCollection property="labelArray" destination="3s3-6A-DZt" collectionClass="NSMutableArray" id="aF2-l8-C9z"/>
+                        <outletCollection property="labelArray" destination="YoY-zA-wCp" collectionClass="NSMutableArray" id="Shx-Td-Zhw"/>
+                        <outletCollection property="labelArray" destination="vgx-eb-FCs" collectionClass="NSMutableArray" id="29h-bJ-hhx"/>
+                        <outletCollection property="labelArray" destination="Re9-NJ-qZ4" collectionClass="NSMutableArray" id="vnY-ez-KTk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
