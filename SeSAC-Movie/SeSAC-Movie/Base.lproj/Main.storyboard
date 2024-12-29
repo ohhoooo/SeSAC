@@ -341,10 +341,10 @@
             </objects>
             <point key="canvasLocation" x="2514" y="694"/>
         </scene>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="NCF-Ox-f5L">
             <objects>
-                <viewController id="HYF-lx-7b7" sceneMemberID="viewController">
+                <viewController id="HYF-lx-7b7" customClass="SearchViewController" customModule="SeSAC_Movie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Aee-Gu-0My">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -404,14 +404,11 @@
                                         <state key="normal" title="공개 예정" image="blue">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="16"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="tappedButton:" destination="HYF-lx-7b7" eventType="touchUpInside" id="3YM-rx-tW7"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUV-rO-Blf">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUV-rO-Blf">
                                         <rect key="frame" x="95.999999999999986" y="0.0" width="151.66666666666663" height="32"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
@@ -426,8 +423,11 @@
                                                 <integer key="value" value="16"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="tappedButton:" destination="HYF-lx-7b7" eventType="touchUpInside" id="XvD-WO-SO7"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32E-ci-WMb">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32E-ci-WMb">
                                         <rect key="frame" x="251.66666666666663" y="0.0" width="137.33333333333337" height="32"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
@@ -442,6 +442,9 @@
                                                 <integer key="value" value="16"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="tappedButton:" destination="HYF-lx-7b7" eventType="touchUpInside" id="Cmm-KS-x2q"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -486,6 +489,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FRg-xX-ovp"/>
+                    <connections>
+                        <outlet property="alternativeMessageLabel" destination="pn3-G3-Qba" id="6mw-Xs-UVV"/>
+                        <outlet property="errorMessageLabel" destination="6ib-BV-Bm7" id="jgR-XC-fwf"/>
+                        <outletCollection property="buttonArray" destination="G1A-Mk-4n8" collectionClass="NSMutableArray" id="Mry-pi-BRM"/>
+                        <outletCollection property="buttonArray" destination="pUV-rO-Blf" collectionClass="NSMutableArray" id="R1y-mE-QY0"/>
+                        <outletCollection property="buttonArray" destination="32E-ci-WMb" collectionClass="NSMutableArray" id="5QM-wv-syu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pT7-aR-V8X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -16,6 +16,7 @@
 		37FB3C242D1EBF9E00A86E2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37FB3C142D1EBF9E00A86E2D /* Assets.xcassets */; };
 		37FB3C262D1EBF9E00A86E2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37FB3C192D1EBF9E00A86E2D /* LaunchScreen.storyboard */; };
 		37FB3C272D1EBF9E00A86E2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37FB3C1B2D1EBF9E00A86E2D /* Main.storyboard */; };
+		37FB3C292D215E5200A86E2D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB3C282D215E5200A86E2D /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		37FB3C1A2D1EBF9E00A86E2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		37FB3C1C2D1EBF9E00A86E2D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		37FB3C1D2D1EBF9E00A86E2D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		37FB3C282D215E5200A86E2D /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,14 +66,15 @@
 			isa = PBXGroup;
 			children = (
 				37FB3C132D1EBF9E00A86E2D /* AppDelegate.swift */,
-				37FB3C142D1EBF9E00A86E2D /* Assets.xcassets */,
-				37FB3C152D1EBF9E00A86E2D /* HomeViewController.swift */,
-				37FB3C162D1EBF9E00A86E2D /* Info.plist */,
-				37FB3C172D1EBF9E00A86E2D /* JoinViewController.swift */,
-				37FB3C192D1EBF9E00A86E2D /* LaunchScreen.storyboard */,
-				37FB3C1B2D1EBF9E00A86E2D /* Main.storyboard */,
 				37FB3C1C2D1EBF9E00A86E2D /* SceneDelegate.swift */,
 				37FB3C1D2D1EBF9E00A86E2D /* ViewController.swift */,
+				37FB3C172D1EBF9E00A86E2D /* JoinViewController.swift */,
+				37FB3C152D1EBF9E00A86E2D /* HomeViewController.swift */,
+				37FB3C282D215E5200A86E2D /* SearchViewController.swift */,
+				37FB3C192D1EBF9E00A86E2D /* LaunchScreen.storyboard */,
+				37FB3C1B2D1EBF9E00A86E2D /* Main.storyboard */,
+				37FB3C142D1EBF9E00A86E2D /* Assets.xcassets */,
+				37FB3C162D1EBF9E00A86E2D /* Info.plist */,
 			);
 			path = "SeSAC-Movie";
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37FB3C292D215E5200A86E2D /* SearchViewController.swift in Sources */,
 				37FB3C1F2D1EBF9E00A86E2D /* AppDelegate.swift in Sources */,
 				37FB3C202D1EBF9E00A86E2D /* HomeViewController.swift in Sources */,
 				37FB3C212D1EBF9E00A86E2D /* JoinViewController.swift in Sources */,
