@@ -16,7 +16,11 @@ final class ViewController: UIViewController {
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var resultBackgroundImageView: UIImageView!
     
-    private let newWordArray = [""]
+    private let newWordArray: [String: String] = ["취존": "취향 존중",
+                                            "JMT": "너무 맛있어",
+                                            "정뚝떨": "정이 뚝 떨어진다",
+                                            "자낳괴": "자본주의가 낳은 괴물",
+                                            "낄끼빠빠": "낄 때 끼고 빠질 때 빠져라"]
     
     // MARK: - life cycles
     override func viewDidLoad() {
@@ -60,5 +64,21 @@ final class ViewController: UIViewController {
     
     @IBAction func tappedTapGestureRecognizer(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
+    }
+    
+    @IBAction func tappedTextFieldReturnKey(_ sender: UITextField) {
+        searchNewWord(word: sender.text)
+    }
+    
+    @IBAction func tappedSearchButton(_ sender: UIButton) {
+        searchNewWord(word: searchTextField.text)
+    }
+    
+    private func searchNewWord(word: String?) {
+        if let word = word, let result = newWordArray[word] {
+            resultLabel.text = result
+        } else {
+            resultLabel.text = "검색결과가 없습니다"
+        }
     }
 }

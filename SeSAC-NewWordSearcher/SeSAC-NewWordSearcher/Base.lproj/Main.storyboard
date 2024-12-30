@@ -26,6 +26,9 @@
                                                 <rect key="frame" x="20" y="4" width="218" height="42"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="tappedTextFieldReturnKey:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="5QF-p8-RXD"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -40,6 +43,9 @@
                                         <rect key="frame" x="258" y="0.0" width="75" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="tappedSearchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f3L-qM-gV9"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
