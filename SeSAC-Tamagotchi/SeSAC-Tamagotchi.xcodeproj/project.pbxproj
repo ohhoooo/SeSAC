@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		370F3C132D25E0BA00BA63A7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370F3C122D25E0BA00BA63A7 /* ProfileViewController.swift */; };
 		37A9A4792D25BA0C00E4B926 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A9A46F2D25BA0C00E4B926 /* AppDelegate.swift */; };
 		37A9A47A2D25BA0C00E4B926 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A9A4762D25BA0C00E4B926 /* SceneDelegate.swift */; };
 		37A9A47B2D25BA0C00E4B926 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A9A4772D25BA0C00E4B926 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		370F3C122D25E0BA00BA63A7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		37A9A4572D25B9FC00E4B926 /* SeSAC-Tamagotchi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SeSAC-Tamagotchi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37A9A46F2D25BA0C00E4B926 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37A9A4702D25BA0C00E4B926 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				37A9A46F2D25BA0C00E4B926 /* AppDelegate.swift */,
 				37A9A4762D25BA0C00E4B926 /* SceneDelegate.swift */,
 				37A9A4772D25BA0C00E4B926 /* ViewController.swift */,
+				370F3C122D25E0BA00BA63A7 /* ProfileViewController.swift */,
 				37A9A4732D25BA0C00E4B926 /* LaunchScreen.storyboard */,
 				37A9A4752D25BA0C00E4B926 /* Main.storyboard */,
 				37A9A4702D25BA0C00E4B926 /* Assets.xcassets */,
@@ -147,6 +150,7 @@
 			files = (
 				37A9A4792D25BA0C00E4B926 /* AppDelegate.swift in Sources */,
 				37A9A47A2D25BA0C00E4B926 /* SceneDelegate.swift in Sources */,
+				370F3C132D25E0BA00BA63A7 /* ProfileViewController.swift in Sources */,
 				37A9A47B2D25BA0C00E4B926 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

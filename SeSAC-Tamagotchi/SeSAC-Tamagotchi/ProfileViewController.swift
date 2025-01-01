@@ -1,0 +1,53 @@
+//
+//  ProfileViewController.swift
+//  SeSAC-Tamagotchi
+//
+//  Created by 김정호 on 1/2/25.
+//
+
+import UIKit
+
+final class ProfileViewController: UIViewController {
+    
+    // MARK: - properties
+    @IBOutlet weak var saveBarButtonItem: UIBarButtonItem!
+    @IBOutlet weak var boundaryView: UIView!
+    @IBOutlet weak var nicknameTextField: UITextField!
+    @IBOutlet weak var textFieldBoundaryView: UIView!
+    
+    // MARK: - life cycles
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        configureUI()
+        configureNavigation()
+    }
+    
+    // MARK: - methods
+    private func configureUI() {
+        configureView()
+        configureTextField()
+    }
+    
+    private func configureView() {
+        view.backgroundColor = UIColor(red: 246/255, green: 252/255, blue: 252/255, alpha: 1)
+        boundaryView.backgroundColor = UIColor(red: 228/255, green: 233/255, blue: 233/255, alpha: 1)
+        textFieldBoundaryView.backgroundColor = UIColor(red: 83/255, green: 105/255, blue: 118/255, alpha: 1)
+    }
+    
+    private func configureTextField() {
+        nicknameTextField.text = "고래밥"
+        nicknameTextField.font = .systemFont(ofSize: 14, weight: .bold)
+        nicknameTextField.placeholder = "닉네임을 입력하세요."
+        nicknameTextField.borderStyle = .none
+        nicknameTextField.textColor = UIColor(red: 83/255, green: 105/255, blue: 118/255, alpha: 1)
+    }
+    
+    private func configureNavigation() {
+        navigationItem.title = "대장님 이름 정하기"
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(red: 83/255, green: 105/255, blue: 118/255, alpha: 1)]
+        
+        saveBarButtonItem.title = "저장"
+        saveBarButtonItem.tintColor = UIColor(red: 83/255, green: 105/255, blue: 118/255, alpha: 1)
+    }
+}
