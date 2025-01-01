@@ -30,11 +30,37 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureUI()
+        configureUserDefaults()
         configureNavigation()
+        configureUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let nickname = UserDefaults.standard.string(forKey: "nickname") ?? ""
+        navigationItem.title = "\(nickname)님의 다마고치"
+        speechBubbleLabel.text = "복습 아직 안하셨다구요? 지금 잠이 오세여? \(nickname)님??"
     }
     
     // MARK: - methods
+    private func configureUserDefaults() {
+        UserDefaults.standard.set("대장", forKey: "nickname")
+    }
+    
+    private func configureNavigation() {
+        let nickname = UserDefaults.standard.string(forKey: "nickname") ?? ""
+        navigationItem.title = "\(nickname)님의 다마고치"
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(red: 83/255, green: 105/255, blue: 118/255, alpha: 1)]
+        
+        let backBarButtonItem = UIBarButtonItem(title: "설정", style: .plain, target: self, action: nil)
+        backBarButtonItem.tintColor = UIColor(red: 83/255, green: 105/255, blue: 118/255, alpha: 1)
+        navigationItem.backBarButtonItem = backBarButtonItem
+        
+        profileBarButtonItem.image = UIImage(systemName: "person.circle")
+        profileBarButtonItem.tintColor = UIColor(red: 83/255, green: 105/255, blue: 118/255, alpha: 1)
+    }
+    
     private func configureUI() {
         configureView()
         configureLabel()
@@ -60,7 +86,8 @@ final class ViewController: UIViewController {
     }
     
     private func configureLabel() {
-        speechBubbleLabel.text = "복습 아직 안하셨다구요? 지금 잠이 오세여? 대장님??"
+        let nickname = UserDefaults.standard.string(forKey: "nickname") ?? ""
+        speechBubbleLabel.text = "복습 아직 안하셨다구요? 지금 잠이 오세여? \(nickname)님??"
         speechBubbleLabel.font = .systemFont(ofSize: 14, weight: .bold)
         speechBubbleLabel.textColor = UIColor(red: 86/255, green: 108/255, blue: 121/255, alpha: 1)
         speechBubbleLabel.numberOfLines = 3
@@ -104,17 +131,5 @@ final class ViewController: UIViewController {
             e.placeholder = textFieldPlaceholderArray[i]
             e.textAlignment = .center
         }
-    }
-    
-    private func configureNavigation() {
-        navigationItem.title = "대장님의 다마고치"
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(red: 83/255, green: 105/255, blue: 118/255, alpha: 1)]
-        
-        let backBarButtonItem = UIBarButtonItem(title: "설정", style: .plain, target: self, action: nil)
-        backBarButtonItem.tintColor = UIColor(red: 83/255, green: 105/255, blue: 118/255, alpha: 1)
-        navigationItem.backBarButtonItem = backBarButtonItem
-        
-        profileBarButtonItem.image = UIImage(systemName: "person.circle")
-        profileBarButtonItem.tintColor = UIColor(red: 83/255, green: 105/255, blue: 118/255, alpha: 1)
     }
 }

@@ -210,7 +210,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Zna-pi-Gf7">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="YJ9-RG-m9Y"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="YJ9-RG-m9Y">
+                            <connections>
+                                <action selector="tappedSaveBarButtonItem:" destination="xdO-IQ-m7a" id="ykH-ve-rns"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="boundaryView" destination="vYe-ht-Avi" id="DTm-Qb-P8O"/>

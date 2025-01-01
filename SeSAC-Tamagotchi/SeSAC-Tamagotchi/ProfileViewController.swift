@@ -36,7 +36,6 @@ final class ProfileViewController: UIViewController {
     }
     
     private func configureTextField() {
-        nicknameTextField.text = "고래밥"
         nicknameTextField.font = .systemFont(ofSize: 14, weight: .bold)
         nicknameTextField.placeholder = "닉네임을 입력하세요."
         nicknameTextField.borderStyle = .none
@@ -44,10 +43,28 @@ final class ProfileViewController: UIViewController {
     }
     
     private func configureNavigation() {
-        navigationItem.title = "대장님 이름 정하기"
+        let nickname = UserDefaults.standard.string(forKey: "nickname") ?? ""
+        navigationItem.title = "\(nickname)님 이름 정하기"
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(red: 83/255, green: 105/255, blue: 118/255, alpha: 1)]
         
         saveBarButtonItem.title = "저장"
         saveBarButtonItem.tintColor = UIColor(red: 83/255, green: 105/255, blue: 118/255, alpha: 1)
+    }
+    
+    @IBAction func tappedSaveBarButtonItem(_ sender: UIBarButtonItem) {
+        guard let count = nicknameTextField.text?.count, count > 1 && count < 7 else {
+            presentAlert(title: "알림", message: "2글자 이상 6글자 이하까지 가능합니다!")
+            return
+        }
+        
+        presentAlert(title: "알림", message: "성공적으로 저장하였습니다!")
+        UserDefaults.standard.set(nicknameTextField.text!, forKey: "nickname")
+    }
+    
+    private func presentAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let check = UIAlertAction(title: "확인", style: .cancel)
+        alert.addAction(check)
+        present(alert, animated: true)
     }
 }
