@@ -40,7 +40,7 @@ final class ViewController: UIViewController {
         
         let nickname = UserDefaults.standard.string(forKey: "nickname") ?? ""
         navigationItem.title = "\(nickname)님의 다마고치"
-        speechBubbleLabel.text = "복습 아직 안하셨다구요? 지금 잠이 오세여? \(nickname)님??"
+        speechBubbleLabel.text = randomContents(nickname: nickname)
     }
     
     // MARK: - methods
@@ -87,7 +87,7 @@ final class ViewController: UIViewController {
     
     private func configureLabel() {
         let nickname = UserDefaults.standard.string(forKey: "nickname") ?? ""
-        speechBubbleLabel.text = "복습 아직 안하셨다구요? 지금 잠이 오세여? \(nickname)님??"
+        speechBubbleLabel.text = randomContents(nickname: nickname)
         speechBubbleLabel.font = .systemFont(ofSize: 14, weight: .bold)
         speechBubbleLabel.textColor = UIColor(red: 86/255, green: 108/255, blue: 121/255, alpha: 1)
         speechBubbleLabel.numberOfLines = 3
@@ -131,5 +131,14 @@ final class ViewController: UIViewController {
             e.placeholder = textFieldPlaceholderArray[i]
             e.textAlignment = .center
         }
+    }
+    
+    private func randomContents(nickname: String) -> String {
+        let contents = ["복습 아직 안하셨다구요? 지금 잠이 오세여? \(nickname)님?",
+                        "\(nickname)님, 밥주세요",
+                        "좋은 하루에요, \(nickname)님",
+                        "과제는 하고 누으신 건가요? \(nickname)님?"]
+        
+        return contents.randomElement()!
     }
 }
