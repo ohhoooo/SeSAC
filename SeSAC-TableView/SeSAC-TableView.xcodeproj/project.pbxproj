@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37BE661B2D26F46500D1CC1C /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BE661A2D26F46500D1CC1C /* SettingTableViewController.swift */; };
+		37BE66672D270B6100D1CC1C /* ShoppingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BE66662D270B6100D1CC1C /* ShoppingTableViewController.swift */; };
 		37DA4C682D26E0C1005A2983 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 37DA4C672D26E0C1005A2983 /* .gitignore */; };
 		37DA4C732D26E124005A2983 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37DA4C6A2D26E124005A2983 /* Assets.xcassets */; };
 		37DA4C752D26E124005A2983 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37DA4C6D2D26E124005A2983 /* LaunchScreen.storyboard */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		37BE661A2D26F46500D1CC1C /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		37BE66662D270B6100D1CC1C /* ShoppingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewController.swift; sourceTree = "<group>"; };
 		37DA4C4F2D26E09E005A2983 /* SeSAC-TableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SeSAC-TableView.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37DA4C672D26E0C1005A2983 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		37DA4C692D26E124005A2983 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +68,8 @@
 				37DA4C6D2D26E124005A2983 /* LaunchScreen.storyboard */,
 				37DA4C6F2D26E124005A2983 /* Main.storyboard */,
 				37DA4C712D26E124005A2983 /* ViewController.swift */,
+				37BE661A2D26F46500D1CC1C /* SettingTableViewController.swift */,
+				37BE66662D270B6100D1CC1C /* ShoppingTableViewController.swift */,
 				37DA4C6A2D26E124005A2983 /* Assets.xcassets */,
 				37DA4C6B2D26E124005A2983 /* Info.plist */,
 			);
@@ -145,8 +151,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37BE661B2D26F46500D1CC1C /* SettingTableViewController.swift in Sources */,
 				37DA4C772D26E124005A2983 /* AppDelegate.swift in Sources */,
 				37DA4C782D26E124005A2983 /* SceneDelegate.swift in Sources */,
+				37BE66672D270B6100D1CC1C /* ShoppingTableViewController.swift in Sources */,
 				37DA4C792D26E124005A2983 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
