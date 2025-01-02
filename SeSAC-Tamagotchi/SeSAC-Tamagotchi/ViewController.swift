@@ -25,42 +25,27 @@ final class ViewController: UIViewController {
     private let textFieldPlaceholderArray = ["밥주세용", "물주세용"]
     private let buttonTextArray = ["밥먹기", "물먹기"]
     private let buttonImageArray = [UIImage(systemName: "leaf.circle"), UIImage(systemName: "drop.circle")]
+    private let maxCountArray = [99, 49]
+    private let itemArray = ["밥", "물방울"]
+    private let keyArray = ["rice", "water", "nickname"]
     
     // MARK: - life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureUserDefaults()
-        configureNavigation()
         configureUI()
+        configureNavigation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let nickname = UserDefaults.standard.string(forKey: "nickname") ?? ""
+        let nickname = UserDefaults.standard.string(forKey: keyArray[2]) ?? "대장"
         navigationItem.title = "\(nickname)님의 다마고치"
         speechBubbleLabel.text = randomContents(nickname: nickname)
     }
     
     // MARK: - methods
-    private func configureUserDefaults() {
-        UserDefaults.standard.set("대장", forKey: "nickname")
-    }
-    
-    private func configureNavigation() {
-        let nickname = UserDefaults.standard.string(forKey: "nickname") ?? ""
-        navigationItem.title = "\(nickname)님의 다마고치"
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(red: 83/255, green: 105/255, blue: 118/255, alpha: 1)]
-        
-        let backBarButtonItem = UIBarButtonItem(title: "설정", style: .plain, target: self, action: nil)
-        backBarButtonItem.tintColor = UIColor(red: 83/255, green: 105/255, blue: 118/255, alpha: 1)
-        navigationItem.backBarButtonItem = backBarButtonItem
-        
-        profileBarButtonItem.image = UIImage(systemName: "person.circle")
-        profileBarButtonItem.tintColor = UIColor(red: 83/255, green: 105/255, blue: 118/255, alpha: 1)
-    }
-    
     private func configureUI() {
         configureView()
         configureLabel()
@@ -86,7 +71,7 @@ final class ViewController: UIViewController {
     }
     
     private func configureLabel() {
-        let nickname = UserDefaults.standard.string(forKey: "nickname") ?? ""
+        let nickname = UserDefaults.standard.string(forKey: keyArray[2]) ?? "대장"
         speechBubbleLabel.text = randomContents(nickname: nickname)
         speechBubbleLabel.font = .systemFont(ofSize: 14, weight: .bold)
         speechBubbleLabel.textColor = UIColor(red: 86/255, green: 108/255, blue: 121/255, alpha: 1)
@@ -97,7 +82,9 @@ final class ViewController: UIViewController {
         nicknameLabel.font = .systemFont(ofSize: 14, weight: .bold)
         nicknameLabel.textColor = UIColor(red: 83/255, green: 105/255, blue: 118/255, alpha: 1)
         
-        informationLabel.text = "LV1 · 밥알 0개 · 물방울 0개"
+        let rice = UserDefaults.standard.integer(forKey: keyArray[0])
+        let water = UserDefaults.standard.integer(forKey: keyArray[1])
+        informationLabel.text = "LV1 · 밥알 \(rice)개 · 물방울 \(water)개"
         informationLabel.font = .systemFont(ofSize: 14, weight: .semibold)
         informationLabel.textColor = UIColor(red: 83/255, green: 105/255, blue: 118/255, alpha: 1)
     }
@@ -140,5 +127,41 @@ final class ViewController: UIViewController {
                         "과제는 하고 누으신 건가요? \(nickname)님?"]
         
         return contents.randomElement()!
+    }
+    
+    private func configureNavigation() {
+        let nickname = UserDefaults.standard.string(forKey: keyArray[2]) ?? "대장"
+        navigationItem.title = "\(nickname)님의 다마고치"
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(red: 83/255, green: 105/255, blue: 118/255, alpha: 1)]
+        
+        let backBarButtonItem = UIBarButtonItem(title: "설정", style: .plain, target: self, action: nil)
+        backBarButtonItem.tintColor = UIColor(red: 83/255, green: 105/255, blue: 118/255, alpha: 1)
+        navigationItem.backBarButtonItem = backBarButtonItem
+        
+        profileBarButtonItem.image = UIImage(systemName: "person.circle")
+        profileBarButtonItem.tintColor = UIColor(red: 83/255, green: 105/255, blue: 118/255, alpha: 1)
+    }
+    
+    @IBAction func tappedButton(_ sender: UIButton) {
+        guard let text = textFieldArray[sender.tag].text, !text.isEmpty else {
+            let count = UserDefaults.standard.integer(forKey: keyArray[sender.tag])
+            UserDefaults.standard.set(count + 1, forKey: keyArray[sender.tag])
+            configureUI()
+            return
+        }
+        
+        guard let intText = Int(text) else {
+            presentAlert(title: "알림", message: "숫자만 가능합니다.", style: .alert)
+            return
+        }
+        
+        guard intText <= maxCountArray[sender.tag] else {
+            presentAlert(title: "알림", message: "한 번에 먹을 수 있는 \(itemArray[sender.tag])의 양은 \(maxCountArray[sender.tag])개까지입니다.", style: .alert)
+            return
+        }
+        
+        let count = UserDefaults.standard.integer(forKey: keyArray[sender.tag])
+        UserDefaults.standard.set(count + intText, forKey: keyArray[sender.tag])
+        configureUI()
     }
 }
