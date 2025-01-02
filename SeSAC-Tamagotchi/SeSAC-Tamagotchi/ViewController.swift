@@ -27,7 +27,8 @@ final class ViewController: UIViewController {
     private let buttonImageArray = [UIImage(systemName: "leaf.circle"), UIImage(systemName: "drop.circle")]
     private let maxCountArray = [99, 49]
     private let itemArray = ["밥", "물방울"]
-    private let keyArray = ["rice", "water", "nickname"]
+    private let keyArray = ["rice", "water", "nickname", "lv"]
+    private let imageArray: [UIImage] = [._2_1, ._2_2, ._2_3, ._2_4, ._2_5, ._2_6, ._2_7, ._2_8, ._2_9, ._2_9]
     
     // MARK: - life cycles
     override func viewDidLoad() {
@@ -84,7 +85,7 @@ final class ViewController: UIViewController {
         
         let rice = UserDefaults.standard.integer(forKey: keyArray[0])
         let water = UserDefaults.standard.integer(forKey: keyArray[1])
-        informationLabel.text = "LV1 · 밥알 \(rice)개 · 물방울 \(water)개"
+        informationLabel.text = "LV\(calculateLevel()) · 밥알 \(rice)개 · 물방울 \(water)개"
         informationLabel.font = .systemFont(ofSize: 14, weight: .semibold)
         informationLabel.textColor = UIColor(red: 83/255, green: 105/255, blue: 118/255, alpha: 1)
     }
@@ -108,7 +109,7 @@ final class ViewController: UIViewController {
     
     private func configureImageView() {
         speechBubbleImageView.image = .bubble
-        tamagotchiImageView.image = ._2_1
+        tamagotchiImageView.image = imageArray[UserDefaults.standard.integer(forKey: keyArray[3]) - 1]
     }
     
     private func configureTextField() {
@@ -163,5 +164,26 @@ final class ViewController: UIViewController {
         let count = UserDefaults.standard.integer(forKey: keyArray[sender.tag])
         UserDefaults.standard.set(count + intText, forKey: keyArray[sender.tag])
         configureUI()
+    }
+}
+
+// MARK: - extensions
+extension ViewController {
+    func calculateLevel() -> Int {
+        let rice = UserDefaults.standard.integer(forKey: keyArray[0])
+        let water = UserDefaults.standard.integer(forKey: keyArray[1])
+        let lv = Int(((Double(rice) / 5.0) + (Double(water) / 2.0)) / 10.0)
+        
+        switch lv {
+        case 0...1:
+            UserDefaults.standard.set(1, forKey: keyArray[3])
+            return 1
+        case 2...9:
+            UserDefaults.standard.set(lv, forKey: keyArray[3])
+            return lv
+        default:
+            UserDefaults.standard.set(10, forKey: keyArray[3])
+            return 10
+        }
     }
 }
