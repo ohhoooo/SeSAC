@@ -7,13 +7,20 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+final class TableViewController: UITableViewController {
+    
+    // MARK: - properties
+    
+    // MARK: - life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
+    
+    // MARK: - methods
 }
 
+// MARK: - extensions
+extension TableViewController {
+    
+}
