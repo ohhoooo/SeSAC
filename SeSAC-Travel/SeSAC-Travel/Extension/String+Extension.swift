@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+extension String {
+    func format() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyMMdd"
+        
+        let date = formatter.date(from: self)!
+        formatter.dateFormat = "yy년 MM월 dd일"
+        
+        return formatter.string(from: date)
+    }
+}
