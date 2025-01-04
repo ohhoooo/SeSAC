@@ -41,6 +41,7 @@ extension CityDetailInformationTableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? CityDetailInformationTableViewCell else { return UITableViewCell() }
         
         let travel = travelArray[indexPath.row]
+        cell.selectionStyle = .none
         cell.cityTitleLabel.text = travel.title
         cell.cityDescriptionLabel.text = travel.description
         cell.citySaveLabel.text = "저장 \((travel.save ?? 0).format())"

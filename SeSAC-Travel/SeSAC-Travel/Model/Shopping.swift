@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct Shopping {
+    let title: String
+    var purchase: Bool
+    var bookmark: Bool
+}

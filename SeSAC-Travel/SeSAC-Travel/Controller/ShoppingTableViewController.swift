@@ -7,83 +7,79 @@
 
 import UIKit
 
-class ShoppingTableViewController: UITableViewController {
-
+final class ShoppingTableViewController: UITableViewController {
+    
+    // MARK: - properties
+    @IBOutlet weak var shoppingBasedView: UIView!
+    @IBOutlet weak var shoppingTextField: UITextField!
+    @IBOutlet weak var additionButton: UIButton!
+    
+    private let identifier = "ShoppingTableViewCell"
+    private var purchaseList: [Shopping] = [Shopping(title: "그립톡 구매하기", purchase: true, bookmark: true),
+                                        Shopping(title: "사이다 구매", purchase: false, bookmark: false),
+                                        Shopping(title: "아이패드 케이스 최저가 알아보기", purchase: false, bookmark: true),
+                                        Shopping(title: "양말", purchase: false, bookmark: true)]
+    
+    // MARK: - life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        configureUI()
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    
+    // MARK: - methods
+    private func configureUI() {
+        configureView()
+        configureButton()
+        configureTextField()
     }
+    
+    private func configureView() {
+        shoppingBasedView.clipsToBounds = true
+        shoppingBasedView.backgroundColor = .systemGray6
+        shoppingBasedView.layer.cornerRadius = 8
+    }
+    
+    private func configureButton() {
+        var config = UIButton.Configuration.filled()
+        config.title = "추가"
+        config.contentInsets = .init(top: 8, leading: 16, bottom: 8, trailing: 16)
+        config.baseBackgroundColor = .systemGray5
+        config.baseForegroundColor = .black
+        config.attributedTitle?.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        additionButton.configuration = config
+        additionButton.clipsToBounds = true
+        additionButton.layer.cornerRadius = 8
+    }
+    
+    private func configureTextField() {
+        shoppingTextField.placeholder = "무엇을 구매하실 건가요?"
+        shoppingTextField.borderStyle = .none
+        shoppingTextField.font = .systemFont(ofSize: 14, weight: .regular)
+    }
+}
 
+// MARK: - extensions
+extension ShoppingTableViewController {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 52
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return purchaseList.count
     }
-
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? ShoppingTableViewCell else { return UITableViewCell() }
+        
+        let purchase = purchaseList[indexPath.row]
+        let purchaseImage = UIImage(systemName: purchase.purchase ? "checkmark.square.fill" : "checkmark.square")?.resize(width: 22, height: 20)
+        let bookmarkImage = UIImage(systemName: purchase.bookmark ? "star.fill" : "star")?.resize(width: 22, height: 20)
+        cell.selectionStyle = .none
+        cell.titleLabel.text = purchase.title
+        cell.purchaseButton.setImage(purchaseImage, for: .normal)
+        cell.bookmarkButton.setImage(bookmarkImage, for: .normal)
+        
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
