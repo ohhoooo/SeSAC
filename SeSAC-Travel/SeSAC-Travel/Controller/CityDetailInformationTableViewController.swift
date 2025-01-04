@@ -18,6 +18,13 @@ final class CityDetailInformationTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    // MARK: - methods
+    @objc
+    private func tappedCityLikeButton(_ sender: UIButton) {
+        travelArray[sender.tag].like?.toggle()
+        tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .automatic)
+    }
 }
 
 // MARK: - extensions
@@ -37,6 +44,8 @@ extension CityDetailInformationTableViewController {
         cell.cityTitleLabel.text = travel.title
         cell.cityDescriptionLabel.text = travel.description
         cell.citySaveLabel.text = "저장 \((travel.save ?? 0).format())"
+        cell.cityLikeButton.tag = indexPath.row
+        cell.cityLikeButton.addTarget(self, action: #selector(tappedCityLikeButton), for: .touchUpInside)
         cell.cityLikeButton.setImage(.init(systemName: (travel.like ?? false) ? "heart.fill" : "heart"), for: .normal)
         cell.cityImageView.kf.setImage(with: URL(string: travel.travel_image ?? ""))
         
