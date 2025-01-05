@@ -17,9 +17,19 @@ final class CityDetailInformationTableViewController: UITableViewController {
     // MARK: - life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configureData()
     }
     
     // MARK: - methods
+    private func configureData() {
+        travelArray.enumerated().forEach { (i, e) in
+            if e.like == nil {
+                travelArray[i].like = false
+            }
+        }
+    }
+    
     @objc
     private func tappedCityLikeButton(_ sender: UIButton) {
         travelArray[sender.tag].like?.toggle()
@@ -48,7 +58,9 @@ extension CityDetailInformationTableViewController {
         cell.cityLikeButton.tag = indexPath.row
         cell.cityLikeButton.addTarget(self, action: #selector(tappedCityLikeButton), for: .touchUpInside)
         cell.cityLikeButton.setImage(.init(systemName: (travel.like ?? false) ? "heart.fill" : "heart"), for: .normal)
-        cell.cityImageView.kf.setImage(with: URL(string: travel.travel_image ?? ""))
+        if let url = travel.travel_image {
+            cell.cityImageView.kf.setImage(with: URL(string: url))
+        }
         
         return cell
     }
