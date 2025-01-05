@@ -15,13 +15,14 @@ final class TravelTableViewCell: UITableViewCell {
     @IBOutlet weak var travelContentLabel: UILabel!
     @IBOutlet weak var travelDateLabel: UILabel!
     
-    // MARK: - methods
+    // MARK: - life cycles
     override func awakeFromNib() {
         super.awakeFromNib()
         
         configureUI()
     }
     
+    // MARK: - methods
     private func configureUI() {
         configureLabel()
         configureImageView()

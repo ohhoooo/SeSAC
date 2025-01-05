@@ -15,13 +15,14 @@ final class ShoppingTableViewCell: UITableViewCell {
     @IBOutlet weak var purchaseButton: UIButton!
     @IBOutlet weak var bookmarkButton: UIButton!
     
-    // MARK: - methods
+    // MARK: - life cycles
     override func awakeFromNib() {
         super.awakeFromNib()
         
         configureUI()
     }
     
+    // MARK: - methods
     private func configureUI() {
         configureView()
         configureLabel()
