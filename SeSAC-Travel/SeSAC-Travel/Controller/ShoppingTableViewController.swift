@@ -63,6 +63,17 @@ final class ShoppingTableViewController: UITableViewController {
         purchaseList.append(Shopping(title: text, purchase: false, bookmark: false))
         tableView.insertRows(at: [IndexPath(row: purchaseList.count - 1, section: 0)], with: .automatic)
     }
+    
+    @objc
+    private func tappedPurchaseAndBookmarkButton(_ sender: UIButton) {
+        if sender.tag % 2 == 0 {
+            purchaseList[sender.tag / 2].purchase.toggle()
+        } else {
+            purchaseList[sender.tag / 2].bookmark.toggle()
+        }
+        
+        tableView.reloadRows(at: [IndexPath(row: sender.tag / 2, section: 0)], with: .automatic)
+    }
 }
 
 // MARK: - extensions
@@ -83,8 +94,12 @@ extension ShoppingTableViewController {
         let bookmarkImage = UIImage(systemName: purchase.bookmark ? "star.fill" : "star")?.resize(width: 22, height: 20)
         cell.selectionStyle = .none
         cell.titleLabel.text = purchase.title
+        cell.purchaseButton.tag = indexPath.row * 2
+        cell.bookmarkButton.tag = indexPath.row * 2 + 1
         cell.purchaseButton.setImage(purchaseImage, for: .normal)
         cell.bookmarkButton.setImage(bookmarkImage, for: .normal)
+        cell.purchaseButton.addTarget(self, action: #selector(tappedPurchaseAndBookmarkButton), for: .touchUpInside)
+        cell.bookmarkButton.addTarget(self, action: #selector(tappedPurchaseAndBookmarkButton), for: .touchUpInside)
         
         return cell
     }
