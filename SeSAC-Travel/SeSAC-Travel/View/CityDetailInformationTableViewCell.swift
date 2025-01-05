@@ -16,13 +16,21 @@ final class CityDetailInformationTableViewCell: UITableViewCell {
     @IBOutlet weak var cityLikeButton: UIButton!
     @IBOutlet weak var cityImageView: UIImageView!
     
-    // MARK: - methods
+    // MARK: - life cycles
+    override func prepareForReuse() {
+        cityTitleLabel.text = nil
+        cityDescriptionLabel.text = nil
+        citySaveLabel.text = nil
+        cityImageView.image = .init(systemName: "photo")
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
         configureUI()
     }
     
+    // MARK: - methods
     private func configureUI() {
         configureLabel()
         configureButton()
@@ -50,6 +58,7 @@ final class CityDetailInformationTableViewCell: UITableViewCell {
     }
     
     private func configureImageView() {
+        cityImageView.image = .init(systemName: "photo")
         cityImageView.contentMode = .scaleAspectFill
         cityImageView.clipsToBounds = true
         cityImageView.layer.cornerRadius = 8

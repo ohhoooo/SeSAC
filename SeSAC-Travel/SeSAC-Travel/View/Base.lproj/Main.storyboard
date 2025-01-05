@@ -286,11 +286,11 @@
             </objects>
             <point key="canvasLocation" x="2932.06106870229" y="1500.7042253521126"/>
         </scene>
-        <!--Item-->
+        <!--여행-->
         <scene sceneID="bfb-Qd-30a">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eX5-LN-xsH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="fZa-WW-hLr"/>
+                    <tabBarItem key="tabBarItem" title="여행" image="airplane" catalog="system" id="fZa-WW-hLr"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gKF-8v-1Xc">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -325,11 +325,11 @@
             </objects>
             <point key="canvasLocation" x="1081.679389312977" y="31.690140845070424"/>
         </scene>
-        <!--Item-->
+        <!--정보-->
         <scene sceneID="Wwy-tF-0Ja">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7TB-zT-rBL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="VQ6-4R-Anh"/>
+                    <tabBarItem key="tabBarItem" title="정보" image="list.bullet.clipboard.fill" catalog="system" id="VQ6-4R-Anh"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="h11-Xl-6WD">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -344,11 +344,11 @@
             </objects>
             <point key="canvasLocation" x="2008" y="768"/>
         </scene>
-        <!--Item-->
+        <!--쇼핑-->
         <scene sceneID="voS-pP-fRM">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2wh-3V-1dm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="WCR-Oo-gLu"/>
+                    <tabBarItem key="tabBarItem" title="쇼핑" image="bag.fill" catalog="system" id="WCR-Oo-gLu"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="SxU-dY-fch">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -365,6 +365,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="airplane" catalog="system" width="128" height="115"/>
+        <image name="bag.fill" catalog="system" width="128" height="128"/>
+        <image name="list.bullet.clipboard.fill" catalog="system" width="98" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
