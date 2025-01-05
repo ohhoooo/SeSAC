@@ -57,6 +57,12 @@ final class ShoppingTableViewController: UITableViewController {
         shoppingTextField.borderStyle = .none
         shoppingTextField.font = .systemFont(ofSize: 14, weight: .regular)
     }
+    
+    @IBAction func tappedAdditionButton(_ sender: UIButton) {
+        guard let text = shoppingTextField.text, text.count > 0 else { return }
+        purchaseList.append(Shopping(title: text, purchase: false, bookmark: false))
+        tableView.insertRows(at: [IndexPath(row: purchaseList.count - 1, section: 0)], with: .automatic)
+    }
 }
 
 // MARK: - extensions

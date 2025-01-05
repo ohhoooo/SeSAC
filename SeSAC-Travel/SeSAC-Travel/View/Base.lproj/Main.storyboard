@@ -192,6 +192,9 @@
                                             <rect key="frame" x="262" y="14" width="75" height="35"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                            <connections>
+                                                <action selector="tappedAdditionButton:" destination="nol-Pq-PZr" eventType="touchUpInside" id="DBp-Rm-IUr"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
