@@ -11,10 +11,10 @@ import Kingfisher
 final class CityTableViewCell: UITableViewCell {
     
     // MARK: - properties
-    @IBOutlet weak var cityImageView: UIImageView!
-    @IBOutlet weak var cityNameLabel: UILabel!
-    @IBOutlet weak var cityExplainBasedView: UIView!
-    @IBOutlet weak var cityExplainLabel: UILabel!
+    @IBOutlet private weak var cityImageView: UIImageView!
+    @IBOutlet private weak var cityNameLabel: UILabel!
+    @IBOutlet private weak var cityExplainBasedView: UIView!
+    @IBOutlet private weak var cityExplainLabel: UILabel!
     
     static let identifier = "CityTableViewCell"
     

@@ -286,6 +286,73 @@
             </objects>
             <point key="canvasLocation" x="2932.06106870229" y="1500.7042253521126"/>
         </scene>
+        <!--인기 도시-->
+        <scene sceneID="JGI-6H-ycK">
+            <objects>
+                <tableViewController id="jNO-ct-kE3" customClass="CityTableViewController" customModule="SeSAC_Travel" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="k88-Sh-9BB">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="GIE-Nr-zu7">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="80"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DIL-CX-Ca5">
+                                    <rect key="frame" x="20" y="40" width="353" height="29"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="28" id="Rki-WQ-ARf"/>
+                                    </constraints>
+                                    <segments>
+                                        <segment title="First"/>
+                                        <segment title="Second"/>
+                                    </segments>
+                                </segmentedControl>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aEF-Cv-T9l">
+                                    <rect key="frame" x="20" y="0.0" width="353" height="28"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="28" id="h6F-Ty-bOU"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="aEF-Cv-T9l" firstAttribute="top" secondItem="GIE-Nr-zu7" secondAttribute="top" id="0z7-xH-o98"/>
+                                <constraint firstItem="aEF-Cv-T9l" firstAttribute="leading" secondItem="GIE-Nr-zu7" secondAttribute="leading" constant="20" id="8rD-9c-1js"/>
+                                <constraint firstItem="DIL-CX-Ca5" firstAttribute="leading" secondItem="GIE-Nr-zu7" secondAttribute="leading" constant="20" id="Dv6-AM-ycM"/>
+                                <constraint firstAttribute="trailing" secondItem="DIL-CX-Ca5" secondAttribute="trailing" constant="20" id="FXF-0f-Dqp"/>
+                                <constraint firstAttribute="trailing" secondItem="aEF-Cv-T9l" secondAttribute="trailing" constant="20" id="bFx-ah-GiC"/>
+                                <constraint firstAttribute="bottom" secondItem="DIL-CX-Ca5" secondAttribute="bottom" constant="12" id="bqa-e4-IJH"/>
+                                <constraint firstItem="DIL-CX-Ca5" firstAttribute="top" secondItem="aEF-Cv-T9l" secondAttribute="bottom" constant="12" id="daK-D8-PbK"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="OFd-de-rE2">
+                                <rect key="frame" x="0.0" y="130" width="393" height="44.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OFd-de-rE2" id="g14-wZ-wcw">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="44.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jNO-ct-kE3" id="AEv-QN-wNw"/>
+                            <outlet property="delegate" destination="jNO-ct-kE3" id="hff-r5-MIe"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="인기 도시" id="id7-5L-7rE"/>
+                    <connections>
+                        <outlet property="citySegmentedControl" destination="DIL-CX-Ca5" id="Bgq-GG-wtF"/>
+                        <outlet property="cityTextField" destination="aEF-Cv-T9l" id="Lmj-jz-a1S"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3X7-Oh-3n2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2932.06106870229" y="2217.605633802817"/>
+        </scene>
         <!--여행-->
         <scene sceneID="bfb-Qd-30a">
             <objects>
@@ -319,6 +386,7 @@
                         <segue destination="eX5-LN-xsH" kind="relationship" relationship="viewControllers" id="yw3-nT-9i9"/>
                         <segue destination="7TB-zT-rBL" kind="relationship" relationship="viewControllers" id="aia-OP-MNl"/>
                         <segue destination="2wh-3V-1dm" kind="relationship" relationship="viewControllers" id="mmV-7j-D2N"/>
+                        <segue destination="kYi-e4-XUz" kind="relationship" relationship="viewControllers" id="Sin-28-GrZ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vaw-e6-P69" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -363,10 +431,30 @@
             </objects>
             <point key="canvasLocation" x="2007" y="1501"/>
         </scene>
+        <!--도시-->
+        <scene sceneID="L4p-fA-lsW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kYi-e4-XUz" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="도시" image="building.2.fill" catalog="system" id="0wB-6u-EFQ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WEZ-AD-kwX">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jNO-ct-kE3" kind="relationship" relationship="rootViewController" id="zYk-mk-c1Q"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o8n-NW-cFQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2007" y="2219"/>
+        </scene>
     </scenes>
     <resources>
         <image name="airplane" catalog="system" width="128" height="115"/>
         <image name="bag.fill" catalog="system" width="128" height="128"/>
+        <image name="building.2.fill" catalog="system" width="108" height="128"/>
         <image name="list.bullet.clipboard.fill" catalog="system" width="98" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
