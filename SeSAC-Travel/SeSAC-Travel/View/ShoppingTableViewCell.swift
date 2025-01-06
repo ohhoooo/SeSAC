@@ -15,7 +15,13 @@ final class ShoppingTableViewCell: UITableViewCell {
     @IBOutlet weak var purchaseButton: UIButton!
     @IBOutlet weak var bookmarkButton: UIButton!
     
+    static let identifier = "ShoppingTableViewCell"
+    
     // MARK: - life cycles
+    override func prepareForReuse() {
+        titleLabel.text = nil
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -46,5 +52,13 @@ final class ShoppingTableViewCell: UITableViewCell {
         config.baseForegroundColor = .black
         purchaseButton.configuration = config
         bookmarkButton.configuration = config
+    }
+    
+    func configureData(shopping: Shopping) {
+        let purchaseImage = UIImage(systemName: shopping.purchase ? "checkmark.square.fill" : "checkmark.square")?.resize(width: 22, height: 20)
+        let bookmarkImage = UIImage(systemName: shopping.bookmark ? "star.fill" : "star")?.resize(width: 22, height: 20)
+        titleLabel.text = shopping.title
+        purchaseButton.setImage(purchaseImage, for: .normal)
+        bookmarkButton.setImage(bookmarkImage, for: .normal)
     }
 }

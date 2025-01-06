@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class CityDetailInformationTableViewCell: UITableViewCell {
     
@@ -15,6 +16,8 @@ final class CityDetailInformationTableViewCell: UITableViewCell {
     @IBOutlet weak var citySaveLabel: UILabel!
     @IBOutlet weak var cityLikeButton: UIButton!
     @IBOutlet weak var cityImageView: UIImageView!
+    
+    static let identifier = "CityDetailInformationTableViewCell"
     
     // MARK: - life cycles
     override func prepareForReuse() {
@@ -62,5 +65,14 @@ final class CityDetailInformationTableViewCell: UITableViewCell {
         cityImageView.contentMode = .scaleAspectFill
         cityImageView.clipsToBounds = true
         cityImageView.layer.cornerRadius = 8
+    }
+    
+    func configureData(travel: Travel) {
+        cityTitleLabel.text = travel.title
+        cityDescriptionLabel.text = travel.description
+        citySaveLabel.text = "저장 \((travel.save ?? 0).format())"
+        cityLikeButton.setImage(.init(systemName: (travel.like ?? false) ? "heart.fill" : "heart"), for: .normal)
+        guard let url = travel.travel_image else { return }
+        cityImageView.kf.setImage(with: URL(string: url))
     }
 }

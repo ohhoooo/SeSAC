@@ -22,9 +22,9 @@ final class CityTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        cityNameLabel.text = nil
-        cityNameLabel.text = nil
         cityImageView.image = .init(systemName: "photo")
+        cityNameLabel.text = nil
+        cityExplainLabel.text = nil
     }
     
     override func awakeFromNib() {

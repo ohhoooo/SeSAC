@@ -14,7 +14,6 @@ final class ShoppingTableViewController: UITableViewController {
     @IBOutlet weak var shoppingTextField: UITextField!
     @IBOutlet weak var additionButton: UIButton!
     
-    private let identifier = "ShoppingTableViewCell"
     private var purchaseList: [Shopping] = [Shopping(title: "그립톡 구매하기", purchase: true, bookmark: true),
                                         Shopping(title: "사이다 구매", purchase: false, bookmark: false),
                                         Shopping(title: "아이패드 케이스 최저가 알아보기", purchase: false, bookmark: true),
@@ -98,17 +97,12 @@ extension ShoppingTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? ShoppingTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ShoppingTableViewCell.identifier, for: indexPath) as? ShoppingTableViewCell else { return UITableViewCell() }
         
-        let purchase = purchaseList[indexPath.row]
-        let purchaseImage = UIImage(systemName: purchase.purchase ? "checkmark.square.fill" : "checkmark.square")?.resize(width: 22, height: 20)
-        let bookmarkImage = UIImage(systemName: purchase.bookmark ? "star.fill" : "star")?.resize(width: 22, height: 20)
         cell.selectionStyle = .none
-        cell.titleLabel.text = purchase.title
+        cell.configureData(shopping: purchaseList[indexPath.row])
         cell.purchaseButton.tag = indexPath.row * 2
         cell.bookmarkButton.tag = indexPath.row * 2 + 1
-        cell.purchaseButton.setImage(purchaseImage, for: .normal)
-        cell.bookmarkButton.setImage(bookmarkImage, for: .normal)
         cell.purchaseButton.addTarget(self, action: #selector(tappedPurchaseAndBookmarkButton), for: .touchUpInside)
         cell.bookmarkButton.addTarget(self, action: #selector(tappedPurchaseAndBookmarkButton), for: .touchUpInside)
         

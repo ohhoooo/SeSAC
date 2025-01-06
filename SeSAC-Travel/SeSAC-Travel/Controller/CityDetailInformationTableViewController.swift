@@ -6,12 +6,10 @@
 //
 
 import UIKit
-import Kingfisher
 
 final class CityDetailInformationTableViewController: UITableViewController {
     
     // MARK: - properties
-    private let identifier = "CityDetailInformationTableViewCell"
     private var travelArray = TravelInfo().travel
     
     // MARK: - life cycles
@@ -48,19 +46,12 @@ extension CityDetailInformationTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? CityDetailInformationTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CityDetailInformationTableViewCell.identifier, for: indexPath) as? CityDetailInformationTableViewCell else { return UITableViewCell() }
         
-        let travel = travelArray[indexPath.row]
         cell.selectionStyle = .none
-        cell.cityTitleLabel.text = travel.title
-        cell.cityDescriptionLabel.text = travel.description
-        cell.citySaveLabel.text = "저장 \((travel.save ?? 0).format())"
+        cell.configureData(travel: travelArray[indexPath.row])
         cell.cityLikeButton.tag = indexPath.row
         cell.cityLikeButton.addTarget(self, action: #selector(tappedCityLikeButton), for: .touchUpInside)
-        cell.cityLikeButton.setImage(.init(systemName: (travel.like ?? false) ? "heart.fill" : "heart"), for: .normal)
-        if let url = travel.travel_image {
-            cell.cityImageView.kf.setImage(with: URL(string: url))
-        }
         
         return cell
     }

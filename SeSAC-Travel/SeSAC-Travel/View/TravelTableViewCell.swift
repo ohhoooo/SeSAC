@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class TravelTableViewCell: UITableViewCell {
     
@@ -15,7 +16,16 @@ final class TravelTableViewCell: UITableViewCell {
     @IBOutlet weak var travelContentLabel: UILabel!
     @IBOutlet weak var travelDateLabel: UILabel!
     
+    static let identifier = "TravelTableViewCell"
+    
     // MARK: - life cycles
+    override func prepareForReuse() {
+        travelImageView.image = .init(systemName: "photo")
+        travelTitleLabel.text = nil
+        travelContentLabel.text = nil
+        travelDateLabel.text = nil
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -44,5 +54,12 @@ final class TravelTableViewCell: UITableViewCell {
         travelImageView.contentMode = .scaleAspectFill
         travelImageView.clipsToBounds = true
         travelImageView.layer.cornerRadius = 12
+    }
+    
+    func configureData(magazine: Magazine) {
+        travelImageView.kf.setImage(with: URL(string: magazine.photo_image))
+        travelTitleLabel.text = magazine.title
+        travelContentLabel.text = magazine.subtitle
+        travelDateLabel.text = magazine.date.format()
     }
 }

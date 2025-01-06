@@ -6,13 +6,11 @@
 //
 
 import UIKit
-import Kingfisher
 
 final class TravelTableViewController: UITableViewController {
     
     // MARK: - properties
     private let magazineArray = MagazineInfo().magazine
-    private let identifier = "TravelTableViewCell"
     
     // MARK: - life cycles
     override func viewDidLoad() {
@@ -38,13 +36,10 @@ extension TravelTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? TravelTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: TravelTableViewCell.identifier, for: indexPath) as? TravelTableViewCell else { return UITableViewCell() }
         
         cell.selectionStyle = .none
-        cell.travelImageView.kf.setImage(with: URL(string: magazineArray[indexPath.row].photo_image))
-        cell.travelTitleLabel.text = magazineArray[indexPath.row].title
-        cell.travelContentLabel.text = magazineArray[indexPath.row].subtitle
-        cell.travelDateLabel.text = magazineArray[indexPath.row].date.format()
+        cell.configureData(magazine: magazineArray[indexPath.row])
         
         return cell
     }
