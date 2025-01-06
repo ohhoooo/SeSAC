@@ -13,7 +13,7 @@ final class CityTableViewController: UITableViewController {
     @IBOutlet private weak var cityTextField: UITextField!
     @IBOutlet private weak var citySegmentedControl: UISegmentedControl!
     
-    private let cityArray = CityInfo().city
+    private var cityArray = CityInfo().city
     
     // MARK: - life cycles
     override func viewDidLoad() {
@@ -42,6 +42,19 @@ final class CityTableViewController: UITableViewController {
         citySegmentedControl.setTitle("모두", forSegmentAt: 0)
         citySegmentedControl.setTitle("국내", forSegmentAt: 1)
         citySegmentedControl.insertSegment(withTitle: "해외", at: 2, animated: true)
+    }
+    
+    @IBAction private func tappedSegmentedControl(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            cityArray = CityInfo().city
+        case 1:
+            cityArray = CityInfo().city.filter { $0.domestic_travel }
+        default:
+            cityArray = CityInfo().city.filter { !$0.domestic_travel }
+        }
+        
+        tableView.reloadData()
     }
 }
 

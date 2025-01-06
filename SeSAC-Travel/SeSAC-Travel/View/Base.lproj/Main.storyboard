@@ -307,6 +307,9 @@
                                         <segment title="First"/>
                                         <segment title="Second"/>
                                     </segments>
+                                    <connections>
+                                        <action selector="tappedSegmentedControl:" destination="jNO-ct-kE3" eventType="valueChanged" id="1Gn-ik-Suz"/>
+                                    </connections>
                                 </segmentedControl>
                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aEF-Cv-T9l">
                                     <rect key="frame" x="20" y="0.0" width="353" height="28"/>
