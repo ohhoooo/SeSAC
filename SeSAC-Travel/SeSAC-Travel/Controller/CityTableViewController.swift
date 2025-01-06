@@ -64,7 +64,7 @@ final class CityTableViewController: UITableViewController {
             cityArray = CityInfo().city.filter { !$0.domestic_travel }
         }
         
-        cityArray = cityArray.filter { $0.city_name.contains(text) || $0.city_english_name.contains(text) || $0.city_explain.contains(text) }
+        cityArray = cityArray.filter { $0.city_name.uppercased().contains(text.uppercased()) || $0.city_english_name.uppercased().contains(text.uppercased()) || $0.city_explain.uppercased().contains(text.uppercased()) }
         tableView.reloadData()
     }
     
