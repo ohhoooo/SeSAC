@@ -318,6 +318,10 @@
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <action selector="didEndOnExitTextField:" destination="jNO-ct-kE3" eventType="editingDidEndOnExit" id="2zB-DJ-nWz"/>
+                                        <action selector="editingChangedTextField:" destination="jNO-ct-kE3" eventType="editingChanged" id="6xQ-FE-dZT"/>
+                                    </connections>
                                 </textField>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>

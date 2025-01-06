@@ -44,6 +44,30 @@ final class CityTableViewController: UITableViewController {
         citySegmentedControl.insertSegment(withTitle: "해외", at: 2, animated: true)
     }
     
+    @IBAction func didEndOnExitTextField(_ sender: UITextField) {
+        guard let text = sender.text, !text.isEmpty else { return }
+        searchCitys(text: text)
+    }
+    
+    @IBAction func editingChangedTextField(_ sender: UITextField) {
+        guard let text = sender.text, !text.isEmpty else { return }
+        searchCitys(text: text)
+    }
+    
+    private func searchCitys(text: String) {
+        switch citySegmentedControl.selectedSegmentIndex {
+        case 0:
+            cityArray = CityInfo().city
+        case 1:
+            cityArray = CityInfo().city.filter { $0.domestic_travel }
+        default:
+            cityArray = CityInfo().city.filter { !$0.domestic_travel }
+        }
+        
+        cityArray = cityArray.filter { $0.city_name.contains(text) || $0.city_english_name.contains(text) || $0.city_explain.contains(text) }
+        tableView.reloadData()
+    }
+    
     @IBAction private func tappedSegmentedControl(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
