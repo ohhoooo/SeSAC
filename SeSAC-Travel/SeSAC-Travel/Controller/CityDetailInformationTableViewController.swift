@@ -55,4 +55,11 @@ extension CityDetailInformationTableViewController {
         
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let touristAttractionVC = storyboard?.instantiateViewController(withIdentifier: "TouristAttractionViewController") as? TouristAttractionViewController else { return }
+        
+        touristAttractionVC.travel = travelArray[indexPath.row]
+        navigationController?.pushViewController(touristAttractionVC, animated: true)
+    }
 }
