@@ -19,6 +19,10 @@ final class CityDetailInformationTableViewController: UITableViewController {
         configureData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationItem.title = "도시 상세 정보"
+    }
+    
     // MARK: - methods
     private func configureData() {
         travelArray.enumerated().forEach { (i, e) in
