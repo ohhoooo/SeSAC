@@ -76,9 +76,20 @@ extension CityDetailInformationTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let touristAttractionVC = storyboard?.instantiateViewController(withIdentifier: "TouristAttractionViewController") as? TouristAttractionViewController else { return }
-        
-        touristAttractionVC.travel = travelArray[indexPath.row]
-        navigationController?.pushViewController(touristAttractionVC, animated: true)
+        if travelArray[indexPath.row].ad {
+            guard let advertisementVC = storyboard?.instantiateViewController(withIdentifier: "AdvertisementViewController") as? AdvertisementViewController else { return }
+            
+            advertisementVC.adText = adArray[indexPath.row % 2]
+            let navigationVC = UINavigationController(rootViewController: advertisementVC)
+            navigationVC.modalPresentationStyle = .fullScreen
+            
+            present(navigationVC, animated: true)
+        } else {
+            guard let touristAttractionVC = storyboard?.instantiateViewController(withIdentifier: "TouristAttractionViewController") as? TouristAttractionViewController else { return }
+            
+            touristAttractionVC.travel = travelArray[indexPath.row]
+            
+            navigationController?.pushViewController(touristAttractionVC, animated: true)
+        }
     }
 }
