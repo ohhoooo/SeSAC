@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -167,6 +168,66 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mfR-GQ-s8W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2932.06106870229" y="767.6056338028169"/>
+        </scene>
+        <!--Tourist Attraction View Controller-->
+        <scene sceneID="5Pf-Xy-sb2">
+            <objects>
+                <viewController storyboardIdentifier="TouristAttractionViewController" id="Ydb-Ws-skM" customClass="TouristAttractionViewController" customModule="SeSAC_Travel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dj8-qz-qwQ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IVO-rh-w62">
+                                <rect key="frame" x="32" y="79" width="329" height="329"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="IVO-rh-w62" secondAttribute="height" multiplier="1:1" id="fhm-8k-TgV"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRc-ZE-zDb">
+                                <rect key="frame" x="32" y="428" width="329" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whh-yx-Nlp">
+                                <rect key="frame" x="32" y="465" width="329" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H69-fx-6Tm">
+                                <rect key="frame" x="159" y="506" width="75" height="88"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="liX-Fk-Nb3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="liX-Fk-Nb3" firstAttribute="trailing" secondItem="WRc-ZE-zDb" secondAttribute="trailing" constant="32" id="1yk-Dv-8be"/>
+                            <constraint firstItem="WRc-ZE-zDb" firstAttribute="top" secondItem="IVO-rh-w62" secondAttribute="bottom" constant="20" id="2fW-qx-F3N"/>
+                            <constraint firstItem="H69-fx-6Tm" firstAttribute="centerX" secondItem="dj8-qz-qwQ" secondAttribute="centerX" id="8LV-vy-UhK"/>
+                            <constraint firstItem="H69-fx-6Tm" firstAttribute="top" secondItem="whh-yx-Nlp" secondAttribute="bottom" constant="20" id="EgO-rz-fJM"/>
+                            <constraint firstItem="IVO-rh-w62" firstAttribute="leading" secondItem="liX-Fk-Nb3" secondAttribute="leading" constant="32" id="MIa-C6-udj"/>
+                            <constraint firstItem="whh-yx-Nlp" firstAttribute="leading" secondItem="liX-Fk-Nb3" secondAttribute="leading" constant="32" id="WKQ-gx-WmL"/>
+                            <constraint firstItem="liX-Fk-Nb3" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="H69-fx-6Tm" secondAttribute="bottom" constant="224" id="YUO-aO-NRU"/>
+                            <constraint firstItem="whh-yx-Nlp" firstAttribute="top" secondItem="WRc-ZE-zDb" secondAttribute="bottom" constant="16" id="aN7-GA-prk"/>
+                            <constraint firstItem="liX-Fk-Nb3" firstAttribute="trailing" secondItem="whh-yx-Nlp" secondAttribute="trailing" constant="32" id="bWE-LV-Sj8"/>
+                            <constraint firstItem="liX-Fk-Nb3" firstAttribute="trailing" secondItem="IVO-rh-w62" secondAttribute="trailing" constant="32" id="cAE-DX-5kQ"/>
+                            <constraint firstItem="WRc-ZE-zDb" firstAttribute="leading" secondItem="liX-Fk-Nb3" secondAttribute="leading" constant="32" id="d8H-a9-qfD"/>
+                            <constraint firstItem="IVO-rh-w62" firstAttribute="top" secondItem="liX-Fk-Nb3" secondAttribute="top" constant="20" id="gC6-bZ-J8i"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="touristAttractionDescriptionLabel" destination="whh-yx-Nlp" id="3Wc-D6-W5Y"/>
+                        <outlet property="touristAttractionImageView" destination="IVO-rh-w62" id="ZtC-Mh-Akt"/>
+                        <outlet property="touristAttractionPopButton" destination="H69-fx-6Tm" id="gFi-Yy-deF"/>
+                        <outlet property="touristAttractionTitleLabel" destination="WRc-ZE-zDb" id="RLd-ZV-cJZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BnR-GX-inh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3876" y="768"/>
         </scene>
         <!--쇼핑-->
         <scene sceneID="3rk-J6-mv8">

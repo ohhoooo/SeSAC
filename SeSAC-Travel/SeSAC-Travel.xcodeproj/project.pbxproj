@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37143C542D2D4C1C0041B833 /* TouristAttractionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37143C532D2D4C1C0041B833 /* TouristAttractionViewController.swift */; };
 		378D91362D2BE513007F50CD /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378D91352D2BE513007F50CD /* City.swift */; };
 		378D91382D2BE648007F50CD /* CityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378D91372D2BE648007F50CD /* CityTableViewController.swift */; };
 		378D913D2D2BE68B007F50CD /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378D913B2D2BE68B007F50CD /* CityTableViewCell.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		37143C532D2D4C1C0041B833 /* TouristAttractionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouristAttractionViewController.swift; sourceTree = "<group>"; };
 		378D91352D2BE513007F50CD /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		378D91372D2BE648007F50CD /* CityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewController.swift; sourceTree = "<group>"; };
 		378D913B2D2BE68B007F50CD /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				37D9E83F2D2908AF00F96767 /* CityDetailInformationTableViewController.swift */,
 				37D9E8452D293F3600F96767 /* ShoppingTableViewController.swift */,
 				378D91372D2BE648007F50CD /* CityTableViewController.swift */,
+				37143C532D2D4C1C0041B833 /* TouristAttractionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				37D9E8232D27F60200F96767 /* SceneDelegate.swift in Sources */,
 				37D9E8332D2800AC00F96767 /* TravelTableViewCell.swift in Sources */,
 				378D91382D2BE648007F50CD /* CityTableViewController.swift in Sources */,
+				37143C542D2D4C1C0041B833 /* TouristAttractionViewController.swift in Sources */,
 				37D9E84A2D293FB000F96767 /* Shopping.swift in Sources */,
 				37D9E8442D291FCB00F96767 /* Int+Extension.swift in Sources */,
 				37D9E8392D2809CA00F96767 /* String+Extension.swift in Sources */,
