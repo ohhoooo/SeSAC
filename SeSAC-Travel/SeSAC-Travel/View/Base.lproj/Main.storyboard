@@ -539,6 +539,9 @@
                                     <segment title="First"/>
                                     <segment title="Second"/>
                                 </segments>
+                                <connections>
+                                    <action selector="tappedSegmentedControl:" destination="nRH-rc-yTJ" eventType="valueChanged" id="7GB-fY-fab"/>
+                                </connections>
                             </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Kw8-cS-pov">
                                 <rect key="frame" x="8" y="131" width="377" height="638"/>

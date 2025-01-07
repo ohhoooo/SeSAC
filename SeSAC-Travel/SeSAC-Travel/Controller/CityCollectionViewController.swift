@@ -20,6 +20,7 @@ final class CityCollectionViewController: UIViewController {
         super.viewDidLoad()
         
         configureUI()
+        configureNavigation()
     }
     
     // MARK: - methods
@@ -46,6 +47,23 @@ final class CityCollectionViewController: UIViewController {
         layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 0
         cityCollectionView.collectionViewLayout = layout
+    }
+    
+    private func configureNavigation() {
+        navigationItem.title = "인기 도시"
+    }
+    
+    @IBAction private func tappedSegmentedControl(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            cityArray = CityInfo().city
+        case 1:
+            cityArray = CityInfo().city.filter { $0.domestic_travel }
+        default:
+            cityArray = CityInfo().city.filter { !$0.domestic_travel }
+        }
+        
+        cityCollectionView.reloadData()
     }
 }
 
