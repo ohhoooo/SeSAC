@@ -199,6 +199,9 @@
                                 <rect key="frame" x="159" y="506" width="75" height="88"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="tappedTouristAttractionPopButton:" destination="Ydb-Ws-skM" eventType="touchUpInside" id="Lqm-7f-sVw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="liX-Fk-Nb3"/>

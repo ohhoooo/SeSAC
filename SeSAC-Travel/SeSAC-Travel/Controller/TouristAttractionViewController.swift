@@ -80,4 +80,8 @@ final class TouristAttractionViewController: UIViewController {
         navigationController?.navigationBar.tintColor = .black
         navigationController?.navigationBar.topItem?.title = ""
     }
+    
+    @IBAction func tappedTouristAttractionPopButton(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
 }
