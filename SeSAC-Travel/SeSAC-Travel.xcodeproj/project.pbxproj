@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		37143C542D2D4C1C0041B833 /* TouristAttractionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37143C532D2D4C1C0041B833 /* TouristAttractionViewController.swift */; };
+		37143C562D2D6BEB0041B833 /* CityDetailInformationAdvertisementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37143C552D2D6BEB0041B833 /* CityDetailInformationAdvertisementTableViewCell.swift */; };
 		378D91362D2BE513007F50CD /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378D91352D2BE513007F50CD /* City.swift */; };
 		378D91382D2BE648007F50CD /* CityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378D91372D2BE648007F50CD /* CityTableViewController.swift */; };
 		378D913D2D2BE68B007F50CD /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378D913B2D2BE68B007F50CD /* CityTableViewCell.swift */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		37143C532D2D4C1C0041B833 /* TouristAttractionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouristAttractionViewController.swift; sourceTree = "<group>"; };
+		37143C552D2D6BEB0041B833 /* CityDetailInformationAdvertisementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailInformationAdvertisementTableViewCell.swift; sourceTree = "<group>"; };
 		378D91352D2BE513007F50CD /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		378D91372D2BE648007F50CD /* CityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewController.swift; sourceTree = "<group>"; };
 		378D913B2D2BE68B007F50CD /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				37D9E81E2D27F60200F96767 /* Main.storyboard */,
 				37D9E8322D2800AC00F96767 /* TravelTableViewCell.swift */,
 				37D9E83D2D29075900F96767 /* CityDetailInformationTableViewCell.swift */,
+				37143C552D2D6BEB0041B833 /* CityDetailInformationAdvertisementTableViewCell.swift */,
 				37D9E8472D293F8300F96767 /* ShoppingTableViewCell.swift */,
 				378D913B2D2BE68B007F50CD /* CityTableViewCell.swift */,
 				378D913C2D2BE68B007F50CD /* CityTableViewCell.xib */,
@@ -242,6 +245,7 @@
 				37D9E8232D27F60200F96767 /* SceneDelegate.swift in Sources */,
 				37D9E8332D2800AC00F96767 /* TravelTableViewCell.swift in Sources */,
 				378D91382D2BE648007F50CD /* CityTableViewController.swift in Sources */,
+				37143C562D2D6BEB0041B833 /* CityDetailInformationAdvertisementTableViewCell.swift in Sources */,
 				37143C542D2D4C1C0041B833 /* TouristAttractionViewController.swift in Sources */,
 				37D9E84A2D293FB000F96767 /* Shopping.swift in Sources */,
 				37D9E8442D291FCB00F96767 /* Int+Extension.swift in Sources */,
