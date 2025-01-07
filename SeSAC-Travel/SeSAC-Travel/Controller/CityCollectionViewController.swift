@@ -1,5 +1,5 @@
 //
-//  PopularityCityViewController.swift
+//  CityCollectionViewController.swift
 //  SeSAC-Travel
 //
 //  Created by 김정호 on 1/8/25.
@@ -35,9 +35,17 @@ final class CityCollectionViewController: UIViewController {
     }
     
     private func configureCollectionView() {
-        cityCollectionView.register(PopularityCityCollectionViewCell.self, forCellWithReuseIdentifier: PopularityCityCollectionViewCell.identifier)
+        cityCollectionView.register(UINib(nibName: "CityCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CityCollectionViewCell.identifier)
         cityCollectionView.delegate = self
         cityCollectionView.dataSource = self
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 164, height: 244)
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 16, bottom: 12, right: 16)
+        layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 0
+        cityCollectionView.collectionViewLayout = layout
     }
 }
 
@@ -48,9 +56,9 @@ extension CityCollectionViewController: UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PopularityCityCollectionViewCell.identifier, for: indexPath) as? PopularityCityCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CityCollectionViewCell.identifier, for: indexPath) as? CityCollectionViewCell else { return UICollectionViewCell() }
         
-        cell.configureData(travel: cityArray[indexPath.row])
+        cell.configureData(city: cityArray[indexPath.row])
         
         return cell
     }
