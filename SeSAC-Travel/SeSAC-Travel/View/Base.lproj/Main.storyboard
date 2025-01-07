@@ -187,29 +187,19 @@
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E8U-9j-V8u">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="120"/>
-                                            <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="iFf-kR-uxz" firstAttribute="leading" secondItem="Fz4-6S-wQc" secondAttribute="leading" constant="24" id="8jk-Vd-att"/>
                                         <constraint firstAttribute="bottom" secondItem="iFf-kR-uxz" secondAttribute="bottom" id="8q4-ih-GJE"/>
                                         <constraint firstItem="0Sd-bA-ceE" firstAttribute="trailing" secondItem="iFf-kR-uxz" secondAttribute="trailing" constant="-4" id="B9J-OY-0R6"/>
-                                        <constraint firstItem="E8U-9j-V8u" firstAttribute="leading" secondItem="Fz4-6S-wQc" secondAttribute="leading" id="IeV-bJ-w4P"/>
                                         <constraint firstItem="0Sd-bA-ceE" firstAttribute="top" secondItem="iFf-kR-uxz" secondAttribute="top" constant="4" id="ONV-Ks-FBv"/>
                                         <constraint firstItem="iFf-kR-uxz" firstAttribute="top" secondItem="Fz4-6S-wQc" secondAttribute="top" id="l0b-yK-off"/>
-                                        <constraint firstAttribute="trailing" secondItem="E8U-9j-V8u" secondAttribute="trailing" id="m7L-48-YoE"/>
-                                        <constraint firstItem="E8U-9j-V8u" firstAttribute="top" secondItem="Fz4-6S-wQc" secondAttribute="top" id="nKO-HW-drv"/>
-                                        <constraint firstAttribute="bottom" secondItem="E8U-9j-V8u" secondAttribute="bottom" id="pZM-OW-Ewv"/>
                                         <constraint firstAttribute="trailing" secondItem="iFf-kR-uxz" secondAttribute="trailing" constant="24" id="sCt-XQ-uln"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="adBasedView" destination="iFf-kR-uxz" id="FmJ-8D-AJb"/>
                                     <outlet property="adButton" destination="0Sd-bA-ceE" id="7Y6-5e-HSM"/>
-                                    <outlet property="adPresentButton" destination="E8U-9j-V8u" id="ttB-or-4BK"/>
                                     <outlet property="adTitleLabel" destination="Wwc-km-XLc" id="bVG-fp-gSS"/>
                                 </connections>
                             </tableViewCell>
@@ -287,6 +277,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BnR-GX-inh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3876" y="768"/>
+        </scene>
+        <!--Advertisement View Controller-->
+        <scene sceneID="yYB-ju-TfJ">
+            <objects>
+                <viewController storyboardIdentifier="AdvertisementViewController" id="Arn-Sk-LZQ" customClass="AdvertisementViewController" customModule="SeSAC_Travel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sfn-6W-e8K">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfm-C7-QZO">
+                                <rect key="frame" x="78.666666666666671" y="415.66666666666669" width="235.66666666666663" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dCl-Dh-xa2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qfm-C7-QZO" firstAttribute="centerX" secondItem="Sfn-6W-e8K" secondAttribute="centerX" id="FVg-Fx-PnD"/>
+                            <constraint firstItem="qfm-C7-QZO" firstAttribute="centerY" secondItem="Sfn-6W-e8K" secondAttribute="centerY" id="GJA-fE-PEF"/>
+                            <constraint firstItem="qfm-C7-QZO" firstAttribute="width" secondItem="Sfn-6W-e8K" secondAttribute="width" multiplier="0.6" id="btS-k0-56z"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Vcy-6x-khO"/>
+                    <connections>
+                        <outlet property="adTitleLabel" destination="qfm-C7-QZO" id="ck0-tg-Hg0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DTz-ap-AAl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5845" y="768"/>
         </scene>
         <!--쇼핑-->
         <scene sceneID="3rk-J6-mv8">
@@ -576,6 +598,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o8n-NW-cFQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2007" y="2219"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Pms-lW-epQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qok-Yg-h2Z" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="T7v-0a-Aa1">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Arn-Sk-LZQ" kind="relationship" relationship="rootViewController" id="pIj-Pi-H9q"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gln-7y-D5b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4857" y="768"/>
         </scene>
     </scenes>
     <resources>

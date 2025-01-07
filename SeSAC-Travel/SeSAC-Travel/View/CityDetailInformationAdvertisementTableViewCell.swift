@@ -13,7 +13,6 @@ final class CityDetailInformationAdvertisementTableViewCell: UITableViewCell {
     @IBOutlet weak var adBasedView: UIView!
     @IBOutlet weak var adTitleLabel: UILabel!
     @IBOutlet weak var adButton: UIButton!
-    @IBOutlet weak var adPresentButton: UIButton!
     
     static let identifier = "CityDetailInformationAdvertisementTableViewCell"
     
@@ -58,8 +57,6 @@ final class CityDetailInformationAdvertisementTableViewCell: UITableViewCell {
         adButton.configuration = config
         adButton.clipsToBounds = true
         adButton.layer.cornerRadius = 8
-        
-        adPresentButton.setTitle("", for: .normal)
     }
     
     func configureData(title: String, isEven: Bool) {
