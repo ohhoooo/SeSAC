@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Cosmos
 import Kingfisher
 
 final class CityDetailInformationTableViewCell: UITableViewCell {
@@ -13,6 +14,7 @@ final class CityDetailInformationTableViewCell: UITableViewCell {
     // MARK: - properties
     @IBOutlet weak var cityTitleLabel: UILabel!
     @IBOutlet weak var cityDescriptionLabel: UILabel!
+    @IBOutlet weak var ratingCosmosView: CosmosView!
     @IBOutlet weak var citySaveLabel: UILabel!
     @IBOutlet weak var cityLikeButton: UIButton!
     @IBOutlet weak var cityImageView: UIImageView!
@@ -38,6 +40,7 @@ final class CityDetailInformationTableViewCell: UITableViewCell {
         configureLabel()
         configureButton()
         configureImageView()
+        configureCosmosView()
     }
     
     private func configureLabel() {
@@ -67,6 +70,19 @@ final class CityDetailInformationTableViewCell: UITableViewCell {
         cityImageView.layer.cornerRadius = 8
     }
     
+    private func configureCosmosView() {
+        ratingCosmosView.settings.fillMode = .precise
+        ratingCosmosView.settings.starSize = 16
+        ratingCosmosView.settings.textFont = .systemFont(ofSize: 13, weight: .semibold)
+        ratingCosmosView.settings.textColor = .systemGray2
+        ratingCosmosView.settings.emptyColor = .systemGray5
+        ratingCosmosView.settings.starMargin = 0
+        ratingCosmosView.settings.filledColor = .systemYellow
+        ratingCosmosView.settings.updateOnTouch = false
+        ratingCosmosView.settings.emptyBorderColor = .clear
+        ratingCosmosView.settings.filledBorderColor = .systemYellow
+    }
+    
     func configureData(travel: Travel) {
         cityTitleLabel.text = travel.title
         cityDescriptionLabel.text = travel.description
@@ -74,5 +90,7 @@ final class CityDetailInformationTableViewCell: UITableViewCell {
         cityLikeButton.setImage(.init(systemName: (travel.like ?? false) ? "heart.fill" : "heart"), for: .normal)
         guard let url = travel.travel_image else { return }
         cityImageView.kf.setImage(with: URL(string: url))
+        ratingCosmosView.rating = travel.grade ?? 0.0
+        ratingCosmosView.text = "(\(travel.grade ?? 0.0))"
     }
 }
