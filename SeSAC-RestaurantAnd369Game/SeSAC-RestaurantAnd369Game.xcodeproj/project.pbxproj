@@ -15,6 +15,7 @@
 		371A94012D2E7318002314C1 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371A93F92D2E7318002314C1 /* RestaurantViewController.swift */; };
 		371A94032D2E733F002314C1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 371A94022D2E733F002314C1 /* .gitignore */; };
 		371A940D2D2E781F002314C1 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371A940C2D2E781F002314C1 /* Restaurant.swift */; };
+		371A94312D2EA906002314C1 /* Game369ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371A94302D2EA906002314C1 /* Game369ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		371A93F92D2E7318002314C1 /* RestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
 		371A94022D2E733F002314C1 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		371A940C2D2E781F002314C1 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		371A94302D2EA906002314C1 /* Game369ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game369ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				371A93F92D2E7318002314C1 /* RestaurantViewController.swift */,
+				371A94302D2EA906002314C1 /* Game369ViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			files = (
 				371A940D2D2E781F002314C1 /* Restaurant.swift in Sources */,
 				371A93FF2D2E7318002314C1 /* AppDelegate.swift in Sources */,
+				371A94312D2EA906002314C1 /* Game369ViewController.swift in Sources */,
 				371A94002D2E7318002314C1 /* SceneDelegate.swift in Sources */,
 				371A94012D2E7318002314C1 /* RestaurantViewController.swift in Sources */,
 			);
