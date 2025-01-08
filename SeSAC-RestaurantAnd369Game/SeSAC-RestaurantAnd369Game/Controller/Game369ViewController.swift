@@ -84,7 +84,11 @@ extension Game369ViewController: UIPickerViewDelegate {
         var text = ""
         
         for i in 1...(100 - row) {
-            text += (i == (100 - row)) ? "\(i)" : "\(i), "
+            if "\(i)".contains("3") || "\(i)".contains("6") || "\(i)".contains("9") {
+                text += (i == (100 - row)) ? "👏" : "👏, "
+            } else {
+                text += (i == (100 - row)) ? "\(i)" : "\(i), "
+            }
         }
         
         gameTextView.text = text
