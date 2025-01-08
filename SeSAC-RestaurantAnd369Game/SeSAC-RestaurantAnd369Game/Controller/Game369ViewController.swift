@@ -57,6 +57,7 @@ final class Game369ViewController: UIViewController {
     }
     
     private func configureTextView() {
+        gameTextView.text = nil
         gameTextView.font = .systemFont(ofSize: 20)
         gameTextView.textColor = .systemGray2
         gameTextView.isEditable = false
@@ -80,7 +81,13 @@ extension Game369ViewController: UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print(100 - row)
+        var text = ""
+        
+        for i in 1...(100 - row) {
+            text += (i == (100 - row)) ? "\(i)" : "\(i), "
+        }
+        
+        gameTextView.text = text
     }
 }
 
