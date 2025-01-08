@@ -83,11 +83,21 @@ extension Game369ViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         var text = ""
         
+        // 옵션 3
+//        for i in 1...(100 - row) {
+//            if "\(i)".contains("3") || "\(i)".contains("6") || "\(i)".contains("9") {
+//                text += (i == (100 - row)) ? "👏" : "👏, "
+//            } else {
+//                text += (i == (100 - row)) ? "\(i)" : "\(i), "
+//            }
+//        }
+        
+        // 옵션 4
         for i in 1...(100 - row) {
-            if "\(i)".contains("3") || "\(i)".contains("6") || "\(i)".contains("9") {
-                text += (i == (100 - row)) ? "👏" : "👏, "
+            if i == (100 - row) {
+                text += "\(i)".replacingOccurrences(of: "3", with: "👏").replacingOccurrences(of: "6", with: "👏").replacingOccurrences(of: "9", with: "👏")
             } else {
-                text += (i == (100 - row)) ? "\(i)" : "\(i), "
+                text += "\(i), ".replacingOccurrences(of: "3", with: "👏").replacingOccurrences(of: "6", with: "👏").replacingOccurrences(of: "9", with: "👏")
             }
         }
         
