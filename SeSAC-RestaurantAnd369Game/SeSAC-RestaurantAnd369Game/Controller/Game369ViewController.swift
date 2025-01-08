@@ -82,6 +82,7 @@ extension Game369ViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         var text = ""
+        var count = 0
         
         // 옵션 3
 //        for i in 1...(100 - row) {
@@ -101,6 +102,8 @@ extension Game369ViewController: UIPickerViewDelegate {
             }
         }
         
+        count = text.map { String($0) }.filter { $0 == "👏" }.count
+        gameClapCountLabel.text = "숫자 \(100 - row)까지 총 박수는 \(count)번 입니다."
         gameTextView.text = text
     }
 }
