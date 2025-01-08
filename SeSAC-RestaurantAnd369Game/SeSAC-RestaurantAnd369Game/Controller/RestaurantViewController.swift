@@ -14,6 +14,9 @@ final class RestaurantViewController: UIViewController {
     @IBOutlet private weak var filterBarButtonItem: UIBarButtonItem!
     @IBOutlet private weak var restaurantMapView: MKMapView!
     
+    private let restaurantArray = RestaurantList().restaurantArray
+    private var restaurantFilteredArray = RestaurantList().restaurantArray
+    
     // MARK: - life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +45,14 @@ final class RestaurantViewController: UIViewController {
     }
     
     private func configureMapView() {
-        
+        for restaurant in restaurantFilteredArray {
+            let coordinate = CLLocationCoordinate2D(latitude: restaurant.latitude, longitude: restaurant.longitude)
+            let annotation = MKPointAnnotation()
+            annotation.title = restaurant.name
+            annotation.coordinate = coordinate
+            
+            restaurantMapView.region = MKCoordinateRegion(center: coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
+            restaurantMapView.addAnnotation(annotation)
+        }
     }
 }
