@@ -16,6 +16,8 @@ final class Game369ViewController: UIViewController {
     @IBOutlet weak var gameTextView: UITextView!
     @IBOutlet weak var gameClapCountLabel: UILabel!
     
+    private let pickerView = UIPickerView()
+    
     // MARK: - life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,7 @@ final class Game369ViewController: UIViewController {
         configureLabel()
         configureTextField()
         configureTextView()
+        configurePickerView()
     }
     
     private func configureView() {
@@ -47,6 +50,7 @@ final class Game369ViewController: UIViewController {
     
     private func configureTextField() {
         gameTextField.font = .systemFont(ofSize: 24)
+        gameTextField.inputView = pickerView
         gameTextField.borderStyle = .none
         gameTextField.placeholder = "최대 숫자를 입력해주세요"
         gameTextField.textAlignment = .center
@@ -57,5 +61,35 @@ final class Game369ViewController: UIViewController {
         gameTextView.textColor = .systemGray2
         gameTextView.isEditable = false
         gameTextView.textAlignment = .center
+    }
+    
+    private func configurePickerView() {
+        pickerView.delegate = self
+        pickerView.dataSource = self
+    }
+    
+    @IBAction private func tappedTapGesture(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+}
+
+// MARK: - extensions
+extension Game369ViewController: UIPickerViewDelegate {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "\(100 - row)"
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        print(100 - row)
+    }
+}
+
+extension Game369ViewController: UIPickerViewDataSource {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 100
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
     }
 }
