@@ -41,10 +41,36 @@ final class RestaurantViewController: UIViewController {
     
     @objc
     private func tappedFilterBarButtonItem(_ sender: UIBarButtonItem) {
-        print(#function)
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let menuType = ["한식", "중식", "일식", "양식", "분식", "샐러드", "카페"]
+        
+        for menu in menuType {
+            let alertAction = UIAlertAction(title: menu, style: .default) { [weak self] alertAction in
+                guard let self else { return }
+                restaurantFilteredArray = restaurantArray.filter { $0.category == alertAction.title }
+                configureMapView()
+            }
+            
+            alertController.addAction(alertAction)
+        }
+        
+        let totalAlertAction = UIAlertAction(title: "전체보기", style: .default) { [weak self] _ in
+            guard let self else { return }
+            restaurantFilteredArray = restaurantArray
+            configureMapView()
+        }
+        
+        let cancelAlertAction = UIAlertAction(title: "취소", style: .cancel)
+        
+        alertController.addAction(totalAlertAction)
+        alertController.addAction(cancelAlertAction)
+        
+        present(alertController, animated: true)
     }
     
     private func configureMapView() {
+        restaurantMapView.removeAnnotations(restaurantMapView.annotations)
+        
         for restaurant in restaurantFilteredArray {
             let coordinate = CLLocationCoordinate2D(latitude: restaurant.latitude, longitude: restaurant.longitude)
             let annotation = MKPointAnnotation()
