@@ -12,8 +12,9 @@
 		371A93FE2D2E7318002314C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 371A93F72D2E7318002314C1 /* Main.storyboard */; };
 		371A93FF2D2E7318002314C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371A93F12D2E7318002314C1 /* AppDelegate.swift */; };
 		371A94002D2E7318002314C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371A93F82D2E7318002314C1 /* SceneDelegate.swift */; };
-		371A94012D2E7318002314C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371A93F92D2E7318002314C1 /* ViewController.swift */; };
+		371A94012D2E7318002314C1 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371A93F92D2E7318002314C1 /* RestaurantViewController.swift */; };
 		371A94032D2E733F002314C1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 371A94022D2E733F002314C1 /* .gitignore */; };
+		371A940D2D2E781F002314C1 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371A940C2D2E781F002314C1 /* Restaurant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +25,9 @@
 		371A93F42D2E7318002314C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		371A93F62D2E7318002314C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		371A93F82D2E7318002314C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		371A93F92D2E7318002314C1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		371A93F92D2E7318002314C1 /* RestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
 		371A94022D2E733F002314C1 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		371A940C2D2E781F002314C1 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,13 +63,38 @@
 			children = (
 				371A93F12D2E7318002314C1 /* AppDelegate.swift */,
 				371A93F82D2E7318002314C1 /* SceneDelegate.swift */,
+				371A94082D2E7658002314C1 /* Model */,
+				371A94092D2E765B002314C1 /* View */,
+				371A940A2D2E765E002314C1 /* Controller */,
 				371A93F52D2E7318002314C1 /* LaunchScreen.storyboard */,
-				371A93F72D2E7318002314C1 /* Main.storyboard */,
-				371A93F92D2E7318002314C1 /* ViewController.swift */,
 				371A93F22D2E7318002314C1 /* Assets.xcassets */,
 				371A93F32D2E7318002314C1 /* Info.plist */,
 			);
 			path = "SeSAC-RestaurantAnd369Game";
+			sourceTree = "<group>";
+		};
+		371A94082D2E7658002314C1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				371A940C2D2E781F002314C1 /* Restaurant.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		371A94092D2E765B002314C1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				371A93F72D2E7318002314C1 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		371A940A2D2E765E002314C1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				371A93F92D2E7318002314C1 /* RestaurantViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,9 +172,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				371A940D2D2E781F002314C1 /* Restaurant.swift in Sources */,
 				371A93FF2D2E7318002314C1 /* AppDelegate.swift in Sources */,
 				371A94002D2E7318002314C1 /* SceneDelegate.swift in Sources */,
-				371A94012D2E7318002314C1 /* ViewController.swift in Sources */,
+				371A94012D2E7318002314C1 /* RestaurantViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
