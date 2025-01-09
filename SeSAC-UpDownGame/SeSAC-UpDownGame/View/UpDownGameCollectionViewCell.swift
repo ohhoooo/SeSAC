@@ -19,6 +19,8 @@ final class UpDownGameCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
         
         numberLabel.text = nil
+        numberLabel.textColor = .black
+        numberLabel.backgroundColor = .white
     }
     
     override func awakeFromNib() {
@@ -44,7 +46,14 @@ final class UpDownGameCollectionViewCell: UICollectionViewCell {
         numberLabel.backgroundColor = .white
     }
     
-    func configureData(text: String) {
+    func configureData(text: String, isSelected: Bool) {
         numberLabel.text = text
+        numberLabel.textColor = isSelected ? .white : .black
+        numberLabel.backgroundColor = isSelected ? .black : .white
+    }
+    
+    func fetchNumber() -> Int {
+        guard let text = numberLabel.text, let number = Int(text) else { return 0 }
+        return number
     }
 }

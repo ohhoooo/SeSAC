@@ -24,6 +24,12 @@ final class IntroViewController: UIViewController {
         configureUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        maxNumberTextField.text = nil
+    }
+    
     // MARK: - methods
     private func configureUI() {
         configureView()
@@ -76,7 +82,7 @@ final class IntroViewController: UIViewController {
     
     @IBAction private func tappedStartButton(_ sender: UIButton) {
         guard let maxNumber = maxNumberTextField.text, !maxNumber.isEmpty else { return }
-        guard let num = Int(maxNumber) else { return }
+        guard let num = Int(maxNumber), num > 0 else { return }
         guard let nextVC = storyboard?.instantiateViewController(identifier: "UpDownGameViewController") as? UpDownGameViewController else { return }
         nextVC.maxNumber = num
         nextVC.modalPresentationStyle = .fullScreen

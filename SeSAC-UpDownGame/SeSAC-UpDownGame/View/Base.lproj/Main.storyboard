@@ -115,6 +115,9 @@
                                 <rect key="frame" x="49" y="783" width="295" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="tappedResultButton:" destination="2kO-JI-Bqb" eventType="touchUpInside" id="Vqd-UH-xAt"/>
+                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="z0k-69-APX">
                                 <rect key="frame" x="0.0" y="255.66666666666666" width="393" height="340.66666666666674"/>
