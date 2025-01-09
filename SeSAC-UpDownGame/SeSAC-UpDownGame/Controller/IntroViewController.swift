@@ -67,9 +67,10 @@ final class IntroViewController: UIViewController {
     }
     
     private func configureTextField() {
-        maxNumberTextField.font = .systemFont(ofSize: 22, weight: .bold)
+        maxNumberTextField.font = .boldSystemFont(ofSize: 14)
+        maxNumberTextField.delegate = self
         maxNumberTextField.borderStyle = .none
-        maxNumberTextField.placeholder = "최대 숫자를 입력하세요."
+        maxNumberTextField.placeholder = "1~9999 사이의 최대 숫자를 입력하세요."
         maxNumberTextField.keyboardType = .numberPad
     }
     
@@ -80,5 +81,16 @@ final class IntroViewController: UIViewController {
         nextVC.maxNumber = num
         nextVC.modalPresentationStyle = .fullScreen
         present(nextVC, animated: true)
+    }
+}
+
+// MARK: - extensions
+extension IntroViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if let text = textField.text, text.count < 4 {
+            return true
+        } else {
+            return false
+        }
     }
 }
