@@ -15,6 +15,8 @@
 		374DFAB32D2FAB27004F8E65 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 374DFAB22D2FAB27004F8E65 /* .gitignore */; };
 		374DFAB92D2FB2B2004F8E65 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374DFAB82D2FB2B2004F8E65 /* IntroViewController.swift */; };
 		374DFABB2D2FC127004F8E65 /* UpDownGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374DFABA2D2FC127004F8E65 /* UpDownGameViewController.swift */; };
+		374DFAD62D2FD0DA004F8E65 /* UpDownGameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374DFAD42D2FD0DA004F8E65 /* UpDownGameCollectionViewCell.swift */; };
+		374DFAD72D2FD0DA004F8E65 /* UpDownGameCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 374DFAD52D2FD0DA004F8E65 /* UpDownGameCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		374DFAB22D2FAB27004F8E65 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		374DFAB82D2FB2B2004F8E65 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		374DFABA2D2FC127004F8E65 /* UpDownGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpDownGameViewController.swift; sourceTree = "<group>"; };
+		374DFAD42D2FD0DA004F8E65 /* UpDownGameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpDownGameCollectionViewCell.swift; sourceTree = "<group>"; };
+		374DFAD52D2FD0DA004F8E65 /* UpDownGameCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpDownGameCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				374DFAA72D2FAB07004F8E65 /* Main.storyboard */,
+				374DFAD42D2FD0DA004F8E65 /* UpDownGameCollectionViewCell.swift */,
+				374DFAD52D2FD0DA004F8E65 /* UpDownGameCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -154,6 +160,7 @@
 				374DFAAB2D2FAB07004F8E65 /* Assets.xcassets in Resources */,
 				374DFAAD2D2FAB07004F8E65 /* LaunchScreen.storyboard in Resources */,
 				374DFAAE2D2FAB07004F8E65 /* Main.storyboard in Resources */,
+				374DFAD72D2FD0DA004F8E65 /* UpDownGameCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				374DFAD62D2FD0DA004F8E65 /* UpDownGameCollectionViewCell.swift in Sources */,
 				374DFAB92D2FB2B2004F8E65 /* IntroViewController.swift in Sources */,
 				374DFAAF2D2FAB07004F8E65 /* AppDelegate.swift in Sources */,
 				374DFAB02D2FAB07004F8E65 /* SceneDelegate.swift in Sources */,
