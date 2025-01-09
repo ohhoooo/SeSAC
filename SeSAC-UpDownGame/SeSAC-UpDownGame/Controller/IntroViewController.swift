@@ -72,4 +72,13 @@ final class IntroViewController: UIViewController {
         maxNumberTextField.placeholder = "최대 숫자를 입력하세요."
         maxNumberTextField.keyboardType = .numberPad
     }
+    
+    @IBAction private func tappedStartButton(_ sender: UIButton) {
+        guard let maxNumber = maxNumberTextField.text, !maxNumber.isEmpty else { return }
+        guard let num = Int(maxNumber) else { return }
+        guard let nextVC = storyboard?.instantiateViewController(identifier: "UpDownGameViewController") as? UpDownGameViewController else { return }
+        nextVC.maxNumber = num
+        nextVC.modalPresentationStyle = .fullScreen
+        present(nextVC, animated: true)
+    }
 }
