@@ -13,6 +13,8 @@ final class TravelTalkViewController: UIViewController {
     @IBOutlet private weak var travelTalkSearchBar: UISearchBar!
     @IBOutlet private weak var travelTalkCollectionView: UICollectionView!
     
+    private var chatRoomArray: [ChatRoom] = mockChatList
+    
     // MARK: - life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +30,7 @@ final class TravelTalkViewController: UIViewController {
     }
     
     private func configureSearchBar() {
+        travelTalkSearchBar.delegate = self
         travelTalkSearchBar.placeholder = "친구 이름을 검색해보세요"
     }
     
@@ -51,6 +54,38 @@ extension TravelTalkViewController {
         layout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 72)
         return layout
     }
+    
+    private func searchFriendName(text: String?) {
+        guard let text, !text.isEmpty else {
+            chatRoomArray = mockChatList
+            travelTalkCollectionView.reloadData()
+            return
+        }
+        
+        chatRoomArray = []
+        
+        for chatRoom in mockChatList {
+            for chat in chatRoom.chatList {
+                if chat.user != .user && chat.user.rawValue.uppercased().contains(text.uppercased()) {
+                    chatRoomArray.append(chatRoom)
+                    break
+                }
+            }
+        }
+        
+        travelTalkCollectionView.reloadData()
+    }
+}
+
+extension TravelTalkViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchFriendName(text: searchBar.text)
+        view.endEditing(true)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchFriendName(text: searchBar.text)
+    }
 }
 
 extension TravelTalkViewController: UICollectionViewDelegate {
@@ -59,13 +94,13 @@ extension TravelTalkViewController: UICollectionViewDelegate {
 
 extension TravelTalkViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return mockChatList.count
+        return chatRoomArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TravelTalkCollectionViewCell.identifier, for: indexPath) as? TravelTalkCollectionViewCell else { return UICollectionViewCell() }
         
-        cell.configureData(chatRoom: mockChatList[indexPath.row])
+        cell.configureData(chatRoom: chatRoomArray[indexPath.row])
         
         return cell
     }
