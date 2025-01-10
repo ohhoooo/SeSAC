@@ -1,5 +1,5 @@
 //
-//  TravelTalkTableViewCell.swift
+//  TravelTalkCollectionViewCell.swift
 //  SeSAC-TravelTalk
 //
 //  Created by 김정호 on 1/10/25.
@@ -7,15 +7,15 @@
 
 import UIKit
 
-final class TravelTalkTableViewCell: UITableViewCell {
-    
+final class TravelTalkCollectionViewCell: UICollectionViewCell {
+
     // MARK: - properties
     @IBOutlet private weak var chatRoomImageView: UIImageView!
     @IBOutlet private weak var chatRoomUserLabel: UILabel!
     @IBOutlet private weak var chatRoomMessageLabel: UILabel!
     @IBOutlet private weak var chatRoomDateLabel: UILabel!
     
-    static let identifier = "TravelTalkTableViewCell"
+    static let identifier = "TravelTalkCollectionViewCell"
     
     // MARK: - life cycles
     override func prepareForReuse() {
