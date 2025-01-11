@@ -89,7 +89,11 @@ extension TravelTalkViewController: UISearchBarDelegate {
 }
 
 extension TravelTalkViewController: UICollectionViewDelegate {
-    // To Do
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let sb = storyboard?.instantiateViewController(identifier: "ChattingViewController") as? ChattingViewController else { return }
+        sb.chatRoom = chatRoomArray[indexPath.row]
+        navigationController?.pushViewController(sb, animated: true)
+    }
 }
 
 extension TravelTalkViewController: UICollectionViewDataSource {

@@ -67,6 +67,71 @@
             </objects>
             <point key="canvasLocation" x="1002.2900763358779" y="-34.507042253521128"/>
         </scene>
+        <!--Chatting View Controller-->
+        <scene sceneID="E5z-Gh-veW">
+            <objects>
+                <viewController storyboardIdentifier="ChattingViewController" id="nY4-sY-PO6" customClass="ChattingViewController" customModule="SeSAC_TravelTalk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8V2-ee-ACr">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vPX-0j-F2t">
+                                <rect key="frame" x="0.0" y="103" width="393" height="623.33333333333337"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7as-Va-Nwh">
+                                <rect key="frame" x="29.333333333333343" y="738.33333333333337" width="334.33333333333326" height="59.666666666666629"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3ha-IE-u1v">
+                                        <rect key="frame" x="12" y="12" width="223.33333333333334" height="35.666666666666664"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qon-SX-los">
+                                        <rect key="frame" x="247.33333333333337" y="12.333333333333258" width="75" height="35"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Qon-SX-los" firstAttribute="centerY" secondItem="7as-Va-Nwh" secondAttribute="centerY" id="Bpn-88-FLO"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qon-SX-los" secondAttribute="trailing" constant="12" id="DTB-FT-sXn"/>
+                                    <constraint firstItem="Qon-SX-los" firstAttribute="leading" secondItem="3ha-IE-u1v" secondAttribute="trailing" constant="12" id="EfG-Fq-boM"/>
+                                    <constraint firstItem="3ha-IE-u1v" firstAttribute="leading" secondItem="7as-Va-Nwh" secondAttribute="leading" constant="12" id="MeQ-ee-a86"/>
+                                    <constraint firstAttribute="bottom" secondItem="3ha-IE-u1v" secondAttribute="bottom" constant="12" id="MrE-W7-ofa"/>
+                                    <constraint firstItem="3ha-IE-u1v" firstAttribute="top" secondItem="7as-Va-Nwh" secondAttribute="top" constant="12" id="uqF-gh-Ahm"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9yi-aO-cmT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9yi-aO-cmT" firstAttribute="bottom" secondItem="7as-Va-Nwh" secondAttribute="bottom" constant="20" id="1GG-ym-KGU"/>
+                            <constraint firstItem="vPX-0j-F2t" firstAttribute="leading" secondItem="9yi-aO-cmT" secondAttribute="leading" id="55Q-JR-cVS"/>
+                            <constraint firstItem="7as-Va-Nwh" firstAttribute="top" secondItem="vPX-0j-F2t" secondAttribute="bottom" constant="12" id="N12-Tk-tN2"/>
+                            <constraint firstItem="9yi-aO-cmT" firstAttribute="trailing" secondItem="vPX-0j-F2t" secondAttribute="trailing" id="Tco-Ao-2bu"/>
+                            <constraint firstItem="vPX-0j-F2t" firstAttribute="top" secondItem="9yi-aO-cmT" secondAttribute="top" id="Xm8-Ar-sEQ"/>
+                            <constraint firstItem="7as-Va-Nwh" firstAttribute="centerX" secondItem="9yi-aO-cmT" secondAttribute="centerX" id="Z3Y-kl-gG3"/>
+                            <constraint firstItem="7as-Va-Nwh" firstAttribute="height" secondItem="8V2-ee-ACr" secondAttribute="height" multiplier="0.07" id="dhC-gz-YOM"/>
+                            <constraint firstItem="7as-Va-Nwh" firstAttribute="width" secondItem="8V2-ee-ACr" secondAttribute="width" multiplier="0.85" id="xZP-lQ-ZgY"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="5J8-KU-1ms"/>
+                    <connections>
+                        <outlet property="chattingBasedView" destination="7as-Va-Nwh" id="Wu7-oW-4vQ"/>
+                        <outlet property="chattingInputTextView" destination="3ha-IE-u1v" id="WZ0-Ra-u1F"/>
+                        <outlet property="chattingSendButton" destination="Qon-SX-los" id="Te0-zX-yo1"/>
+                        <outlet property="chattingTableView" destination="vPX-0j-F2t" id="5KM-sb-9cp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kOj-Sn-Ed1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1000.763358778626" y="678.87323943661977"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="2Fn-pp-fTF">
             <objects>
@@ -85,8 +150,29 @@
             </objects>
             <point key="canvasLocation" x="75.572519083969468" y="-34.507042253521128"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="v5P-MQ-dnh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yM3-7k-11Y" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jqn-Jd-oed">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nY4-sY-PO6" kind="relationship" relationship="rootViewController" id="htc-2o-Bw2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dNj-pw-T4g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="76" y="679"/>
+        </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
