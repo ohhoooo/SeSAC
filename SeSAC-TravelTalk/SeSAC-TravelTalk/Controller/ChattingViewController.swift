@@ -62,6 +62,12 @@ final class ChattingViewController: UIViewController {
         chattingTableView.separatorStyle = .none
         chattingTableView.register(UINib(nibName: "ChattingSenderTableViewCell", bundle: nil), forCellReuseIdentifier: ChattingSenderTableViewCell.identifier)
         chattingTableView.register(UINib(nibName: "ChattingReceiverTableViewCell", bundle: nil), forCellReuseIdentifier: ChattingReceiverTableViewCell.identifier)
+        
+        DispatchQueue.main.async {
+            guard let index = self.chatRoom?.chatList.count else { return }
+            let indexPath = IndexPath(row: index - 1, section: 0)
+            self.chattingTableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
+        }
     }
     
     private func configureNavigation() {
