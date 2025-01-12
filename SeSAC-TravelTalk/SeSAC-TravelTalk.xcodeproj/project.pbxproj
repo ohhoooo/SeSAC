@@ -21,6 +21,10 @@
 		37C75C812D3195B500D587A5 /* TravelTalkCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37C75C802D3195B500D587A5 /* TravelTalkCollectionViewCell.xib */; };
 		37C75C822D3195B500D587A5 /* TravelTalkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C75C7F2D3195B500D587A5 /* TravelTalkCollectionViewCell.swift */; };
 		37EB21682D325A5500CAFF7D /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EB21672D325A5500CAFF7D /* ChattingViewController.swift */; };
+		37EB216B2D3263F400CAFF7D /* ChattingSenderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37EB216A2D3263F400CAFF7D /* ChattingSenderTableViewCell.xib */; };
+		37EB216C2D3263F400CAFF7D /* ChattingSenderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EB21692D3263F400CAFF7D /* ChattingSenderTableViewCell.swift */; };
+		37EB216F2D32641B00CAFF7D /* ChattingReceiverTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37EB216E2D32641B00CAFF7D /* ChattingReceiverTableViewCell.xib */; };
+		37EB21702D32641B00CAFF7D /* ChattingReceiverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EB216D2D32641B00CAFF7D /* ChattingReceiverTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,10 @@
 		37C75C7F2D3195B500D587A5 /* TravelTalkCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTalkCollectionViewCell.swift; sourceTree = "<group>"; };
 		37C75C802D3195B500D587A5 /* TravelTalkCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelTalkCollectionViewCell.xib; sourceTree = "<group>"; };
 		37EB21672D325A5500CAFF7D /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
+		37EB21692D3263F400CAFF7D /* ChattingSenderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingSenderTableViewCell.swift; sourceTree = "<group>"; };
+		37EB216A2D3263F400CAFF7D /* ChattingSenderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChattingSenderTableViewCell.xib; sourceTree = "<group>"; };
+		37EB216D2D32641B00CAFF7D /* ChattingReceiverTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingReceiverTableViewCell.swift; sourceTree = "<group>"; };
+		37EB216E2D32641B00CAFF7D /* ChattingReceiverTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChattingReceiverTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +100,10 @@
 				37C75C532D312FE200D587A5 /* Main.storyboard */,
 				37C75C7F2D3195B500D587A5 /* TravelTalkCollectionViewCell.swift */,
 				37C75C802D3195B500D587A5 /* TravelTalkCollectionViewCell.xib */,
+				37EB21692D3263F400CAFF7D /* ChattingSenderTableViewCell.swift */,
+				37EB216A2D3263F400CAFF7D /* ChattingSenderTableViewCell.xib */,
+				37EB216D2D32641B00CAFF7D /* ChattingReceiverTableViewCell.swift */,
+				37EB216E2D32641B00CAFF7D /* ChattingReceiverTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -186,11 +198,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37EB216B2D3263F400CAFF7D /* ChattingSenderTableViewCell.xib in Resources */,
 				37C75C5F2D312FF900D587A5 /* .gitignore in Resources */,
 				37C75C572D312FE200D587A5 /* Assets.xcassets in Resources */,
 				37C75C812D3195B500D587A5 /* TravelTalkCollectionViewCell.xib in Resources */,
 				37C75C592D312FE200D587A5 /* LaunchScreen.storyboard in Resources */,
 				37C75C5A2D312FE200D587A5 /* Main.storyboard in Resources */,
+				37EB216F2D32641B00CAFF7D /* ChattingReceiverTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +223,8 @@
 				37C75C5C2D312FE200D587A5 /* SceneDelegate.swift in Sources */,
 				37EB21682D325A5500CAFF7D /* ChattingViewController.swift in Sources */,
 				37C75C692D31366800D587A5 /* ChatRoom.swift in Sources */,
+				37EB216C2D3263F400CAFF7D /* ChattingSenderTableViewCell.swift in Sources */,
+				37EB21702D32641B00CAFF7D /* ChattingReceiverTableViewCell.swift in Sources */,
 				37C75C5D2D312FE200D587A5 /* TravelTalkViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
