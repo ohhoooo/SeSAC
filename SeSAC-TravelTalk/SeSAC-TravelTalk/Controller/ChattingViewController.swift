@@ -49,7 +49,7 @@ final class ChattingViewController: UIViewController {
     
     private func configureTextView() {
         chattingInputTextView.text = "메세지를 입력하세요"
-        chattingInputTextView.font = .systemFont(ofSize: 14, weight: .semibold)
+        chattingInputTextView.font = .systemFont(ofSize: 14)
         chattingInputTextView.delegate = self
         chattingInputTextView.textColor = .lightGray
         chattingInputTextView.borderStyle = .none
