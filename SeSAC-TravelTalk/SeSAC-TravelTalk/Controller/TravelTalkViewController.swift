@@ -22,6 +22,12 @@ final class TravelTalkViewController: UIViewController {
         configureUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationItem.title = "TRAVEL TALK"
+    }
+    
     // MARK: - methods
     private func configureUI() {
         configureSearchBar()

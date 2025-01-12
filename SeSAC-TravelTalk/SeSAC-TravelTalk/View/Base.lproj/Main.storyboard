@@ -76,14 +76,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vPX-0j-F2t">
-                                <rect key="frame" x="0.0" y="103" width="393" height="623.33333333333337"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="627.66666666666663"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7as-Va-Nwh">
-                                <rect key="frame" x="29.333333333333343" y="738.33333333333337" width="334.33333333333326" height="59.666666666666629"/>
+                                <rect key="frame" x="29.333333333333343" y="742.66666666666663" width="334.33333333333326" height="55.333333333333371"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3ha-IE-u1v">
-                                        <rect key="frame" x="12" y="12" width="223.33333333333334" height="35.666666666666664"/>
+                                        <rect key="frame" x="12" y="11.999999999999998" width="227.33333333333334" height="31.333333333333329"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" systemColor="labelColor"/>
@@ -91,7 +91,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qon-SX-los">
-                                        <rect key="frame" x="247.33333333333337" y="12.333333333333258" width="75" height="35"/>
+                                        <rect key="frame" x="251.33333333333337" y="10" width="75" height="35"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                     </button>
@@ -99,7 +99,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="Qon-SX-los" firstAttribute="centerY" secondItem="7as-Va-Nwh" secondAttribute="centerY" id="Bpn-88-FLO"/>
-                                    <constraint firstAttribute="trailing" secondItem="Qon-SX-los" secondAttribute="trailing" constant="12" id="DTB-FT-sXn"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qon-SX-los" secondAttribute="trailing" constant="8" id="DTB-FT-sXn"/>
                                     <constraint firstItem="Qon-SX-los" firstAttribute="leading" secondItem="3ha-IE-u1v" secondAttribute="trailing" constant="12" id="EfG-Fq-boM"/>
                                     <constraint firstItem="3ha-IE-u1v" firstAttribute="leading" secondItem="7as-Va-Nwh" secondAttribute="leading" constant="12" id="MeQ-ee-a86"/>
                                     <constraint firstAttribute="bottom" secondItem="3ha-IE-u1v" secondAttribute="bottom" constant="12" id="MrE-W7-ofa"/>
@@ -116,7 +116,7 @@
                             <constraint firstItem="9yi-aO-cmT" firstAttribute="trailing" secondItem="vPX-0j-F2t" secondAttribute="trailing" id="Tco-Ao-2bu"/>
                             <constraint firstItem="vPX-0j-F2t" firstAttribute="top" secondItem="9yi-aO-cmT" secondAttribute="top" id="Xm8-Ar-sEQ"/>
                             <constraint firstItem="7as-Va-Nwh" firstAttribute="centerX" secondItem="9yi-aO-cmT" secondAttribute="centerX" id="Z3Y-kl-gG3"/>
-                            <constraint firstItem="7as-Va-Nwh" firstAttribute="height" secondItem="8V2-ee-ACr" secondAttribute="height" multiplier="0.07" id="dhC-gz-YOM"/>
+                            <constraint firstItem="7as-Va-Nwh" firstAttribute="height" secondItem="8V2-ee-ACr" secondAttribute="height" multiplier="0.065" id="dhC-gz-YOM"/>
                             <constraint firstItem="7as-Va-Nwh" firstAttribute="width" secondItem="8V2-ee-ACr" secondAttribute="width" multiplier="0.85" id="xZP-lQ-ZgY"/>
                         </constraints>
                     </view>
