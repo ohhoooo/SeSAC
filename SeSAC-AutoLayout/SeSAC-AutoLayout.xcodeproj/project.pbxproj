@@ -12,6 +12,8 @@
 		372450512D34F69D00C06B29 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372450502D34F69D00C06B29 /* JoinViewController.swift */; };
 		372450532D34F6E600C06B29 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372450522D34F6E600C06B29 /* PaymentViewController.swift */; };
 		372450552D34F71200C06B29 /* MovieSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372450542D34F71200C06B29 /* MovieSearchViewController.swift */; };
+		37260DFD2D353A4E003E241B /* MovieSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37260DFC2D353A4E003E241B /* MovieSearchTableViewCell.swift */; };
+		37260E012D353E49003E241B /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37260E002D353E49003E241B /* Movie.swift */; };
 		3752DBD82D25682B00BA3F26 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3752DBD72D25682B00BA3F26 /* ProfileViewController.swift */; };
 		378074AC2D34FE4F00B95BDF /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 378074AB2D34FE4F00B95BDF /* SnapKit */; };
 		37C7405C2D2537D100043C5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C740522D2537D100043C5E /* AppDelegate.swift */; };
@@ -28,6 +30,8 @@
 		372450502D34F69D00C06B29 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 		372450522D34F6E600C06B29 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		372450542D34F71200C06B29 /* MovieSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchViewController.swift; sourceTree = "<group>"; };
+		37260DFC2D353A4E003E241B /* MovieSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchTableViewCell.swift; sourceTree = "<group>"; };
+		37260E002D353E49003E241B /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		3752DBD72D25682B00BA3F26 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		37C7403A2D2537B000043C5E /* SeSAC-AutoLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SeSAC-AutoLayout.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37C740522D2537D100043C5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +60,7 @@
 			children = (
 				37C740562D2537D100043C5E /* LaunchScreen.storyboard */,
 				37C740582D2537D100043C5E /* Main.storyboard */,
+				37260DFC2D353A4E003E241B /* MovieSearchTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -89,6 +94,14 @@
 			path = CodeBase;
 			sourceTree = "<group>";
 		};
+		37260DFF2D353E2B003E241B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				37260E002D353E49003E241B /* Movie.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		37C740312D2537B000043C5E = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +124,7 @@
 			children = (
 				37C740522D2537D100043C5E /* AppDelegate.swift */,
 				37C740592D2537D100043C5E /* SceneDelegate.swift */,
+				37260DFF2D353E2B003E241B /* Model */,
 				372450482D34F32600C06B29 /* View */,
 				372450492D34F32900C06B29 /* Controller */,
 				37C740532D2537D100043C5E /* Assets.xcassets */,
@@ -202,7 +216,9 @@
 				3724504D2D34F3B700C06B29 /* ViewController.swift in Sources */,
 				37C7405C2D2537D100043C5E /* AppDelegate.swift in Sources */,
 				37C7405D2D2537D100043C5E /* SceneDelegate.swift in Sources */,
+				37260E012D353E49003E241B /* Movie.swift in Sources */,
 				3752DBD82D25682B00BA3F26 /* ProfileViewController.swift in Sources */,
+				37260DFD2D353A4E003E241B /* MovieSearchTableViewCell.swift in Sources */,
 				372450512D34F69D00C06B29 /* JoinViewController.swift in Sources */,
 				372450452D34F30C00C06B29 /* CodeBaseViewController.swift in Sources */,
 				372450552D34F71200C06B29 /* MovieSearchViewController.swift in Sources */,

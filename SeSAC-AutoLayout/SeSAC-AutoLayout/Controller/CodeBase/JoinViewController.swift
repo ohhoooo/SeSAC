@@ -122,8 +122,8 @@ final class JoinViewController: UIViewController {
     
     private func configureConstraint() {
         titleLabel.snp.makeConstraints {
-            $0.centerY.equalToSuperview().multipliedBy(0.2)
             $0.centerX.equalToSuperview()
+            $0.centerY.equalToSuperview().multipliedBy(0.2)
         }
         
         textFieldStackView.snp.makeConstraints {
