@@ -7,10 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		372450452D34F30C00C06B29 /* CodeBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372450442D34F30C00C06B29 /* CodeBaseViewController.swift */; };
+		3724504D2D34F3B700C06B29 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3724504B2D34F3B700C06B29 /* ViewController.swift */; };
+		372450512D34F69D00C06B29 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372450502D34F69D00C06B29 /* JoinViewController.swift */; };
+		372450532D34F6E600C06B29 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372450522D34F6E600C06B29 /* PaymentViewController.swift */; };
+		372450552D34F71200C06B29 /* MovieSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372450542D34F71200C06B29 /* MovieSearchViewController.swift */; };
 		3752DBD82D25682B00BA3F26 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3752DBD72D25682B00BA3F26 /* ProfileViewController.swift */; };
+		378074AC2D34FE4F00B95BDF /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 378074AB2D34FE4F00B95BDF /* SnapKit */; };
 		37C7405C2D2537D100043C5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C740522D2537D100043C5E /* AppDelegate.swift */; };
 		37C7405D2D2537D100043C5E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C740592D2537D100043C5E /* SceneDelegate.swift */; };
-		37C7405E2D2537D100043C5E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C7405A2D2537D100043C5E /* ViewController.swift */; };
 		37C7405F2D2537D100043C5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37C740532D2537D100043C5E /* Assets.xcassets */; };
 		37C740612D2537D100043C5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37C740562D2537D100043C5E /* LaunchScreen.storyboard */; };
 		37C740622D2537D100043C5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37C740582D2537D100043C5E /* Main.storyboard */; };
@@ -18,6 +23,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		372450442D34F30C00C06B29 /* CodeBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeBaseViewController.swift; sourceTree = "<group>"; };
+		3724504B2D34F3B700C06B29 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		372450502D34F69D00C06B29 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
+		372450522D34F6E600C06B29 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		372450542D34F71200C06B29 /* MovieSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchViewController.swift; sourceTree = "<group>"; };
 		3752DBD72D25682B00BA3F26 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		37C7403A2D2537B000043C5E /* SeSAC-AutoLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SeSAC-AutoLayout.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37C740522D2537D100043C5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -26,7 +36,6 @@
 		37C740552D2537D100043C5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37C740572D2537D100043C5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		37C740592D2537D100043C5E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		37C7405A2D2537D100043C5E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		37C740632D2537FA00043C5E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -35,12 +44,51 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				378074AC2D34FE4F00B95BDF /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		372450482D34F32600C06B29 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				37C740562D2537D100043C5E /* LaunchScreen.storyboard */,
+				37C740582D2537D100043C5E /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		372450492D34F32900C06B29 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3724504C2D34F3B700C06B29 /* StoryboardBase */,
+				3724504F2D34F3CF00C06B29 /* CodeBase */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3724504C2D34F3B700C06B29 /* StoryboardBase */ = {
+			isa = PBXGroup;
+			children = (
+				3724504B2D34F3B700C06B29 /* ViewController.swift */,
+				3752DBD72D25682B00BA3F26 /* ProfileViewController.swift */,
+			);
+			path = StoryboardBase;
+			sourceTree = "<group>";
+		};
+		3724504F2D34F3CF00C06B29 /* CodeBase */ = {
+			isa = PBXGroup;
+			children = (
+				372450442D34F30C00C06B29 /* CodeBaseViewController.swift */,
+				372450502D34F69D00C06B29 /* JoinViewController.swift */,
+				372450522D34F6E600C06B29 /* PaymentViewController.swift */,
+				372450542D34F71200C06B29 /* MovieSearchViewController.swift */,
+			);
+			path = CodeBase;
+			sourceTree = "<group>";
+		};
 		37C740312D2537B000043C5E = {
 			isa = PBXGroup;
 			children = (
@@ -63,10 +111,8 @@
 			children = (
 				37C740522D2537D100043C5E /* AppDelegate.swift */,
 				37C740592D2537D100043C5E /* SceneDelegate.swift */,
-				37C7405A2D2537D100043C5E /* ViewController.swift */,
-				3752DBD72D25682B00BA3F26 /* ProfileViewController.swift */,
-				37C740562D2537D100043C5E /* LaunchScreen.storyboard */,
-				37C740582D2537D100043C5E /* Main.storyboard */,
+				372450482D34F32600C06B29 /* View */,
+				372450492D34F32900C06B29 /* Controller */,
 				37C740532D2537D100043C5E /* Assets.xcassets */,
 				37C740542D2537D100043C5E /* Info.plist */,
 			);
@@ -90,6 +136,7 @@
 			);
 			name = "SeSAC-AutoLayout";
 			packageProductDependencies = (
+				378074AB2D34FE4F00B95BDF /* SnapKit */,
 			);
 			productName = "SeSAC-AutoLayout";
 			productReference = 37C7403A2D2537B000043C5E /* SeSAC-AutoLayout.app */;
@@ -119,6 +166,9 @@
 			);
 			mainGroup = 37C740312D2537B000043C5E;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				378074AA2D34FE4F00B95BDF /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 37C7403B2D2537B000043C5E /* Products */;
 			projectDirPath = "";
@@ -148,10 +198,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				372450532D34F6E600C06B29 /* PaymentViewController.swift in Sources */,
+				3724504D2D34F3B700C06B29 /* ViewController.swift in Sources */,
 				37C7405C2D2537D100043C5E /* AppDelegate.swift in Sources */,
 				37C7405D2D2537D100043C5E /* SceneDelegate.swift in Sources */,
 				3752DBD82D25682B00BA3F26 /* ProfileViewController.swift in Sources */,
-				37C7405E2D2537D100043C5E /* ViewController.swift in Sources */,
+				372450512D34F69D00C06B29 /* JoinViewController.swift in Sources */,
+				372450452D34F30C00C06B29 /* CodeBaseViewController.swift in Sources */,
+				372450552D34F71200C06B29 /* MovieSearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +436,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		378074AA2D34FE4F00B95BDF /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		378074AB2D34FE4F00B95BDF /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 378074AA2D34FE4F00B95BDF /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 37C740322D2537B000043C5E /* Project object */;
 }
