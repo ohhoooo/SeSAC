@@ -206,6 +206,23 @@ final class LotteryView: UIView {
 
 // MARK: - extensions
 extension LotteryView {
+    func configureData(lottery: Lottery) {
+        drwNoDateLabel.text = "\(lottery.drwNoDate) 추첨"
+        drwNoResultLabel.text = "\(lottery.drwNo)회 당첨결과"
+        let fontSize = UIFont.boldSystemFont(ofSize: 21)
+        let attributedStr = NSMutableAttributedString(string: drwNoResultLabel.text!)
+        attributedStr.addAttribute(.font, value: fontSize, range: (drwNoResultLabel.text! as NSString).range(of: "\(lottery.drwNo)회"))
+        attributedStr.addAttribute(.foregroundColor, value: UIColor.black, range: (drwNoResultLabel.text! as NSString).range(of: "당첨결과"))
+        drwNoResultLabel.attributedText = attributedStr
+        drwtNo1Label.text = String(lottery.drwtNo1)
+        drwtNo2Label.text = String(lottery.drwtNo2)
+        drwtNo3Label.text = String(lottery.drwtNo3)
+        drwtNo4Label.text = String(lottery.drwtNo4)
+        drwtNo5Label.text = String(lottery.drwtNo5)
+        drwtNo6Label.text = String(lottery.drwtNo6)
+        bnusNoLabel.text = String(lottery.bnusNo)
+    }
+    
     func sizeCornerRadius() {
         [drwtNo1Label, drwtNo2Label, drwtNo3Label, drwtNo4Label, drwtNo5Label, drwtNo6Label, plusImageBasedView, bnusNoLabel].forEach {
             $0.clipsToBounds = true
