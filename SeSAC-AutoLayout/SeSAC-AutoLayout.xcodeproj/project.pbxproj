@@ -12,6 +12,8 @@
 		372450512D34F69D00C06B29 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372450502D34F69D00C06B29 /* JoinViewController.swift */; };
 		372450532D34F6E600C06B29 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372450522D34F6E600C06B29 /* PaymentViewController.swift */; };
 		372450552D34F71200C06B29 /* MovieSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372450542D34F71200C06B29 /* MovieSearchViewController.swift */; };
+		3724FBC62D36CBD6003815DC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3724FBC52D36CBD6003815DC /* NetworkManager.swift */; };
+		3724FBC92D36CC38003815DC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3724FBC82D36CC38003815DC /* Alamofire */; };
 		37260DFD2D353A4E003E241B /* MovieSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37260DFC2D353A4E003E241B /* MovieSearchTableViewCell.swift */; };
 		37260E012D353E49003E241B /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37260E002D353E49003E241B /* Movie.swift */; };
 		3752DBD82D25682B00BA3F26 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3752DBD72D25682B00BA3F26 /* ProfileViewController.swift */; };
@@ -30,6 +32,7 @@
 		372450502D34F69D00C06B29 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 		372450522D34F6E600C06B29 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		372450542D34F71200C06B29 /* MovieSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchViewController.swift; sourceTree = "<group>"; };
+		3724FBC52D36CBD6003815DC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		37260DFC2D353A4E003E241B /* MovieSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchTableViewCell.swift; sourceTree = "<group>"; };
 		37260E002D353E49003E241B /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		3752DBD72D25682B00BA3F26 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +52,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				378074AC2D34FE4F00B95BDF /* SnapKit in Frameworks */,
+				3724FBC92D36CC38003815DC /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				37260E002D353E49003E241B /* Movie.swift */,
+				3724FBC52D36CBD6003815DC /* NetworkManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -151,6 +156,7 @@
 			name = "SeSAC-AutoLayout";
 			packageProductDependencies = (
 				378074AB2D34FE4F00B95BDF /* SnapKit */,
+				3724FBC82D36CC38003815DC /* Alamofire */,
 			);
 			productName = "SeSAC-AutoLayout";
 			productReference = 37C7403A2D2537B000043C5E /* SeSAC-AutoLayout.app */;
@@ -182,6 +188,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				378074AA2D34FE4F00B95BDF /* XCRemoteSwiftPackageReference "SnapKit" */,
+				3724FBC72D36CC38003815DC /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 37C7403B2D2537B000043C5E /* Products */;
@@ -216,6 +223,7 @@
 				3724504D2D34F3B700C06B29 /* ViewController.swift in Sources */,
 				37C7405C2D2537D100043C5E /* AppDelegate.swift in Sources */,
 				37C7405D2D2537D100043C5E /* SceneDelegate.swift in Sources */,
+				3724FBC62D36CBD6003815DC /* NetworkManager.swift in Sources */,
 				37260E012D353E49003E241B /* Movie.swift in Sources */,
 				3752DBD82D25682B00BA3F26 /* ProfileViewController.swift in Sources */,
 				37260DFD2D353A4E003E241B /* MovieSearchTableViewCell.swift in Sources */,
@@ -454,6 +462,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		3724FBC72D36CC38003815DC /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
 		378074AA2D34FE4F00B95BDF /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -465,6 +481,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3724FBC82D36CC38003815DC /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3724FBC72D36CC38003815DC /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		378074AB2D34FE4F00B95BDF /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 378074AA2D34FE4F00B95BDF /* XCRemoteSwiftPackageReference "SnapKit" */;
