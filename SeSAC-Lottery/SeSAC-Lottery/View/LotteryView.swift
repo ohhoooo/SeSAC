@@ -207,6 +207,7 @@ final class LotteryView: UIView {
 // MARK: - extensions
 extension LotteryView {
     func configureData(lottery: Lottery) {
+        drwNoSelectTextField.text = String(lottery.drwNo)
         drwNoDateLabel.text = "\(lottery.drwNoDate) 추첨"
         drwNoResultLabel.text = "\(lottery.drwNo)회 당첨결과"
         let fontSize = UIFont.boldSystemFont(ofSize: 21)
