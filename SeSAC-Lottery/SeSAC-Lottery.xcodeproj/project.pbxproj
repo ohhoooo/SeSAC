@@ -19,6 +19,7 @@
 		3724FBB62D363F55003815DC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3724FBB52D363F55003815DC /* Alamofire */; };
 		3724FBBA2D3644A5003815DC /* Lottery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3724FBB92D3644A5003815DC /* Lottery.swift */; };
 		3724FBC22D365903003815DC /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3724FBC02D365903003815DC /* UIImage+Extension.swift */; };
+		3724FBC42D368321003815DC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3724FBC32D368321003815DC /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		3724FBAC2D363C2B003815DC /* LotteryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryView.swift; sourceTree = "<group>"; };
 		3724FBB92D3644A5003815DC /* Lottery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lottery.swift; sourceTree = "<group>"; };
 		3724FBC02D365903003815DC /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		3724FBC32D368321003815DC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				3724FBB92D3644A5003815DC /* Lottery.swift */,
+				3724FBC32D368321003815DC /* NetworkManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				3724FBA32D3639C0003815DC /* AppDelegate.swift in Sources */,
 				3724FBA42D3639C0003815DC /* SceneDelegate.swift in Sources */,
 				3724FBAD2D363C2B003815DC /* LotteryView.swift in Sources */,
+				3724FBC42D368321003815DC /* NetworkManager.swift in Sources */,
 				3724FBC22D365903003815DC /* UIImage+Extension.swift in Sources */,
 				3724FBBA2D3644A5003815DC /* Lottery.swift in Sources */,
 				3724FBA52D3639C0003815DC /* LotteryViewController.swift in Sources */,
