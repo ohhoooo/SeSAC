@@ -13,6 +13,7 @@ final class MovieSearchViewController: UIViewController {
     // MARK: - properties
     private let textField = {
         let tf = UITextField()
+        tf.text = "20250113"
         tf.font = .systemFont(ofSize: 19)
         tf.textColor = .white
         tf.borderStyle = .none
@@ -41,6 +42,14 @@ final class MovieSearchViewController: UIViewController {
         return tv
     }()
     
+    private let networkManager = NetworkManager.shared
+    
+    private var movie: Movie? {
+        didSet {
+            movieTableView.reloadData()
+        }
+    }
+    
     // MARK: - life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +59,7 @@ final class MovieSearchViewController: UIViewController {
         configureUI()
         configureHierarchy()
         configureConstraint()
+        configureData()
     }
     
     // MARK: - methods
@@ -57,6 +67,8 @@ final class MovieSearchViewController: UIViewController {
         movieTableView.delegate = self
         movieTableView.dataSource = self
         movieTableView.register(MovieSearchTableViewCell.self, forCellReuseIdentifier: MovieSearchTableViewCell.identifier)
+        
+        searchButton.addTarget(self, action: #selector(tappedSearchButton), for: .touchUpInside)
     }
     
     private func configureHierarchy() {
@@ -92,6 +104,23 @@ final class MovieSearchViewController: UIViewController {
             $0.horizontalEdges.bottom.equalToSuperview()
         }
     }
+    
+    private func configureData(date: String = "20250113") {
+        networkManager.fetchMovieList(date: date) { result in
+            switch result {
+            case .success(let movie):
+                self.movie = movie
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    @objc
+    private func tappedSearchButton(_ sender: UIButton) {
+        guard let date = textField.text else { return }
+        configureData(date: date)
+    }
 }
 
 // MARK: - extensions
@@ -101,14 +130,14 @@ extension MovieSearchViewController: UITableViewDelegate {
 
 extension MovieSearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movieList.count
+        return movie?.boxOfficeResult.dailyBoxOfficeList.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MovieSearchTableViewCell.identifier, for: indexPath) as? MovieSearchTableViewCell else { return UITableViewCell() }
         
         cell.selectionStyle = .none
-        cell.configureData(movie: movieList[indexPath.row])
+        cell.configureData(movie: movie?.boxOfficeResult.dailyBoxOfficeList[indexPath.row])
         
         return cell
     }

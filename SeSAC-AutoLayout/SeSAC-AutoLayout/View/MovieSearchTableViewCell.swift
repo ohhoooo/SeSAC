@@ -77,9 +77,11 @@ final class MovieSearchTableViewCell: UITableViewCell {
         }
     }
     
-    func configureData(movie: Movie) {
+    func configureData(movie: DailyBoxOfficeList?) {
+        guard let movie else { return }
+        
         rankLabel.text = "\(movie.rank)"
-        titleLabel.text = movie.title
-        dateLabel.text = movie.date
+        titleLabel.text = movie.movieNm
+        dateLabel.text = movie.openDt
     }
 }
