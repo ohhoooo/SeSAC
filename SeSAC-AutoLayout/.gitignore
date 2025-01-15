@@ -110,3 +110,4 @@ iOSInjectionProject/
 
 .DS_Store
 *.xcuserstate
+Config.xcconfig
