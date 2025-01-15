@@ -19,6 +19,8 @@
 		37ACC0802D37E6E3005933CE /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 37ACC07C2D37E6E3005933CE /* Config.xcconfig */; };
 		37ACC0852D37E6F1005933CE /* ShoppingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ACC0832D37E6F1005933CE /* ShoppingViewController.swift */; };
 		37ACC0892D37EB91005933CE /* ShoppingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ACC0882D37EB91005933CE /* ShoppingView.swift */; };
+		37ACC08B2D37F6BD005933CE /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ACC08A2D37F6BD005933CE /* ResultViewController.swift */; };
+		37ACC08D2D37F6C9005933CE /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ACC08C2D37F6C9005933CE /* ResultView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		37ACC07D2D37E6E3005933CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37ACC0832D37E6F1005933CE /* ShoppingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewController.swift; sourceTree = "<group>"; };
 		37ACC0882D37EB91005933CE /* ShoppingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingView.swift; sourceTree = "<group>"; };
+		37ACC08A2D37F6BD005933CE /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		37ACC08C2D37F6C9005933CE /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				37ACC0832D37E6F1005933CE /* ShoppingViewController.swift */,
+				37ACC08A2D37F6BD005933CE /* ResultViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -101,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				37ACC0882D37EB91005933CE /* ShoppingView.swift */,
+				37ACC08C2D37F6C9005933CE /* ResultView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -190,10 +196,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37ACC08B2D37F6BD005933CE /* ResultViewController.swift in Sources */,
 				37ACC0892D37EB91005933CE /* ShoppingView.swift in Sources */,
 				37ACC0852D37E6F1005933CE /* ShoppingViewController.swift in Sources */,
 				37ACC0662D37E630005933CE /* AppDelegate.swift in Sources */,
 				37ACC0672D37E630005933CE /* SceneDelegate.swift in Sources */,
+				37ACC08D2D37F6C9005933CE /* ResultView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
