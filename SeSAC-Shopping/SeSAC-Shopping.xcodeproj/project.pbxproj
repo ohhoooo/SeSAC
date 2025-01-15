@@ -1,0 +1,465 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		37ACC0642D37E630005933CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37ACC05C2D37E630005933CE /* LaunchScreen.storyboard */; };
+		37ACC0662D37E630005933CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ACC0582D37E630005933CE /* AppDelegate.swift */; };
+		37ACC0672D37E630005933CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ACC05F2D37E630005933CE /* SceneDelegate.swift */; };
+		37ACC06B2D37E652005933CE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 37ACC06A2D37E652005933CE /* Kingfisher */; };
+		37ACC06E2D37E663005933CE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 37ACC06D2D37E663005933CE /* Alamofire */; };
+		37ACC0712D37E669005933CE /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 37ACC0702D37E669005933CE /* Then */; };
+		37ACC0742D37E673005933CE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 37ACC0732D37E673005933CE /* SnapKit */; };
+		37ACC0762D37E685005933CE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 37ACC0752D37E685005933CE /* .gitignore */; };
+		37ACC07F2D37E6E3005933CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37ACC07B2D37E6E3005933CE /* Assets.xcassets */; };
+		37ACC0802D37E6E3005933CE /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 37ACC07C2D37E6E3005933CE /* Config.xcconfig */; };
+		37ACC0852D37E6F1005933CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ACC0832D37E6F1005933CE /* ViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		37ACC0402D37DB46005933CE /* SeSAC-Shopping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SeSAC-Shopping.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		37ACC0582D37E630005933CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		37ACC05B2D37E630005933CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		37ACC05F2D37E630005933CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		37ACC0752D37E685005933CE /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		37ACC07B2D37E6E3005933CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		37ACC07C2D37E6E3005933CE /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		37ACC07D2D37E6E3005933CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37ACC0832D37E6F1005933CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		37ACC03D2D37DB46005933CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37ACC06B2D37E652005933CE /* Kingfisher in Frameworks */,
+				37ACC0742D37E673005933CE /* SnapKit in Frameworks */,
+				37ACC0712D37E669005933CE /* Then in Frameworks */,
+				37ACC06E2D37E663005933CE /* Alamofire in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		37ACC0372D37DB46005933CE = {
+			isa = PBXGroup;
+			children = (
+				37ACC0752D37E685005933CE /* .gitignore */,
+				37ACC0612D37E630005933CE /* SeSAC-Shopping */,
+				37ACC0412D37DB46005933CE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		37ACC0412D37DB46005933CE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				37ACC0402D37DB46005933CE /* SeSAC-Shopping.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		37ACC0612D37E630005933CE /* SeSAC-Shopping */ = {
+			isa = PBXGroup;
+			children = (
+				37ACC0582D37E630005933CE /* AppDelegate.swift */,
+				37ACC05F2D37E630005933CE /* SceneDelegate.swift */,
+				37ACC0842D37E6F1005933CE /* Controller */,
+				37ACC07E2D37E6E3005933CE /* Resource */,
+			);
+			path = "SeSAC-Shopping";
+			sourceTree = "<group>";
+		};
+		37ACC07E2D37E6E3005933CE /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				37ACC05C2D37E630005933CE /* LaunchScreen.storyboard */,
+				37ACC07B2D37E6E3005933CE /* Assets.xcassets */,
+				37ACC07C2D37E6E3005933CE /* Config.xcconfig */,
+				37ACC07D2D37E6E3005933CE /* Info.plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		37ACC0842D37E6F1005933CE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				37ACC0832D37E6F1005933CE /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		37ACC03F2D37DB46005933CE /* SeSAC-Shopping */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37ACC0532D37DB47005933CE /* Build configuration list for PBXNativeTarget "SeSAC-Shopping" */;
+			buildPhases = (
+				37ACC03C2D37DB46005933CE /* Sources */,
+				37ACC03D2D37DB46005933CE /* Frameworks */,
+				37ACC03E2D37DB46005933CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SeSAC-Shopping";
+			packageProductDependencies = (
+				37ACC06A2D37E652005933CE /* Kingfisher */,
+				37ACC06D2D37E663005933CE /* Alamofire */,
+				37ACC0702D37E669005933CE /* Then */,
+				37ACC0732D37E673005933CE /* SnapKit */,
+			);
+			productName = "SeSAC-Shopping";
+			productReference = 37ACC0402D37DB46005933CE /* SeSAC-Shopping.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		37ACC0382D37DB46005933CE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					37ACC03F2D37DB46005933CE = {
+						CreatedOnToolsVersion = 16.2;
+					};
+				};
+			};
+			buildConfigurationList = 37ACC03B2D37DB46005933CE /* Build configuration list for PBXProject "SeSAC-Shopping" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 37ACC0372D37DB46005933CE;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				37ACC0692D37E652005933CE /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				37ACC06C2D37E663005933CE /* XCRemoteSwiftPackageReference "Alamofire" */,
+				37ACC06F2D37E669005933CE /* XCRemoteSwiftPackageReference "Then" */,
+				37ACC0722D37E673005933CE /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 37ACC0412D37DB46005933CE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				37ACC03F2D37DB46005933CE /* SeSAC-Shopping */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		37ACC03E2D37DB46005933CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37ACC0762D37E685005933CE /* .gitignore in Resources */,
+				37ACC07F2D37E6E3005933CE /* Assets.xcassets in Resources */,
+				37ACC0802D37E6E3005933CE /* Config.xcconfig in Resources */,
+				37ACC0642D37E630005933CE /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		37ACC03C2D37DB46005933CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37ACC0852D37E6F1005933CE /* ViewController.swift in Sources */,
+				37ACC0662D37E630005933CE /* AppDelegate.swift in Sources */,
+				37ACC0672D37E630005933CE /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		37ACC05C2D37E630005933CE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				37ACC05B2D37E630005933CE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		37ACC0542D37DB47005933CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z4QC7WDU5Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SeSAC-Shopping/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kjh.SeSAC-Shopping";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		37ACC0552D37DB47005933CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z4QC7WDU5Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SeSAC-Shopping/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kjh.SeSAC-Shopping";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		37ACC0562D37DB47005933CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		37ACC0572D37DB47005933CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		37ACC03B2D37DB46005933CE /* Build configuration list for PBXProject "SeSAC-Shopping" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37ACC0562D37DB47005933CE /* Debug */,
+				37ACC0572D37DB47005933CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37ACC0532D37DB47005933CE /* Build configuration list for PBXNativeTarget "SeSAC-Shopping" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37ACC0542D37DB47005933CE /* Debug */,
+				37ACC0552D37DB47005933CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		37ACC0692D37E652005933CE /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.1.3;
+			};
+		};
+		37ACC06C2D37E663005933CE /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+		37ACC06F2D37E669005933CE /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		37ACC0722D37E673005933CE /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		37ACC06A2D37E652005933CE /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 37ACC0692D37E652005933CE /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		37ACC06D2D37E663005933CE /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 37ACC06C2D37E663005933CE /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		37ACC0702D37E669005933CE /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 37ACC06F2D37E669005933CE /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+		37ACC0732D37E673005933CE /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 37ACC0722D37E673005933CE /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 37ACC0382D37DB46005933CE /* Project object */;
+}
