@@ -21,6 +21,7 @@
 		37ACC0892D37EB91005933CE /* ShoppingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ACC0882D37EB91005933CE /* ShoppingView.swift */; };
 		37ACC08B2D37F6BD005933CE /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ACC08A2D37F6BD005933CE /* ResultViewController.swift */; };
 		37ACC08D2D37F6C9005933CE /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ACC08C2D37F6C9005933CE /* ResultView.swift */; };
+		37ACC08F2D37FE0F005933CE /* ResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ACC08E2D37FE0F005933CE /* ResultCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		37ACC0882D37EB91005933CE /* ShoppingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingView.swift; sourceTree = "<group>"; };
 		37ACC08A2D37F6BD005933CE /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		37ACC08C2D37F6C9005933CE /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		37ACC08E2D37FE0F005933CE /* ResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			children = (
 				37ACC0882D37EB91005933CE /* ShoppingView.swift */,
 				37ACC08C2D37F6C9005933CE /* ResultView.swift */,
+				37ACC08E2D37FE0F005933CE /* ResultCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				37ACC0892D37EB91005933CE /* ShoppingView.swift in Sources */,
 				37ACC0852D37E6F1005933CE /* ShoppingViewController.swift in Sources */,
 				37ACC0662D37E630005933CE /* AppDelegate.swift in Sources */,
+				37ACC08F2D37FE0F005933CE /* ResultCollectionViewCell.swift in Sources */,
 				37ACC0672D37E630005933CE /* SceneDelegate.swift in Sources */,
 				37ACC08D2D37F6C9005933CE /* ResultView.swift in Sources */,
 			);

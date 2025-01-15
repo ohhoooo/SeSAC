@@ -7,23 +7,42 @@
 
 import UIKit
 
-class ResultViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+final class ResultViewController: UIViewController {
+    
+    // MARK: - properties
+    private let resultView = ResultView()
+    
+    var keyword: String? {
+        didSet {
+            guard let keyword else { return }
+            print(keyword)
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - life cycles
+    override func loadView() {
+        view = resultView
     }
-    */
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        configureUI()
+    }
+}
 
+// MARK: - extensions
+extension ResultViewController {
+    private func configureUI() {
+        configureView()
+        configureNavigation()
+    }
+    
+    private func configureView() {
+        
+    }
+    
+    private func configureNavigation() {
+        navigationItem.title = keyword
+    }
 }
