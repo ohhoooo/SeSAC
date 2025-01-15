@@ -44,5 +44,7 @@ extension ResultViewController {
     
     private func configureNavigation() {
         navigationItem.title = keyword
+        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.topItem?.title = ""
     }
 }
