@@ -27,10 +27,20 @@ final class ShoppingViewController: UIViewController {
 // MARK: - extensions
 extension ShoppingViewController {
     private func configureUI() {
+        configureView()
         configureNavigation()
+    }
+    
+    private func configureView() {
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tappedTapGesture)))
     }
     
     private func configureNavigation() {
         navigationItem.title = "정호의 쇼핑쇼핑"
+    }
+    
+    @objc
+    private func tappedTapGesture() {
+        view.endEditing(true)
     }
 }
