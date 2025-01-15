@@ -22,6 +22,8 @@
 		37ACC08B2D37F6BD005933CE /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ACC08A2D37F6BD005933CE /* ResultViewController.swift */; };
 		37ACC08D2D37F6C9005933CE /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ACC08C2D37F6C9005933CE /* ResultView.swift */; };
 		37ACC08F2D37FE0F005933CE /* ResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ACC08E2D37FE0F005933CE /* ResultCollectionViewCell.swift */; };
+		37ACC0932D380DEA005933CE /* Shopping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ACC0922D380DEA005933CE /* Shopping.swift */; };
+		37ACC0952D381159005933CE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ACC0942D381159005933CE /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		37ACC08A2D37F6BD005933CE /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		37ACC08C2D37F6C9005933CE /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		37ACC08E2D37FE0F005933CE /* ResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCollectionViewCell.swift; sourceTree = "<group>"; };
+		37ACC0922D380DEA005933CE /* Shopping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shopping.swift; sourceTree = "<group>"; };
+		37ACC0942D381159005933CE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 			children = (
 				37ACC0582D37E630005933CE /* AppDelegate.swift */,
 				37ACC05F2D37E630005933CE /* SceneDelegate.swift */,
+				37ACC0912D380D07005933CE /* Model */,
 				37ACC0872D37EB84005933CE /* View */,
 				37ACC0842D37E6F1005933CE /* Controller */,
 				37ACC07E2D37E6E3005933CE /* Resource */,
@@ -112,6 +117,15 @@
 				37ACC08E2D37FE0F005933CE /* ResultCollectionViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		37ACC0912D380D07005933CE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				37ACC0922D380DEA005933CE /* Shopping.swift */,
+				37ACC0942D381159005933CE /* NetworkManager.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,7 +213,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37ACC0952D381159005933CE /* NetworkManager.swift in Sources */,
 				37ACC08B2D37F6BD005933CE /* ResultViewController.swift in Sources */,
+				37ACC0932D380DEA005933CE /* Shopping.swift in Sources */,
 				37ACC0892D37EB91005933CE /* ShoppingView.swift in Sources */,
 				37ACC0852D37E6F1005933CE /* ShoppingViewController.swift in Sources */,
 				37ACC0662D37E630005933CE /* AppDelegate.swift in Sources */,
@@ -225,6 +241,7 @@
 /* Begin XCBuildConfiguration section */
 		37ACC0542D37DB47005933CE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37ACC07C2D37E6E3005933CE /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -256,6 +273,7 @@
 		};
 		37ACC0552D37DB47005933CE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37ACC07C2D37E6E3005933CE /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -287,6 +305,7 @@
 		};
 		37ACC0562D37DB47005933CE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37ACC07C2D37E6E3005933CE /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -350,6 +369,7 @@
 		};
 		37ACC0572D37DB47005933CE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37ACC07C2D37E6E3005933CE /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
