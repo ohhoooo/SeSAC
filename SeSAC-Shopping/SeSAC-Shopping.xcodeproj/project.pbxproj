@@ -17,7 +17,8 @@
 		37ACC0762D37E685005933CE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 37ACC0752D37E685005933CE /* .gitignore */; };
 		37ACC07F2D37E6E3005933CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37ACC07B2D37E6E3005933CE /* Assets.xcassets */; };
 		37ACC0802D37E6E3005933CE /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 37ACC07C2D37E6E3005933CE /* Config.xcconfig */; };
-		37ACC0852D37E6F1005933CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ACC0832D37E6F1005933CE /* ViewController.swift */; };
+		37ACC0852D37E6F1005933CE /* ShoppingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ACC0832D37E6F1005933CE /* ShoppingViewController.swift */; };
+		37ACC0892D37EB91005933CE /* ShoppingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ACC0882D37EB91005933CE /* ShoppingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +30,8 @@
 		37ACC07B2D37E6E3005933CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37ACC07C2D37E6E3005933CE /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		37ACC07D2D37E6E3005933CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		37ACC0832D37E6F1005933CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		37ACC0832D37E6F1005933CE /* ShoppingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewController.swift; sourceTree = "<group>"; };
+		37ACC0882D37EB91005933CE /* ShoppingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 			children = (
 				37ACC0582D37E630005933CE /* AppDelegate.swift */,
 				37ACC05F2D37E630005933CE /* SceneDelegate.swift */,
+				37ACC0872D37EB84005933CE /* View */,
 				37ACC0842D37E6F1005933CE /* Controller */,
 				37ACC07E2D37E6E3005933CE /* Resource */,
 			);
@@ -89,9 +92,17 @@
 		37ACC0842D37E6F1005933CE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				37ACC0832D37E6F1005933CE /* ViewController.swift */,
+				37ACC0832D37E6F1005933CE /* ShoppingViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		37ACC0872D37EB84005933CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				37ACC0882D37EB91005933CE /* ShoppingView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,7 +190,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37ACC0852D37E6F1005933CE /* ViewController.swift in Sources */,
+				37ACC0892D37EB91005933CE /* ShoppingView.swift in Sources */,
+				37ACC0852D37E6F1005933CE /* ShoppingViewController.swift in Sources */,
 				37ACC0662D37E630005933CE /* AppDelegate.swift in Sources */,
 				37ACC0672D37E630005933CE /* SceneDelegate.swift in Sources */,
 			);
@@ -208,7 +220,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z4QC7WDU5Z;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "SeSAC-Shopping/Info.plist";
+				INFOPLIST_FILE = "SeSAC-Shopping/Resource/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -239,7 +251,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z4QC7WDU5Z;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "SeSAC-Shopping/Info.plist";
+				INFOPLIST_FILE = "SeSAC-Shopping/Resource/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
