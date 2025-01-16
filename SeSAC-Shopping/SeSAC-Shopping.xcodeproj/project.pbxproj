@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37A3F0BB2D391D930085C9F8 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A3F0B92D391D930085C9F8 /* BaseView.swift */; };
 		37ACC0642D37E630005933CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37ACC05C2D37E630005933CE /* LaunchScreen.storyboard */; };
 		37ACC0662D37E630005933CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ACC0582D37E630005933CE /* AppDelegate.swift */; };
 		37ACC0672D37E630005933CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ACC05F2D37E630005933CE /* SceneDelegate.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		37A3F0B92D391D930085C9F8 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		37ACC0402D37DB46005933CE /* SeSAC-Shopping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SeSAC-Shopping.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37ACC0582D37E630005933CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37ACC05B2D37E630005933CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,6 +61,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37A3F0B52D391D6A0085C9F8 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				37A3F0BA2D391D930085C9F8 /* Base */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		37A3F0BA2D391D930085C9F8 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				37A3F0B92D391D930085C9F8 /* BaseView.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		37ACC0372D37DB46005933CE = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +99,7 @@
 			children = (
 				37ACC0582D37E630005933CE /* AppDelegate.swift */,
 				37ACC05F2D37E630005933CE /* SceneDelegate.swift */,
+				37A3F0B52D391D6A0085C9F8 /* Util */,
 				37ACC0912D380D07005933CE /* Model */,
 				37ACC0872D37EB84005933CE /* View */,
 				37ACC0842D37E6F1005933CE /* Controller */,
@@ -220,6 +239,7 @@
 				37ACC0852D37E6F1005933CE /* ShoppingViewController.swift in Sources */,
 				37ACC0662D37E630005933CE /* AppDelegate.swift in Sources */,
 				37ACC08F2D37FE0F005933CE /* ResultCollectionViewCell.swift in Sources */,
+				37A3F0BB2D391D930085C9F8 /* BaseView.swift in Sources */,
 				37ACC0672D37E630005933CE /* SceneDelegate.swift in Sources */,
 				37ACC08D2D37F6C9005933CE /* ResultView.swift in Sources */,
 			);
