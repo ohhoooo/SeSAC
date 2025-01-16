@@ -6,10 +6,8 @@
 //
 
 import UIKit
-import SnapKit
-import Then
 
-protocol BaseViewProtocol {
+protocol BaseViewProtocol: AnyObject {
     func configureUI()
     func configureHierarchy()
     func configureConstraints()

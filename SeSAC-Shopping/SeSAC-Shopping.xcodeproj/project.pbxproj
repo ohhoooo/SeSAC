@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		37A3F0BB2D391D930085C9F8 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A3F0B92D391D930085C9F8 /* BaseView.swift */; };
+		37A3F0BD2D391FFE0085C9F8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A3F0BC2D391FFE0085C9F8 /* BaseViewController.swift */; };
 		37ACC0642D37E630005933CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37ACC05C2D37E630005933CE /* LaunchScreen.storyboard */; };
 		37ACC0662D37E630005933CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ACC0582D37E630005933CE /* AppDelegate.swift */; };
 		37ACC0672D37E630005933CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ACC05F2D37E630005933CE /* SceneDelegate.swift */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		37A3F0B92D391D930085C9F8 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		37A3F0BC2D391FFE0085C9F8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		37ACC0402D37DB46005933CE /* SeSAC-Shopping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SeSAC-Shopping.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37ACC0582D37E630005933CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37ACC05B2D37E630005933CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				37A3F0B92D391D930085C9F8 /* BaseView.swift */,
+				37A3F0BC2D391FFE0085C9F8 /* BaseViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			files = (
 				37ACC0952D381159005933CE /* NetworkManager.swift in Sources */,
 				37ACC08B2D37F6BD005933CE /* ResultViewController.swift in Sources */,
+				37A3F0BD2D391FFE0085C9F8 /* BaseViewController.swift in Sources */,
 				37ACC0932D380DEA005933CE /* Shopping.swift in Sources */,
 				37ACC0892D37EB91005933CE /* ShoppingView.swift in Sources */,
 				37ACC0852D37E6F1005933CE /* ShoppingViewController.swift in Sources */,
