@@ -17,6 +17,58 @@ final class ResultView: UIView {
         $0.textColor = UIColor(red: 68/255, green: 208/255, blue: 137/255, alpha: 1)
     }
     
+    let accuracyButton = UIButton().then {
+        var config = UIButton.Configuration.filled()
+        config.title = "정확도"
+        config.baseBackgroundColor = UIColor(red: 68/255, green: 208/255, blue: 137/255, alpha: 1)
+        config.baseForegroundColor = .white
+        config.attributedTitle?.font = UIFont.systemFont(ofSize: 16)
+        $0.configuration = config
+        $0.clipsToBounds = true
+        $0.layer.borderWidth = 1
+        $0.layer.borderColor = UIColor.clear.cgColor
+        $0.layer.cornerRadius = 8
+    }
+    
+    let dateButton = UIButton().then {
+        var config = UIButton.Configuration.filled()
+        config.title = "날짜순"
+        config.baseBackgroundColor = .clear
+        config.baseForegroundColor = UIColor(red: 68/255, green: 208/255, blue: 137/255, alpha: 1)
+        config.attributedTitle?.font = UIFont.systemFont(ofSize: 16)
+        $0.configuration = config
+        $0.clipsToBounds = true
+        $0.layer.borderWidth = 1
+        $0.layer.borderColor = UIColor(red: 68/255, green: 208/255, blue: 137/255, alpha: 1).cgColor
+        $0.layer.cornerRadius = 8
+    }
+    
+    let sortByHighPriceButton = UIButton().then {
+        var config = UIButton.Configuration.filled()
+        config.title = "가격높은순"
+        config.baseBackgroundColor = .clear
+        config.baseForegroundColor = UIColor(red: 68/255, green: 208/255, blue: 137/255, alpha: 1)
+        config.attributedTitle?.font = UIFont.systemFont(ofSize: 16)
+        $0.configuration = config
+        $0.clipsToBounds = true
+        $0.layer.borderWidth = 1
+        $0.layer.borderColor = UIColor(red: 68/255, green: 208/255, blue: 137/255, alpha: 1).cgColor
+        $0.layer.cornerRadius = 8
+    }
+    
+    let sortByLowPriceButton = UIButton().then {
+        var config = UIButton.Configuration.filled()
+        config.title = "가격낮은순"
+        config.baseBackgroundColor = .clear
+        config.baseForegroundColor = UIColor(red: 68/255, green: 208/255, blue: 137/255, alpha: 1)
+        config.attributedTitle?.font = UIFont.systemFont(ofSize: 16)
+        $0.configuration = config
+        $0.clipsToBounds = true
+        $0.layer.borderWidth = 1
+        $0.layer.borderColor = UIColor(red: 68/255, green: 208/255, blue: 137/255, alpha: 1).cgColor
+        $0.layer.cornerRadius = 8
+    }
+    
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
     
     // MARK: - life cycles
@@ -41,6 +93,10 @@ extension ResultView {
     
     private func configureHierarchy() {
         addSubview(totalLabel)
+        addSubview(accuracyButton)
+        addSubview(dateButton)
+        addSubview(sortByHighPriceButton)
+        addSubview(sortByLowPriceButton)
         addSubview(collectionView)
     }
     
@@ -50,8 +106,29 @@ extension ResultView {
             $0.horizontalEdges.equalToSuperview().inset(12)
         }
         
+        accuracyButton.snp.makeConstraints {
+            $0.top.equalTo(totalLabel.snp.bottom).offset(8)
+            $0.leading.equalToSuperview().offset(12)
+        }
+        
+        dateButton.snp.makeConstraints {
+            $0.top.equalTo(totalLabel.snp.bottom).offset(8)
+            $0.leading.equalTo(accuracyButton.snp.trailing).offset(8)
+        }
+        
+        sortByHighPriceButton.snp.makeConstraints {
+            $0.top.equalTo(totalLabel.snp.bottom).offset(8)
+            $0.leading.equalTo(dateButton.snp.trailing).offset(8)
+        }
+        
+        sortByLowPriceButton.snp.makeConstraints {
+            $0.top.equalTo(totalLabel.snp.bottom).offset(8)
+            $0.leading.equalTo(sortByHighPriceButton.snp.trailing).offset(8)
+            $0.trailing.lessThanOrEqualToSuperview().offset(-12)
+        }
+        
         collectionView.snp.makeConstraints {
-            $0.top.equalTo(totalLabel.snp.bottom).offset(4)
+            $0.top.equalTo(accuracyButton.snp.bottom).offset(8)
             $0.bottom.equalTo(safeAreaLayoutGuide)
             $0.horizontalEdges.equalToSuperview()
         }
