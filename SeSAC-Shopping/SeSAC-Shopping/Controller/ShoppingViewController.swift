@@ -58,9 +58,14 @@ extension ShoppingViewController {
 
 extension ShoppingViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let keyword = searchBar.text, keyword.count > 1 else { return }
-        let resultVC = ResultViewController()
-        resultVC.keyword = keyword
-        navigationController?.pushViewController(resultVC, animated: true)
+        if let keyword = searchBar.text, keyword.count > 1 {
+            let resultVC = ResultViewController()
+            resultVC.keyword = keyword
+            navigationController?.pushViewController(resultVC, animated: true)
+        } else {
+            showAlert(title: "알림", message: "두 글자 이상 입력하세요.", button: "확인") {
+                print(#function)
+            }
+        }
     }
 }
