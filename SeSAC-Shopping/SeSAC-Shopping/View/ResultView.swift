@@ -23,6 +23,7 @@ final class ResultView: UIView {
         config.baseBackgroundColor = UIColor(red: 68/255, green: 208/255, blue: 137/255, alpha: 1)
         config.baseForegroundColor = .white
         config.attributedTitle?.font = UIFont.systemFont(ofSize: 16)
+        $0.tag = 0
         $0.configuration = config
         $0.clipsToBounds = true
         $0.layer.borderWidth = 1
@@ -36,6 +37,7 @@ final class ResultView: UIView {
         config.baseBackgroundColor = .clear
         config.baseForegroundColor = UIColor(red: 68/255, green: 208/255, blue: 137/255, alpha: 1)
         config.attributedTitle?.font = UIFont.systemFont(ofSize: 16)
+        $0.tag = 1
         $0.configuration = config
         $0.clipsToBounds = true
         $0.layer.borderWidth = 1
@@ -49,6 +51,7 @@ final class ResultView: UIView {
         config.baseBackgroundColor = .clear
         config.baseForegroundColor = UIColor(red: 68/255, green: 208/255, blue: 137/255, alpha: 1)
         config.attributedTitle?.font = UIFont.systemFont(ofSize: 16)
+        $0.tag = 2
         $0.configuration = config
         $0.clipsToBounds = true
         $0.layer.borderWidth = 1
@@ -62,6 +65,7 @@ final class ResultView: UIView {
         config.baseBackgroundColor = .clear
         config.baseForegroundColor = UIColor(red: 68/255, green: 208/255, blue: 137/255, alpha: 1)
         config.attributedTitle?.font = UIFont.systemFont(ofSize: 16)
+        $0.tag = 3
         $0.configuration = config
         $0.clipsToBounds = true
         $0.layer.borderWidth = 1
@@ -150,5 +154,21 @@ extension ResultView {
     
     func configureData(total: Int) {
         totalLabel.text = "\(total.formatted(.number)) 개의 검색 결과"
+    }
+    
+    func changeButtonColor(tag: Int) {
+        [accuracyButton, dateButton, sortByHighPriceButton, sortByLowPriceButton].forEach {
+            var config = UIButton.Configuration.filled()
+            config.title = $0.titleLabel?.text
+            config.baseBackgroundColor = ($0.tag == tag) ? UIColor(red: 68/255, green: 208/255, blue: 137/255, alpha: 1) : .clear
+            config.baseForegroundColor = ($0.tag == tag) ? .white : UIColor(red: 68/255, green: 208/255, blue: 137/255, alpha: 1)
+            config.attributedTitle?.font = UIFont.systemFont(ofSize: 16)
+            $0.tag = $0.tag
+            $0.configuration = config
+            $0.clipsToBounds = true
+            $0.layer.borderWidth = 1
+            $0.layer.borderColor = ($0.tag == tag) ? UIColor.clear.cgColor : UIColor(red: 68/255, green: 208/255, blue: 137/255, alpha: 1).cgColor
+            $0.layer.cornerRadius = 8
+        }
     }
 }

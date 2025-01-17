@@ -25,8 +25,11 @@ final class NetworkManager {
     private let baseUrl = "https://openapi.naver.com/v1/search/shop.json"
     
     // MARK: - methods
-    func fetchShopping(query: String, completion: @escaping ((Result<Shopping, Error>) -> Void)) {
-        let parameters: Parameters = ["query": query, "display": "100"]
+    func fetchShopping(query: String,
+                       start: Int,
+                       sort: Sort,
+                       completion: @escaping ((Result<Shopping, Error>) -> Void)) {
+        let parameters: Parameters = ["query": query, "start": start, "sort": sort.rawValue, "display": "30"]
         
         AF.request(baseUrl, parameters: parameters, headers: headers).responseDecodable(of: Shopping.self) { response in
             switch response.result {
