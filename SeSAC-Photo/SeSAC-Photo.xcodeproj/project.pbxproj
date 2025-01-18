@@ -22,6 +22,7 @@
 		37023CF12D3B777300602100 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37023CF02D3B777300602100 /* BaseCollectionViewCell.swift */; };
 		37023CF72D3B793A00602100 /* PhotoSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37023CF62D3B793A00602100 /* PhotoSearchView.swift */; };
 		37023CF92D3B79FB00602100 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37023CF82D3B79FB00602100 /* TabBarViewController.swift */; };
+		37023CFB2D3B853E00602100 /* NavigationBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37023CFA2D3B853E00602100 /* NavigationBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		37023CF02D3B777300602100 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		37023CF62D3B793A00602100 /* PhotoSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSearchView.swift; sourceTree = "<group>"; };
 		37023CF82D3B79FB00602100 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		37023CFA2D3B853E00602100 /* NavigationBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 		37023CF52D3B78C200602100 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				37023CFA2D3B853E00602100 /* NavigationBarViewController.swift */,
 				37023CF82D3B79FB00602100 /* TabBarViewController.swift */,
 				37023CCD2D3B721A00602100 /* PhotoSearchViewController.swift */,
 			);
@@ -223,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37023CF92D3B79FB00602100 /* TabBarViewController.swift in Sources */,
+				37023CFB2D3B853E00602100 /* NavigationBarViewController.swift in Sources */,
 				37023CEF2D3B775B00602100 /* BaseViewController.swift in Sources */,
 				37023CD32D3B721A00602100 /* AppDelegate.swift in Sources */,
 				37023CD42D3B721A00602100 /* SceneDelegate.swift in Sources */,
