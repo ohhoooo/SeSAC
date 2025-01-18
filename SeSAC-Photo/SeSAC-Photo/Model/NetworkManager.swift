@@ -8,6 +8,17 @@
 import Foundation
 import Alamofire
 
+enum Topic: String {
+    case goldenHour = "golden-hour"
+    case businessWork = "business-work"
+    case architectureInterior = "architecture-interior"
+}
+
+enum Order: String {
+    case relevant = "relevant"
+    case latest = "latest"
+}
+
 final class NetworkManager {
     
     // MARK: - properties
@@ -27,12 +38,26 @@ final class NetworkManager {
     private let searchPath = "/search/photos"
     
     // MARK: - methods
+    func fetchPhotoTopic(topic: Topic,
+                         completion: @escaping ((Result<[Photo], Error>) -> Void)) {
+        let path = "/topics/\(topic.rawValue)/photos"
+        
+        AF.request(baseUrl + path, headers: headers).responseDecodable(of: [Photo].self) { response in
+            switch response.result {
+            case .success(let photoList):
+                completion(.success(photoList))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
     func fetchPhotoSearch(query: String,
                           page: Int,
                           perPage: Int,
-                          orderBy: String,
+                          orderBy: Order,
                           completion: @escaping ((Result<PhotoSearch, Error>) -> Void)) {
-        let parameters: Parameters = ["query": query, "page": page, "per_page": perPage, "order_by": orderBy]
+        let parameters: Parameters = ["query": query, "page": page, "per_page": perPage, "order_by": orderBy.rawValue]
         
         AF.request(baseUrl + searchPath, parameters: parameters, headers: headers).responseDecodable(of: PhotoSearch.self) { response in
             switch response.result {
