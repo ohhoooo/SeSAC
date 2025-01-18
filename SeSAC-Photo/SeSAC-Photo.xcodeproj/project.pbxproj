@@ -11,7 +11,7 @@
 		37023CD12D3B721A00602100 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37023CC92D3B721A00602100 /* LaunchScreen.storyboard */; };
 		37023CD32D3B721A00602100 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37023CC52D3B721A00602100 /* AppDelegate.swift */; };
 		37023CD42D3B721A00602100 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37023CCC2D3B721A00602100 /* SceneDelegate.swift */; };
-		37023CD52D3B721A00602100 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37023CCD2D3B721A00602100 /* ViewController.swift */; };
+		37023CD52D3B721A00602100 /* PhotoSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37023CCD2D3B721A00602100 /* PhotoSearchViewController.swift */; };
 		37023CD92D3B733700602100 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 37023CD82D3B733700602100 /* .gitignore */; };
 		37023CDC2D3B735100602100 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 37023CDB2D3B735100602100 /* SnapKit */; };
 		37023CDF2D3B735800602100 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 37023CDE2D3B735800602100 /* Then */; };
@@ -20,6 +20,8 @@
 		37023CED2D3B774700602100 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37023CEC2D3B774700602100 /* BaseView.swift */; };
 		37023CEF2D3B775B00602100 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37023CEE2D3B775B00602100 /* BaseViewController.swift */; };
 		37023CF12D3B777300602100 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37023CF02D3B777300602100 /* BaseCollectionViewCell.swift */; };
+		37023CF72D3B793A00602100 /* PhotoSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37023CF62D3B793A00602100 /* PhotoSearchView.swift */; };
+		37023CF92D3B79FB00602100 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37023CF82D3B79FB00602100 /* TabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,11 +31,13 @@
 		37023CC72D3B721A00602100 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37023CC82D3B721A00602100 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37023CCC2D3B721A00602100 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		37023CCD2D3B721A00602100 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		37023CCD2D3B721A00602100 /* PhotoSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSearchViewController.swift; sourceTree = "<group>"; };
 		37023CD82D3B733700602100 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		37023CEC2D3B774700602100 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		37023CEE2D3B775B00602100 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		37023CF02D3B777300602100 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		37023CF62D3B793A00602100 /* PhotoSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSearchView.swift; sourceTree = "<group>"; };
+		37023CF82D3B79FB00602100 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,8 +77,8 @@
 			children = (
 				37023CE72D3B73E800602100 /* Application */,
 				37023CE92D3B771800602100 /* Util */,
-				37023CC92D3B721A00602100 /* LaunchScreen.storyboard */,
-				37023CCD2D3B721A00602100 /* ViewController.swift */,
+				37023CF42D3B78C100602100 /* View */,
+				37023CF52D3B78C200602100 /* Controller */,
 				37023CD72D3B727800602100 /* Resource */,
 			);
 			path = "SeSAC-Photo";
@@ -114,6 +118,24 @@
 				37023CEE2D3B775B00602100 /* BaseViewController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		37023CF42D3B78C100602100 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				37023CC92D3B721A00602100 /* LaunchScreen.storyboard */,
+				37023CF62D3B793A00602100 /* PhotoSearchView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		37023CF52D3B78C200602100 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				37023CF82D3B79FB00602100 /* TabBarViewController.swift */,
+				37023CCD2D3B721A00602100 /* PhotoSearchViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,12 +222,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37023CF92D3B79FB00602100 /* TabBarViewController.swift in Sources */,
 				37023CEF2D3B775B00602100 /* BaseViewController.swift in Sources */,
 				37023CD32D3B721A00602100 /* AppDelegate.swift in Sources */,
 				37023CD42D3B721A00602100 /* SceneDelegate.swift in Sources */,
-				37023CD52D3B721A00602100 /* ViewController.swift in Sources */,
+				37023CD52D3B721A00602100 /* PhotoSearchViewController.swift in Sources */,
 				37023CED2D3B774700602100 /* BaseView.swift in Sources */,
 				37023CF12D3B777300602100 /* BaseCollectionViewCell.swift in Sources */,
+				37023CF72D3B793A00602100 /* PhotoSearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
