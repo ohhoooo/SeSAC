@@ -18,12 +18,14 @@ final class NavigationBarViewController: UINavigationController {
     
     // MARK: - methods
     private func configureNavigationBarAppearence() {
-        let appearence = UINavigationBarAppearance()
-        appearence.configureWithOpaqueBackground()
-        appearence.backgroundColor = .white
-        appearence.titleTextAttributes = [.foregroundColor: UIColor.black]
-        appearence.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
-        UINavigationBar.appearance().standardAppearance = appearence
-        UINavigationBar.appearance().scrollEdgeAppearance = appearence
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.shadowImage = nil
+        appearance.shadowColor = nil
+        appearance.backgroundColor = .white
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
     }
 }

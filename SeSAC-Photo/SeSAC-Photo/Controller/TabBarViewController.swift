@@ -26,12 +26,12 @@ final class TabBarViewController: UITabBarController {
     }
     
     private func configureTabBarAppearence() {
-        let appearence = UITabBarAppearance()
-        appearence.configureWithTransparentBackground()
-        appearence.backgroundColor = .white
-        appearence.stackedLayoutAppearance.normal.iconColor = .gray
-        appearence.stackedLayoutAppearance.selected.iconColor = .black
-        tabBar.standardAppearance = appearence
-        tabBar.scrollEdgeAppearance = appearence
+        let appearance = UITabBarAppearance()
+        appearance.configureWithTransparentBackground()
+        appearance.backgroundColor = .white
+        appearance.stackedLayoutAppearance.normal.iconColor = .gray
+        appearance.stackedLayoutAppearance.selected.iconColor = .black
+        tabBar.standardAppearance = appearance
+        tabBar.scrollEdgeAppearance = appearance
     }
 }
