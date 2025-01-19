@@ -27,16 +27,13 @@ final class PhotoSearchView: BaseView {
         $0.register(PhotoSearchCollectionViewCell.self, forCellWithReuseIdentifier: PhotoSearchCollectionViewCell.identifier)
     }
     
-    private let guideLabel = UILabel().then {
-        $0.text = "사진을 검색해보세요."
-        $0.font = .systemFont(ofSize: 16, weight: .black)
-        $0.textAlignment = .center
-    }
+    private let guideLabel = UILabel()
     
     // MARK: - methods
     override func configureUI() {
         backgroundColor = .white
         
+        changeGuideLabel()
         changeOrderButton()
     }
     
@@ -67,16 +64,23 @@ final class PhotoSearchView: BaseView {
         }
         
         guideLabel.snp.makeConstraints {
-            $0.top.equalTo(orderButton.snp.bottom)
+            $0.top.equalTo(orderButton.snp.bottom).offset(8)
             $0.horizontalEdges.equalToSuperview()
             $0.bottom.equalTo(safeAreaLayoutGuide)
         }
         
         collectionView.snp.makeConstraints {
-            $0.top.equalTo(orderButton.snp.bottom)
+            $0.top.equalTo(orderButton.snp.bottom).offset(8)
             $0.horizontalEdges.equalToSuperview()
             $0.bottom.equalTo(safeAreaLayoutGuide)
         }
+    }
+    
+    func changeGuideLabel(isHidden: Bool = false, comment: String = "사진을 검색해보세요.") {
+        guideLabel.text = comment
+        guideLabel.font = .systemFont(ofSize: 16, weight: .black)
+        guideLabel.textAlignment = .center
+        guideLabel.isHidden = isHidden
     }
     
     func changeOrderButton(order: Order = .relevant) {

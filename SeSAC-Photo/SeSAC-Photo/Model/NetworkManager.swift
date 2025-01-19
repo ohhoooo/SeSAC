@@ -17,6 +17,15 @@ enum Topic: String {
 enum Order: String {
     case relevant = "relevant"
     case latest = "latest"
+    
+    var toKorean: String {
+        switch self {
+        case .relevant:
+            return "관련순"
+        case .latest:
+            return "최신순"
+        }
+    }
 }
 
 final class NetworkManager {
