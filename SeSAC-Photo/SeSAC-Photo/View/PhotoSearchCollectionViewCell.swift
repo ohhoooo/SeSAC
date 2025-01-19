@@ -58,9 +58,8 @@ final class PhotoSearchCollectionViewCell: BaseCollectionViewCell {
         config.baseForegroundColor = .white
         config.baseBackgroundColor = UIColor(red: 81/255, green: 89/255, blue: 86/255, alpha: 1)
         config.attributedTitle?.font = UIFont.systemFont(ofSize: 11)
+        config.background.cornerRadius = 14
         likeButton.configuration = config
-        likeButton.clipsToBounds = true
-        likeButton.layer.cornerRadius = 14
     }
     
     func bind(photo: Photo?) {
