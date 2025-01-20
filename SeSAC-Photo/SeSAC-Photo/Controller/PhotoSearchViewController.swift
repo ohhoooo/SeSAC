@@ -34,6 +34,12 @@ final class PhotoSearchViewController: BaseViewController {
         view = photoSearchView
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        configureNavigation()
+    }
+    
     // MARK: - methods
     override func configureStyle() {
         configureNavigation()
@@ -97,6 +103,15 @@ extension PhotoSearchViewController: UISearchBarDelegate {
 }
 
 extension PhotoSearchViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let photoDetailVC = PhotoDetailViewController()
+        photoDetailVC.photo = photos[indexPath.row]
+        
+        navigationItem.title = ""
+        navigationController?.navigationBar.prefersLargeTitles = false
+        navigationController?.pushViewController(photoDetailVC, animated: true)
+    }
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let contentOffsetY = scrollView.contentOffset.y
         let collectionViewHeight = photoSearchView.collectionView.contentSize.height

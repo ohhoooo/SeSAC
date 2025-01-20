@@ -30,6 +30,12 @@ final class PhotoTopicViewController: BaseViewController {
         configureData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        configureNavigation()
+    }
+    
     // MARK: - methods
     override func configureStyle() {
         configureNavigation()
@@ -67,7 +73,21 @@ final class PhotoTopicViewController: BaseViewController {
 
 // MARK: - extensions
 extension PhotoTopicViewController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let photoDetailVC = PhotoDetailViewController()
+        
+        if collectionView == photoTopicView.goldenHourCollectionView {
+            photoDetailVC.photo = photos[0][indexPath.row]
+        } else if collectionView == photoTopicView.businessWorkCollectionView {
+            photoDetailVC.photo = photos[1][indexPath.row]
+        } else {
+            photoDetailVC.photo = photos[2][indexPath.row]
+        }
+        
+        navigationItem.title = ""
+        navigationController?.navigationBar.prefersLargeTitles = false
+        navigationController?.pushViewController(photoDetailVC, animated: true)
+    }
 }
 
 extension PhotoTopicViewController: UICollectionViewDataSource {
