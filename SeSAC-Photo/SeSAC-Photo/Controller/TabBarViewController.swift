@@ -19,10 +19,13 @@ final class TabBarViewController: UITabBarController {
     
     // MARK: - methods
     private func configureTabBarController() {
-        let photoSearchVC = NavigationBarViewController(rootViewController: PhotoSearchViewController())
-        photoSearchVC.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "magnifyingglass"), tag: 0)
+        let photoTopicVC = NavigationBarViewController(rootViewController: PhotoTopicViewController())
+        photoTopicVC.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "chart.line.uptrend.xyaxis"), tag: 0)
         
-        setViewControllers([photoSearchVC], animated: true)
+        let photoSearchVC = NavigationBarViewController(rootViewController: PhotoSearchViewController())
+        photoSearchVC.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "magnifyingglass"), tag: 1)
+        
+        setViewControllers([photoTopicVC, photoSearchVC], animated: true)
     }
     
     private func configureTabBarAppearence() {

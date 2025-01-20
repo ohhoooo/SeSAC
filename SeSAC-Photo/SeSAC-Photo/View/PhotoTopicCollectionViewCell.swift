@@ -1,8 +1,8 @@
 //
-//  PhotoSearchCollectionViewCell.swift
+//  PhotoTopicCollectionViewCell.swift
 //  SeSAC-Photo
 //
-//  Created by 김정호 on 1/18/25.
+//  Created by 김정호 on 1/20/25.
 //
 
 import UIKit
@@ -10,14 +10,15 @@ import Kingfisher
 import SnapKit
 import Then
 
-final class PhotoSearchCollectionViewCell: BaseCollectionViewCell {
+final class PhotoTopicCollectionViewCell: BaseCollectionViewCell {
     
     // MARK: - properties
-    static let identifier = "PhotoSearchCollectionViewCell"
+    static let identifier = "PhotoTopicCollectionViewCell"
     
     private let photoImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFill
         $0.clipsToBounds = true
+        $0.layer.cornerRadius = 12
     }
     
     private let likeButton = UIButton()
@@ -50,7 +51,7 @@ final class PhotoSearchCollectionViewCell: BaseCollectionViewCell {
         }
     }
     
-    private func configureLikeButton(like: Int? = 0) {
+    func configureLikeButton(like: Int? = 0) {
         var config = UIButton.Configuration.filled()
         config.title = String((like ?? 0).formatted(.number))
         config.image = UIImage(systemName: "star.fill")?.resize(width: 15, height: 13).withTintColor(UIColor(red: 236/255, green: 216/255, blue: 125/255, alpha: 1))
