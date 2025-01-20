@@ -77,4 +77,18 @@ final class NetworkManager {
             }
         }
     }
+    
+    func fetchPhotoStatistic(photoId: String,
+                             completion: @escaping ((Result<PhotoStatistic, Error>) -> Void)) {
+        let path = "/photos/\(photoId)/statistics"
+        
+        AF.request(baseUrl + path, headers: headers).responseDecodable(of: PhotoStatistic.self) { response in
+            switch response.result {
+            case .success(let photoStatistic):
+                completion(.success(photoStatistic))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
 }
