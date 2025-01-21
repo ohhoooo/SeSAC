@@ -11,23 +11,11 @@ final class PhotoTopicViewController: BaseViewController {
     
     // MARK: - properties
     private let photoTopicView = PhotoTopicView()
-    private var photos: [[Photo]] = Array(repeating: [], count: 3) {
-        didSet {
-            photoTopicView.goldenHourCollectionView.reloadData()
-            photoTopicView.businessWorkCollectionView.reloadData()
-            photoTopicView.architectureInteriorCollectionView.reloadData()
-        }
-    }
+    private var photos: [[Photo]] = Array(repeating: [], count: 3)
     
     // MARK: - life cycles
     override func loadView() {
         view = photoTopicView
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        configureData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,10 +25,6 @@ final class PhotoTopicViewController: BaseViewController {
     }
     
     // MARK: - methods
-    override func configureStyle() {
-        configureNavigation()
-    }
-    
     override func configureDelegate() {
         photoTopicView.goldenHourCollectionView.delegate = self
         photoTopicView.goldenHourCollectionView.dataSource = self
@@ -52,22 +36,34 @@ final class PhotoTopicViewController: BaseViewController {
         photoTopicView.architectureInteriorCollectionView.dataSource = self
     }
     
-    private func configureNavigation() {
-        navigationItem.title = "OUR TOPIC"
-        navigationController?.navigationBar.prefersLargeTitles = true
-    }
-    
-    private func configureData() {
+    override func bind() {
+        let group = DispatchGroup()
+        
         [Topic.goldenHour, Topic.businessWork, Topic.architectureInterior].enumerated().forEach { (i, e) in
-            NetworkManager.shared.fetchPhotoTopic(topic: e) { result in
+            group.enter()
+            
+            NetworkManager.shared.request([Photo].self, router: .fetchPhotos(topic: e)) { [weak self] result in
                 switch result {
                 case .success(let photos):
-                    self.photos[i] = photos
+                    self?.photos[i] = photos
+                    group.leave()
                 case .failure(let error):
                     print(error.localizedDescription)
+                    group.leave()
                 }
             }
         }
+        
+        group.notify(queue: .main) { [weak self] in
+            self?.photoTopicView.goldenHourCollectionView.reloadData()
+            self?.photoTopicView.businessWorkCollectionView.reloadData()
+            self?.photoTopicView.architectureInteriorCollectionView.reloadData()
+        }
+    }
+    
+    private func configureNavigation() {
+        navigationItem.title = "OUR TOPIC"
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 }
 
