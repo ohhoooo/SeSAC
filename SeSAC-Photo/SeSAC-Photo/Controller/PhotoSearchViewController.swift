@@ -11,17 +11,7 @@ final class PhotoSearchViewController: BaseViewController {
     
     // MARK: - properties
     private let photoSearchView = PhotoSearchView()
-    private var photos: [Photo] = [] {
-        didSet {
-            if photos.isEmpty {
-                photoSearchView.changeGuideLabel(comment: "검색 결과가 없어요.")
-            } else {
-                photoSearchView.changeGuideLabel(isHidden: true)
-            }
-            
-            photoSearchView.collectionView.reloadData()
-        }
-    }
+    private var photos: [Photo] = []
     
     // parameters
     private var query = ""
@@ -41,10 +31,6 @@ final class PhotoSearchViewController: BaseViewController {
     }
     
     // MARK: - methods
-    override func configureStyle() {
-        configureNavigation()
-    }
-    
     override func configureDelegate() {
         photoSearchView.searchBar.delegate = self
         photoSearchView.collectionView.delegate = self
@@ -60,10 +46,13 @@ final class PhotoSearchViewController: BaseViewController {
     }
     
     private func configureData() {
-        NetworkManager.shared.fetchPhotoSearch(query: query, page: page, perPage: perPage, orderBy: orderBy) { result in
+        NetworkManager.shared.request(PhotoSearch.self, router: .fetchPhotoSearch(query: query, page: page, perPage: perPage, orderBy: orderBy)) { [weak self] result in
             switch result {
             case .success(let photoSearch):
-                self.photos.append(contentsOf: photoSearch.photos ?? [])
+                guard let self else { return }
+                photos.append(contentsOf: photoSearch.photos ?? [])
+                photoSearchView.changeGuideLabel(isHidden: photos.isEmpty, comment: "검색 결과가 없어요.")
+                photoSearchView.collectionView.reloadData()
             case .failure(let error):
                 print(error.localizedDescription)
             }
