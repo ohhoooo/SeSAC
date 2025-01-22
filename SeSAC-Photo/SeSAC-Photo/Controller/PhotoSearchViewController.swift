@@ -51,10 +51,11 @@ final class PhotoSearchViewController: BaseViewController {
             case .success(let photoSearch):
                 guard let self else { return }
                 photos.append(contentsOf: photoSearch.photos ?? [])
-                photoSearchView.changeGuideLabel(isHidden: photos.isEmpty, comment: "검색 결과가 없어요.")
+                photoSearchView.changeGuideLabel(isHidden: !photos.isEmpty, comment: "검색 결과가 없어요.")
                 photoSearchView.collectionView.reloadData()
             case .failure(let error):
-                print(error.localizedDescription)
+                guard let error = error as? NetworkError else { return }
+                self?.showAlert(title: "알림", message: error.alertMessage)
             }
         }
     }

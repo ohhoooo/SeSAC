@@ -48,7 +48,8 @@ final class PhotoTopicViewController: BaseViewController {
                     self?.photos[i] = photos
                     group.leave()
                 case .failure(let error):
-                    print(error.localizedDescription)
+                    guard let error = error as? NetworkError else { return }
+                    self?.showAlert(title: "알림", message: error.alertMessage)
                     group.leave()
                 }
             }
