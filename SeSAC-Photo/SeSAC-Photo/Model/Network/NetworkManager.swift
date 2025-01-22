@@ -38,12 +38,29 @@ final class NetworkManager {
     func request<T: Decodable>(_ object: T.Type,
                                router: NetworkRouter,
                                completion: @escaping ((Result<T, Error>) -> Void)) {
-        AF.request(router).validate(statusCode: 200..<500).responseDecodable(of: object) { response in
+        AF.request(router).validate(statusCode: 200..<300).responseDecodable(of: object) { response in
             switch response.result {
             case .success(let value):
                 completion(.success(value))
             case .failure(let error):
-                completion(.failure(error))
+                switch response.response?.statusCode {
+                case 400:
+                    completion(.failure(NetworkError.missingARequiredParameter))
+                case 401:
+                    completion(.failure(NetworkError.invalidAccessToken))
+                case 403:
+                    completion(.failure(NetworkError.missingPermissionsToPerformRequest))
+                case 404:
+                    completion(.failure(NetworkError.requestedResourceDoesNotExist))
+                case 500:
+                    completion(.failure(NetworkError.somethingWentWrongOnServerEnd1))
+                case 503:
+                    completion(.failure(NetworkError.somethingWentWrongOnServerEnd2))
+                case .some(_):
+                    completion(.failure(error))
+                case .none:
+                    completion(.failure(error))
+                }
             }
         }
     }
