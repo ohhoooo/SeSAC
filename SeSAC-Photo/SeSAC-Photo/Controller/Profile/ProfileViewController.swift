@@ -17,11 +17,13 @@ final class ProfileViewController: BaseViewController {
         view = profileView
     }
     
-    // MARK: - methods
-    override func configureStyle() {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         configureNavigation()
     }
     
+    // MARK: - methods
     override func configureAddTarget() {
         profileView.withdrawBarButtonItem.target = self
         profileView.withdrawBarButtonItem.action = #selector(tappedWithdrawBarButtonItem)

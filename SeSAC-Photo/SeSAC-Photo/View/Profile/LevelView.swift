@@ -6,15 +6,34 @@
 //
 
 import UIKit
+import SnapKit
+import Then
 
-class LevelView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+final class LevelView: BaseView {
+    
+    // MARK: - properties
+    let okBarButtonItem = UIBarButtonItem().then {
+        $0.style = .plain
+        $0.title = "확인"
     }
-    */
-
+    
+    let segmentedControl = UISegmentedControl(items: ["상", "중", "하"]).then {
+        $0.selectedSegmentIndex = 0
+    }
+    
+    // MARK: - methods
+    override func configureUI() {
+        backgroundColor = .white
+    }
+    
+    override func configureHierarchy() {
+        addSubview(segmentedControl)
+    }
+    
+    override func configureConstraints() {
+        segmentedControl.snp.makeConstraints {
+            $0.centerX.top.equalTo(safeAreaLayoutGuide)
+            $0.width.equalTo(safeAreaLayoutGuide).inset(24)
+        }
+    }
 }
