@@ -12,6 +12,12 @@ import Then
 final class PhotoTopicView: BaseView {
     
     // MARK: - properties
+    let profileBarButtonItem = UIBarButtonItem().then {
+        $0.style = .done
+        $0.image = UIImage(systemName: "person.crop.circle")?.withRenderingMode(.alwaysTemplate)
+        $0.tintColor = .black
+    }
+    
     private let scrollView = UIScrollView()
     private let contentView = UIView()
     

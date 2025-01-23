@@ -34,9 +34,17 @@
 		377C66D12D3BF55D00252E61 /* PhotoSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377C66D02D3BF55D00252E61 /* PhotoSearchCollectionViewCell.swift */; };
 		379FC4462D3E37F500DEE589 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379FC4452D3E37F500DEE589 /* String+Extension.swift */; };
 		379FC4482D3E5C7800DEE589 /* PhotoStatistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379FC4472D3E5C7800DEE589 /* PhotoStatistic.swift */; };
+		37A011DF2D424BA60011C6A7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A011DE2D424BA60011C6A7 /* ProfileView.swift */; };
+		37A011E12D424BB30011C6A7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A011E02D424BB30011C6A7 /* ProfileViewController.swift */; };
 		37A7E6F42D40F7E200680B08 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A7E6F32D40F7E200680B08 /* NetworkError.swift */; };
 		37A7E6F62D410ED700680B08 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A7E6F52D410ED700680B08 /* UIViewController+Extension.swift */; };
 		37C41EDB2D3F8D7500211FD6 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C41EDA2D3F8D7500211FD6 /* NetworkRouter.swift */; };
+		37D798782D42544D00D12460 /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D798772D42544D00D12460 /* NicknameViewController.swift */; };
+		37D7987A2D4254A800D12460 /* BirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D798792D4254A800D12460 /* BirthdayViewController.swift */; };
+		37D7987C2D4254D900D12460 /* LevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D7987B2D4254D900D12460 /* LevelViewController.swift */; };
+		37D7987E2D4254E600D12460 /* LevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D7987D2D4254E600D12460 /* LevelView.swift */; };
+		37D798802D4254F600D12460 /* NicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D7987F2D4254F600D12460 /* NicknameView.swift */; };
+		37D798822D42550400D12460 /* BirthdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D798812D42550400D12460 /* BirthdayView.swift */; };
 		37DAB7E22D3D9B6B00CC6701 /* PhotoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DAB7E12D3D9B6B00CC6701 /* PhotoDetailView.swift */; };
 		37DAB7E42D3D9B8A00CC6701 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DAB7E32D3D9B8A00CC6701 /* PhotoDetailViewController.swift */; };
 /* End PBXBuildFile section */
@@ -67,9 +75,17 @@
 		377C66D02D3BF55D00252E61 /* PhotoSearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		379FC4452D3E37F500DEE589 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		379FC4472D3E5C7800DEE589 /* PhotoStatistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStatistic.swift; sourceTree = "<group>"; };
+		37A011DE2D424BA60011C6A7 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		37A011E02D424BB30011C6A7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		37A7E6F32D40F7E200680B08 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		37A7E6F52D410ED700680B08 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		37C41EDA2D3F8D7500211FD6 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
+		37D798772D42544D00D12460 /* NicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewController.swift; sourceTree = "<group>"; };
+		37D798792D4254A800D12460 /* BirthdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewController.swift; sourceTree = "<group>"; };
+		37D7987B2D4254D900D12460 /* LevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewController.swift; sourceTree = "<group>"; };
+		37D7987D2D4254E600D12460 /* LevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelView.swift; sourceTree = "<group>"; };
+		37D7987F2D4254F600D12460 /* NicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameView.swift; sourceTree = "<group>"; };
+		37D798812D42550400D12460 /* BirthdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayView.swift; sourceTree = "<group>"; };
 		37DAB7E12D3D9B6B00CC6701 /* PhotoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailView.swift; sourceTree = "<group>"; };
 		37DAB7E32D3D9B8A00CC6701 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -161,6 +177,7 @@
 		37023CF42D3B78C100602100 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				37A011DB2D424B750011C6A7 /* Profile */,
 				375241212D3D691D001018C6 /* PhotoTopicView.swift */,
 				375241232D3D693A001018C6 /* PhotoTopicCollectionViewCell.swift */,
 				37023CF62D3B793A00602100 /* PhotoSearchView.swift */,
@@ -173,6 +190,7 @@
 		37023CF52D3B78C200602100 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				37A011DD2D424B890011C6A7 /* Profile */,
 				37023CFA2D3B853E00602100 /* NavigationBarViewController.swift */,
 				37023CF82D3B79FB00602100 /* TabBarViewController.swift */,
 				375241252D3D6948001018C6 /* PhotoTopicViewController.swift */,
@@ -201,6 +219,28 @@
 				37A7E6F52D410ED700680B08 /* UIViewController+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		37A011DB2D424B750011C6A7 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				37A011DE2D424BA60011C6A7 /* ProfileView.swift */,
+				37D7987F2D4254F600D12460 /* NicknameView.swift */,
+				37D798812D42550400D12460 /* BirthdayView.swift */,
+				37D7987D2D4254E600D12460 /* LevelView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		37A011DD2D424B890011C6A7 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				37A011E02D424BB30011C6A7 /* ProfileViewController.swift */,
+				37D798772D42544D00D12460 /* NicknameViewController.swift */,
+				37D798792D4254A800D12460 /* BirthdayViewController.swift */,
+				37D7987B2D4254D900D12460 /* LevelViewController.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		37C41ED92D3F8D6800211FD6 /* Network */ = {
@@ -305,14 +345,20 @@
 				37DAB7E42D3D9B8A00CC6701 /* PhotoDetailViewController.swift in Sources */,
 				375241242D3D693A001018C6 /* PhotoTopicCollectionViewCell.swift in Sources */,
 				375241202D3D4EBF001018C6 /* UIImage+Extension.swift in Sources */,
+				37D7987C2D4254D900D12460 /* LevelViewController.swift in Sources */,
+				37A011DF2D424BA60011C6A7 /* ProfileView.swift in Sources */,
 				375241262D3D6948001018C6 /* PhotoTopicViewController.swift in Sources */,
 				375241222D3D691D001018C6 /* PhotoTopicView.swift in Sources */,
+				37A011E12D424BB30011C6A7 /* ProfileViewController.swift in Sources */,
 				37023CF92D3B79FB00602100 /* TabBarViewController.swift in Sources */,
 				37023CFB2D3B853E00602100 /* NavigationBarViewController.swift in Sources */,
+				37D7987A2D4254A800D12460 /* BirthdayViewController.swift in Sources */,
 				379FC4462D3E37F500DEE589 /* String+Extension.swift in Sources */,
+				37D798802D4254F600D12460 /* NicknameView.swift in Sources */,
 				37023D012D3B8F4D00602100 /* PhotoSearch.swift in Sources */,
 				379FC4482D3E5C7800DEE589 /* PhotoStatistic.swift in Sources */,
 				37DAB7E22D3D9B6B00CC6701 /* PhotoDetailView.swift in Sources */,
+				37D7987E2D4254E600D12460 /* LevelView.swift in Sources */,
 				37023CFF2D3B886A00602100 /* NetworkManager.swift in Sources */,
 				37023CEF2D3B775B00602100 /* BaseViewController.swift in Sources */,
 				37023CD32D3B721A00602100 /* AppDelegate.swift in Sources */,
@@ -321,7 +367,9 @@
 				37023CED2D3B774700602100 /* BaseView.swift in Sources */,
 				37023CF12D3B777300602100 /* BaseCollectionViewCell.swift in Sources */,
 				37023CF72D3B793A00602100 /* PhotoSearchView.swift in Sources */,
+				37D798782D42544D00D12460 /* NicknameViewController.swift in Sources */,
 				377C66D12D3BF55D00252E61 /* PhotoSearchCollectionViewCell.swift in Sources */,
+				37D798822D42550400D12460 /* BirthdayView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -64,7 +64,18 @@ final class PhotoTopicViewController: BaseViewController {
     
     private func configureNavigation() {
         navigationItem.title = "OUR TOPIC"
+        navigationItem.rightBarButtonItem = photoTopicView.profileBarButtonItem
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        photoTopicView.profileBarButtonItem.target = self
+        photoTopicView.profileBarButtonItem.action = #selector(tappedProfileBarButtonItem)
+    }
+    
+    @objc
+    private func tappedProfileBarButtonItem() {
+        navigationItem.title = ""
+        navigationController?.navigationBar.prefersLargeTitles = false
+        navigationController?.pushViewController(ProfileViewController(), animated: true)
     }
 }
 
