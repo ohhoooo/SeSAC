@@ -6,15 +6,34 @@
 //
 
 import UIKit
+import SnapKit
+import Then
 
-class BirthdayView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+final class BirthdayView: BaseView {
+    
+    // MARK: - properties
+    let okBarButtonItem = UIBarButtonItem().then {
+        $0.style = .plain
+        $0.title = "확인"
     }
-    */
-
+    
+    let datePicker = UIDatePicker().then {
+        $0.datePickerMode = .date
+        $0.preferredDatePickerStyle = .wheels
+    }
+    
+    // MARK: - methods
+    override func configureUI() {
+        backgroundColor = .white
+    }
+    
+    override func configureHierarchy() {
+        addSubview(datePicker)
+    }
+    
+    override func configureConstraints() {
+        datePicker.snp.makeConstraints {
+            $0.centerX.top.equalTo(safeAreaLayoutGuide)
+        }
+    }
 }

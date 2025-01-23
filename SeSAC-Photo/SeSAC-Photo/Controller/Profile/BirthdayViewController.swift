@@ -7,23 +7,34 @@
 
 import UIKit
 
-class BirthdayViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+final class BirthdayViewController: BaseViewController {
+    
+    // MARK: - properties
+    private let birthdayView = BirthdayView()
+    
+    // MARK: - life cycles
+    override func loadView() {
+        view = birthdayView
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - methods
+    override func configureStyle() {
+        configureNavigation()
     }
-    */
-
+    
+    override func configureAddTarget() {
+        birthdayView.okBarButtonItem.target = self
+        birthdayView.okBarButtonItem.action = #selector(tappedOkBarButtonItem)
+    }
+    
+    private func configureNavigation() {
+        navigationItem.title = "생일"
+        navigationItem.rightBarButtonItem = birthdayView.okBarButtonItem
+        navigationController?.navigationBar.topItem?.title = ""
+    }
+    
+    @objc
+    private func tappedOkBarButtonItem() {
+        print(#function)
+    }
 }
