@@ -6,15 +6,34 @@
 //
 
 import UIKit
+import SnapKit
+import Then
 
-class NicknameView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+final class NicknameView: BaseView {
+    
+    // MARK: - properties
+    let okBarButtonItem = UIBarButtonItem().then {
+        $0.style = .plain
+        $0.title = "확인"
     }
-    */
-
+    
+    let textField = UITextField().then {
+        $0.placeholder = "닉네임을 입력해주세요"
+    }
+    
+    // MARK: - methods
+    override func configureUI() {
+        backgroundColor = .white
+    }
+    
+    override func configureHierarchy() {
+        addSubview(textField)
+    }
+    
+    override func configureConstraints() {
+        textField.snp.makeConstraints {
+            $0.centerX.top.equalTo(safeAreaLayoutGuide)
+            $0.width.equalTo(safeAreaLayoutGuide).inset(24)
+        }
+    }
 }

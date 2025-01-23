@@ -7,23 +7,34 @@
 
 import UIKit
 
-class NicknameViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+final class NicknameViewController: BaseViewController {
+    
+    // MARK: - properties
+    private let nicknameView = NicknameView()
+    
+    // MARK: - life cycles
+    override func loadView() {
+        view = nicknameView
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - methods
+    override func configureStyle() {
+        configureNavigation()
     }
-    */
-
+    
+    override func configureAddTarget() {
+        nicknameView.okBarButtonItem.target = self
+        nicknameView.okBarButtonItem.action = #selector(tappedOkBarButtonItem)
+    }
+    
+    private func configureNavigation() {
+        navigationItem.title = "닉네임"
+        navigationItem.rightBarButtonItem = nicknameView.okBarButtonItem
+        navigationController?.navigationBar.topItem?.title = ""
+    }
+    
+    @objc
+    private func tappedOkBarButtonItem() {
+        print(#function)
+    }
 }
