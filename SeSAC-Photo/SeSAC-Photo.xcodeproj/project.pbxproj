@@ -45,6 +45,8 @@
 		37D7987E2D4254E600D12460 /* LevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D7987D2D4254E600D12460 /* LevelView.swift */; };
 		37D798802D4254F600D12460 /* NicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D7987F2D4254F600D12460 /* NicknameView.swift */; };
 		37D798822D42550400D12460 /* BirthdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D798812D42550400D12460 /* BirthdayView.swift */; };
+		37D798842D4296EC00D12460 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D798832D4296EC00D12460 /* OnboardingViewController.swift */; };
+		37D798862D4296FB00D12460 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D798852D4296FB00D12460 /* OnboardingView.swift */; };
 		37DAB7E22D3D9B6B00CC6701 /* PhotoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DAB7E12D3D9B6B00CC6701 /* PhotoDetailView.swift */; };
 		37DAB7E42D3D9B8A00CC6701 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DAB7E32D3D9B8A00CC6701 /* PhotoDetailViewController.swift */; };
 /* End PBXBuildFile section */
@@ -86,6 +88,8 @@
 		37D7987D2D4254E600D12460 /* LevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelView.swift; sourceTree = "<group>"; };
 		37D7987F2D4254F600D12460 /* NicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameView.swift; sourceTree = "<group>"; };
 		37D798812D42550400D12460 /* BirthdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayView.swift; sourceTree = "<group>"; };
+		37D798832D4296EC00D12460 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		37D798852D4296FB00D12460 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		37DAB7E12D3D9B6B00CC6701 /* PhotoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailView.swift; sourceTree = "<group>"; };
 		37DAB7E32D3D9B8A00CC6701 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -177,6 +181,7 @@
 		37023CF42D3B78C100602100 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				37D798852D4296FB00D12460 /* OnboardingView.swift */,
 				37A011DB2D424B750011C6A7 /* Profile */,
 				375241212D3D691D001018C6 /* PhotoTopicView.swift */,
 				375241232D3D693A001018C6 /* PhotoTopicCollectionViewCell.swift */,
@@ -190,6 +195,7 @@
 		37023CF52D3B78C200602100 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				37D798832D4296EC00D12460 /* OnboardingViewController.swift */,
 				37A011DD2D424B890011C6A7 /* Profile */,
 				37023CFA2D3B853E00602100 /* NavigationBarViewController.swift */,
 				37023CF82D3B79FB00602100 /* TabBarViewController.swift */,
@@ -353,6 +359,7 @@
 				37023CF92D3B79FB00602100 /* TabBarViewController.swift in Sources */,
 				37023CFB2D3B853E00602100 /* NavigationBarViewController.swift in Sources */,
 				37D7987A2D4254A800D12460 /* BirthdayViewController.swift in Sources */,
+				37D798862D4296FB00D12460 /* OnboardingView.swift in Sources */,
 				379FC4462D3E37F500DEE589 /* String+Extension.swift in Sources */,
 				37D798802D4254F600D12460 /* NicknameView.swift in Sources */,
 				37023D012D3B8F4D00602100 /* PhotoSearch.swift in Sources */,
@@ -369,6 +376,7 @@
 				37023CF72D3B793A00602100 /* PhotoSearchView.swift in Sources */,
 				37D798782D42544D00D12460 /* NicknameViewController.swift in Sources */,
 				377C66D12D3BF55D00252E61 /* PhotoSearchCollectionViewCell.swift in Sources */,
+				37D798842D4296EC00D12460 /* OnboardingViewController.swift in Sources */,
 				37D798822D42550400D12460 /* BirthdayView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
