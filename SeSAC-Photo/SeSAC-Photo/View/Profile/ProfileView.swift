@@ -20,6 +20,7 @@ final class ProfileView: BaseView {
     let nicknameButton = UIButton().then {
         $0.setTitleColor(.black, for: .normal)
         $0.setTitle("닉네임", for: .normal)
+        $0.tag = 0
     }
     
     private let nicknameLabel = UILabel().then {
@@ -31,6 +32,7 @@ final class ProfileView: BaseView {
     let birthdayButton = UIButton().then {
         $0.setTitleColor(.black, for: .normal)
         $0.setTitle("생일", for: .normal)
+        $0.tag = 1
     }
     
     private let birthdayLabel = UILabel().then {
@@ -42,6 +44,7 @@ final class ProfileView: BaseView {
     let levelButton = UIButton().then {
         $0.setTitleColor(.black, for: .normal)
         $0.setTitle("레벨", for: .normal)
+        $0.tag = 2
     }
     
     private let levelLabel = UILabel().then {

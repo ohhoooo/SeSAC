@@ -23,6 +23,9 @@ final class ProfileViewController: BaseViewController {
     }
     
     override func configureAddTarget() {
+        profileView.withdrawBarButtonItem.target = self
+        profileView.withdrawBarButtonItem.action = #selector(tappedWithdrawBarButtonItem)
+        
         profileView.nicknameButton.addTarget(self, action: #selector(tappedChangeButton), for: .touchUpInside)
         profileView.birthdayButton.addTarget(self, action: #selector(tappedChangeButton), for: .touchUpInside)
         profileView.levelButton.addTarget(self, action: #selector(tappedChangeButton), for: .touchUpInside)
@@ -32,14 +35,18 @@ final class ProfileViewController: BaseViewController {
         navigationItem.title = "프로필 화면"
         navigationItem.rightBarButtonItem = profileView.withdrawBarButtonItem
         navigationController?.navigationBar.tintColor = .black
-        
-        profileView.withdrawBarButtonItem.target = self
-        profileView.withdrawBarButtonItem.action = #selector(tappedWithdrawBarButtonItem)
     }
     
     @objc
     private func tappedChangeButton(_ sender: UIButton) {
-        print(#function)
+        switch sender.tag {
+        case 0:
+            navigationController?.pushViewController(NicknameViewController(), animated: true)
+        case 1:
+            navigationController?.pushViewController(BirthdayViewController(), animated: true)
+        default:
+            navigationController?.pushViewController(LevelViewController(), animated: true)
+        }
     }
     
     @objc
