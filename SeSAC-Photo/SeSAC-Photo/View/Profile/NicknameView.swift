@@ -36,4 +36,8 @@ final class NicknameView: BaseView {
             $0.width.equalTo(safeAreaLayoutGuide).inset(24)
         }
     }
+    
+    func configureData(nickname: String?) {
+        textField.text = nickname
+    }
 }

@@ -36,4 +36,8 @@ final class LevelView: BaseView {
             $0.width.equalTo(safeAreaLayoutGuide).inset(24)
         }
     }
+    
+    func configureData(level: Int?) {
+        segmentedControl.selectedSegmentIndex = level ?? 0
+    }
 }

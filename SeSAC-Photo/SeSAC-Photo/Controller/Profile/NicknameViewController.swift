@@ -12,6 +12,9 @@ final class NicknameViewController: BaseViewController {
     // MARK: - properties
     private let nicknameView = NicknameView()
     
+    var nickname: String?
+    var completion: ((String?) -> Void)?
+    
     // MARK: - life cycles
     override func loadView() {
         view = nicknameView
@@ -27,6 +30,10 @@ final class NicknameViewController: BaseViewController {
         nicknameView.okBarButtonItem.action = #selector(tappedOkBarButtonItem)
     }
     
+    override func bind() {
+        nicknameView.configureData(nickname: nickname)
+    }
+    
     private func configureNavigation() {
         navigationItem.title = "닉네임"
         navigationItem.rightBarButtonItem = nicknameView.okBarButtonItem
@@ -35,6 +42,12 @@ final class NicknameViewController: BaseViewController {
     
     @objc
     private func tappedOkBarButtonItem() {
-        print(#function)
+        completion?(nicknameView.textField.text)
+        
+        navigationController?.popViewController(animated: true)
+    }
+    
+    deinit {
+        completion?(nicknameView.textField.text)
     }
 }

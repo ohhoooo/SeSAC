@@ -12,6 +12,8 @@ final class BirthdayViewController: BaseViewController {
     // MARK: - properties
     private let birthdayView = BirthdayView()
     
+    var birthday: Date?
+    
     // MARK: - life cycles
     override func loadView() {
         view = birthdayView
@@ -27,6 +29,10 @@ final class BirthdayViewController: BaseViewController {
         birthdayView.okBarButtonItem.action = #selector(tappedOkBarButtonItem)
     }
     
+    override func bind() {
+        birthdayView.configureData(date: birthday)
+    }
+    
     private func configureNavigation() {
         navigationItem.title = "생일"
         navigationItem.rightBarButtonItem = birthdayView.okBarButtonItem
@@ -35,6 +41,12 @@ final class BirthdayViewController: BaseViewController {
     
     @objc
     private func tappedOkBarButtonItem() {
-        print(#function)
+        NotificationCenter.default.post(name: NSNotification.Name("date"), object: nil, userInfo: ["date": birthdayView.datePicker.date])
+        
+        navigationController?.popViewController(animated: true)
+    }
+    
+    deinit {
+        NotificationCenter.default.post(name: NSNotification.Name("date"), object: nil, userInfo: ["date": birthdayView.datePicker.date])
     }
 }

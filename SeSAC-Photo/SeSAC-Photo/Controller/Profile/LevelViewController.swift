@@ -12,6 +12,9 @@ final class LevelViewController: BaseViewController {
     // MARK: - properties
     private let levelView = LevelView()
     
+    var level: Int?
+    var delegate: LevelDelegate?
+    
     // MARK: - life cycles
     override func loadView() {
         view = levelView
@@ -27,6 +30,10 @@ final class LevelViewController: BaseViewController {
         levelView.okBarButtonItem.action = #selector(tappedOkBarButtonItem)
     }
     
+    override func bind() {
+        levelView.configureData(level: level)
+    }
+    
     private func configureNavigation() {
         navigationItem.title = "레벨"
         navigationItem.rightBarButtonItem = levelView.okBarButtonItem
@@ -35,6 +42,12 @@ final class LevelViewController: BaseViewController {
     
     @objc
     private func tappedOkBarButtonItem() {
-        print(#function)
+        delegate?.postLevel(level: levelView.segmentedControl.selectedSegmentIndex)
+        
+        navigationController?.popViewController(animated: true)
+    }
+    
+    deinit {
+        delegate?.postLevel(level: levelView.segmentedControl.selectedSegmentIndex)
     }
 }

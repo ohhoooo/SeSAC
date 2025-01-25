@@ -36,4 +36,8 @@ final class BirthdayView: BaseView {
             $0.centerX.top.equalTo(safeAreaLayoutGuide)
         }
     }
+    
+    func configureData(date: Date?) {
+        datePicker.date = date ?? Date()
+    }
 }
