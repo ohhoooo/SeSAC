@@ -17,4 +17,11 @@ extension String {
         
         return formatter.string(from: date)
     }
+    
+    func formatToDate() -> Date? {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "M-dd-yyyy, H:mm a"
+        
+        return formatter.date(from: self)
+    }
 }
