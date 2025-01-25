@@ -40,6 +40,15 @@ final class ProfileViewController: BaseViewController {
     }
     
     @objc
+    private func tappedWithdrawBarButtonItem() {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let window = windowScene.windows.first else { return }
+        window.rootViewController = OnboardingViewController()
+        window.makeKeyAndVisible()
+        
+        UserDefaults.standard.set(false, forKey: "isLoggedIn")
+    }
+    
+    @objc
     private func tappedChangeButton(_ sender: UIButton) {
         switch sender.tag {
         case 0:

@@ -24,6 +24,10 @@ final class OnboardingViewController: BaseViewController {
     
     @objc
     private func tappedButton() {
-        print(#function)
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let window = windowScene.windows.first else { return }
+        window.rootViewController = TabBarViewController()
+        window.makeKeyAndVisible()
+        
+        UserDefaults.standard.set(true, forKey: "isLoggedIn")
     }
 }
