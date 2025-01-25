@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol LevelDelegate {
+    func postLevel(level: Int)
+}
+
 final class ProfileViewController: BaseViewController {
     
     // MARK: - properties
@@ -31,6 +35,14 @@ final class ProfileViewController: BaseViewController {
         profileView.nicknameButton.addTarget(self, action: #selector(tappedChangeButton), for: .touchUpInside)
         profileView.birthdayButton.addTarget(self, action: #selector(tappedChangeButton), for: .touchUpInside)
         profileView.levelButton.addTarget(self, action: #selector(tappedChangeButton), for: .touchUpInside)
+        
+        profileView.saveButton.addTarget(self, action: #selector(tappedSaveButton), for: .touchUpInside)
+    }
+    
+    override func bind() {
+        profileView.configureNicknameLabel(nickname: UserDefaults.standard.string(forKey: "nickname"))
+        profileView.configureBirthdayLabel(birthday: UserDefaults.standard.object(forKey: "birthday") as? Date)
+        profileView.configureLevelLabel(level: UserDefaults.standard.string(forKey: "level"))
     }
     
     private func configureNavigation() {
@@ -52,16 +64,48 @@ final class ProfileViewController: BaseViewController {
     private func tappedChangeButton(_ sender: UIButton) {
         switch sender.tag {
         case 0:
-            navigationController?.pushViewController(NicknameViewController(), animated: true)
+            let nicknameVC = NicknameViewController()
+            nicknameVC.nickname = profileView.fetchNicknameLabel()
+            nicknameVC.completion = { [weak self] nickname in
+                self?.profileView.configureNicknameLabel(nickname: nickname)
+            }
+            
+            navigationController?.pushViewController(nicknameVC, animated: true)
         case 1:
-            navigationController?.pushViewController(BirthdayViewController(), animated: true)
+            let birthdayVC = BirthdayViewController()
+            birthdayVC.birthday = profileView.fetchBirthdayLabel()
+            NotificationCenter.default.addObserver(self, selector: #selector(receivedNotification), name: NSNotification.Name("date"), object: nil)
+            
+            navigationController?.pushViewController(birthdayVC, animated: true)
         default:
-            navigationController?.pushViewController(LevelViewController(), animated: true)
+            let levelVC = LevelViewController()
+            levelVC.level = profileView.fetchLevelLabel()
+            levelVC.delegate = self
+            
+            navigationController?.pushViewController(levelVC, animated: true)
         }
     }
     
     @objc
-    private func tappedWithdrawBarButtonItem() {
-        print(#function)
+    private func receivedNotification(value: NSNotification) {
+        if let date = value.userInfo!["date"] as? Date {
+            profileView.configureBirthdayLabel(birthday: date)
+        }
+    }
+    
+    @objc
+    private func tappedSaveButton() {
+        if profileView.isSavable() {
+            UserDefaults.standard.set(profileView.fetchNicknameLabel(), forKey: "nickname")
+            UserDefaults.standard.set(profileView.fetchBirthdayLabel(), forKey: "birthday")
+            UserDefaults.standard.set(profileView.fetchLevelLabel(), forKey: "level")
+        }
+    }
+}
+
+// MARK: - extensions
+extension ProfileViewController: LevelDelegate {
+    func postLevel(level: Int) {
+        profileView.configureLevelLabel(level: String(level))
     }
 }

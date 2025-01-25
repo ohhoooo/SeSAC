@@ -23,7 +23,7 @@ final class ProfileView: BaseView {
         $0.tag = 0
     }
     
-    private let nicknameLabel = UILabel().then {
+    let nicknameLabel = UILabel().then {
         $0.text = "NO NAME"
         $0.textColor = .lightGray
         $0.textAlignment = .right
@@ -35,7 +35,7 @@ final class ProfileView: BaseView {
         $0.tag = 1
     }
     
-    private let birthdayLabel = UILabel().then {
+    let birthdayLabel = UILabel().then {
         $0.text = "NO DATE"
         $0.textColor = .lightGray
         $0.textAlignment = .right
@@ -47,10 +47,17 @@ final class ProfileView: BaseView {
         $0.tag = 2
     }
     
-    private let levelLabel = UILabel().then {
+    let levelLabel = UILabel().then {
         $0.text = "NO LEVEL"
         $0.textColor = .lightGray
         $0.textAlignment = .right
+    }
+    
+    let saveButton = UIButton().then {
+        $0.setTitle("저장하기", for: .normal)
+        $0.setTitleColor(.white, for: .normal)
+        $0.backgroundColor = .darkGray
+        $0.layer.cornerRadius = 25
     }
     
     // MARK: - methods
@@ -65,6 +72,7 @@ final class ProfileView: BaseView {
         addSubview(birthdayLabel)
         addSubview(levelButton)
         addSubview(levelLabel)
+        addSubview(saveButton)
     }
     
     override func configureConstraints() {
@@ -108,5 +116,56 @@ final class ProfileView: BaseView {
             $0.leading.equalTo(levelButton.snp.trailing).offset(24)
             $0.height.equalTo(50)
         }
+        
+        saveButton.snp.makeConstraints {
+            $0.horizontalEdges.bottom.equalTo(safeAreaLayoutGuide).inset(24)
+            $0.height.equalTo(50)
+        }
+    }
+    
+    func configureNicknameLabel(nickname: String?) {
+        nicknameLabel.text = (nickname == nil || nickname == "") ? "NO NAME" : nickname
+    }
+    
+    func configureBirthdayLabel(birthday: Date?) {
+        birthdayLabel.text = (birthday == nil) ? "NO DATE" : birthday?.formatted(.dateTime)
+    }
+    
+    func configureLevelLabel(level: String?) {
+        switch level {
+        case "0":
+            levelLabel.text = "상"
+        case "1":
+            levelLabel.text = "중"
+        case "2":
+            levelLabel.text = "하"
+        default:
+            levelLabel.text = "NO LEVEL"
+        }
+    }
+    
+    func fetchNicknameLabel() -> String? {
+        return (nicknameLabel.text == "NO NAME") ? nil : nicknameLabel.text
+    }
+    
+    func fetchBirthdayLabel() -> Date? {
+        return birthdayLabel.text?.formatToDate()
+    }
+    
+    func fetchLevelLabel() -> Int? {
+        switch levelLabel.text {
+        case "상":
+            return 0
+        case "중":
+            return 1
+        case "하":
+            return 2
+        default:
+            return nil
+        }
+    }
+    
+    func isSavable() -> Bool {
+        return !(nicknameLabel.text == "NO NAME" || birthdayLabel.text == "NO DATE" || levelLabel.text == "NO LEVEL")
     }
 }
