@@ -150,7 +150,7 @@ final class WeatherViewController: UIViewController {
             // 사용자가 권한 요청 얼럿에서 앱의 위치 서비스 사용을 거부한 경우
         case .denied:
             showLocationSettingAlert()
-            setRegionAndAnnotation(center: CLLocationCoordinate2D(latitude: 37.65421, longitude: 127.0499))
+            setRegionAndAnnotation(lat: 37.65421, lon: 127.0499)
         case .authorizedWhenInUse:
             print("정상 로직 실행하면 됨. 날씨든.")
             //
@@ -175,7 +175,14 @@ final class WeatherViewController: UIViewController {
         present(alert, animated: true)
     }
     
-    func setRegionAndAnnotation(center: CLLocationCoordinate2D) {
+    func setRegionAndAnnotation(lat: Double, lon: Double) {
+        mapView.removeAnnotations(mapView.annotations)
+        
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+        mapView.addAnnotation(annotation)
+        
+        let center = CLLocationCoordinate2D(latitude: lat, longitude: lon)
         let region = MKCoordinateRegion(center: center, latitudinalMeters: 500, longitudinalMeters: 500)
         mapView.setRegion(region, animated: true)
         
@@ -228,7 +235,7 @@ extension WeatherViewController: CLLocationManagerDelegate {
         if let coordinate = locations.last?.coordinate {
             //print(coordinate)
             print(coordinate.latitude)
-            setRegionAndAnnotation(center: coordinate)
+            setRegionAndAnnotation(lat: coordinate.latitude, lon: coordinate.longitude)
         }
         
         // start를 했다면, 더이상 위치를 안 받아와도 되는 시점에 stop을 외쳐야 합니다.
