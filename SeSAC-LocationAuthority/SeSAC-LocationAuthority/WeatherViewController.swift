@@ -12,7 +12,7 @@ import MapKit
 final class WeatherViewController: UIViewController {
     
     lazy var locationManager = CLLocationManager()
-     
+    
     private let mapView: MKMapView = {
         let view = MKMapView()
         return view
@@ -138,7 +138,7 @@ final class WeatherViewController: UIViewController {
         // 선행: info.plist에서 Privacy 항목 추가 -> 위치 서비스에 대한 승인 요청 메서드를 사용할 수 있음
         // 사용자에게 보여지는 권한 얼럿(권한 프롬프트)에는 info.plist에 있는 키의 텍스트가 포함되어 있기 때문
         switch status {
-        // 앱이 위치 서비스를 사용할 수 있는지에 대한 여부를 사용자가 선택하지 않은 경우
+            // 앱이 위치 서비스를 사용할 수 있는지에 대한 여부를 사용자가 선택하지 않은 경우
         case .notDetermined:
             // 배터리로 동작할 때 권장되는 가장 높은 수준의 정확도
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -147,7 +147,7 @@ final class WeatherViewController: UIViewController {
             // 사용자의 권한 승인 상태가 확인이 되지 않은 경우에만 (CLAuthorizationStatus 가 notDetermined 일 경우) 호출이 가능합니다.
             // 그리고 항상 항상 앱이 포그라운드 상태에 있어야 권한 얼럿이 표시됩니다.
             locationManager.requestWhenInUseAuthorization()
-        // 사용자가 권한 요청 얼럿에서 앱의 위치 서비스 사용을 거부한 경우
+            // 사용자가 권한 요청 얼럿에서 앱의 위치 서비스 사용을 거부한 경우
         case .denied:
             showLocationSettingAlert()
             setRegionAndAnnotation(center: CLLocationCoordinate2D(latitude: 37.65421, longitude: 127.0499))
@@ -178,6 +178,29 @@ final class WeatherViewController: UIViewController {
     func setRegionAndAnnotation(center: CLLocationCoordinate2D) {
         let region = MKCoordinateRegion(center: center, latitudinalMeters: 500, longitudinalMeters: 500)
         mapView.setRegion(region, animated: true)
+        
+        setWeatherData(lat: center.latitude, lon: center.longitude)
+    }
+    
+    private func setWeatherData(lat: Double, lon: Double) {
+        NetworkManager.shared.fetchWeather(lat: lat, lon: lon) { result in
+            switch result {
+            case .success(let weatherResponse):
+                let temp = weatherResponse.main?.temp
+                let tempMin = weatherResponse.main?.tempMin
+                let tempMax = weatherResponse.main?.tempMax
+                let speed = weatherResponse.wind?.speed
+                let humidity = weatherResponse.main?.humidity
+                
+                let formatter = DateFormatter()
+                formatter.locale = Locale(identifier: "ko_KR")
+                formatter.dateFormat = "yyyy년 M월 d일 a hh시 mm분"
+                
+                self.weatherInfoLabel.text = "\(formatter.string(from: Date()))\n현재온도: \(Int(temp ?? 0))°C\n최저온도: \(Int(tempMin ?? 0))°C\n최고온도: \(Int(tempMax ?? 0))°C\n풍속: \(Int(speed ?? 0))m/s\n습도: \(humidity ?? 0)%"
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
     // MARK: - Actions

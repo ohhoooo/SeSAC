@@ -15,6 +15,8 @@
 		379297F42D50B96C00D638DB /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379297F32D50B96C00D638DB /* WeatherViewController.swift */; };
 		379297F72D50C0FF00D638DB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 379297F62D50C0FF00D638DB /* SnapKit */; };
 		379297FA2D50C11400D638DB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 379297F92D50C11400D638DB /* Alamofire */; };
+		37F6F9D82D50EB21003D49D1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F6F9D72D50EB21003D49D1 /* NetworkManager.swift */; };
+		37F6F9DC2D50EE1B003D49D1 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F6F9DB2D50EE1B003D49D1 /* WeatherResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		379297E52D50B8AC00D638DB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		379297F12D50B92900D638DB /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		379297F32D50B96C00D638DB /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		37F6F9D72D50EB21003D49D1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		37F6F9DB2D50EE1B003D49D1 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 			children = (
 				379297DE2D50B8AC00D638DB /* AppDelegate.swift */,
 				379297E52D50B8AC00D638DB /* SceneDelegate.swift */,
+				37F6F9DB2D50EE1B003D49D1 /* WeatherResponse.swift */,
+				37F6F9D72D50EB21003D49D1 /* NetworkManager.swift */,
 				379297F32D50B96C00D638DB /* WeatherViewController.swift */,
 				379297DF2D50B8AC00D638DB /* Assets.xcassets */,
 				379297E02D50B8AC00D638DB /* Info.plist */,
@@ -151,6 +157,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37F6F9D82D50EB21003D49D1 /* NetworkManager.swift in Sources */,
+				37F6F9DC2D50EE1B003D49D1 /* WeatherResponse.swift in Sources */,
 				379297E82D50B8AC00D638DB /* AppDelegate.swift in Sources */,
 				379297F42D50B96C00D638DB /* WeatherViewController.swift in Sources */,
 				379297E92D50B8AC00D638DB /* SceneDelegate.swift in Sources */,
