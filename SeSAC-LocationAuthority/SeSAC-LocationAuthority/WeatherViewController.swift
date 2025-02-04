@@ -18,6 +18,12 @@ final class WeatherViewController: UIViewController {
         return view
     }()
     
+    private let photoImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
     private let weatherInfoLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
@@ -30,6 +36,19 @@ final class WeatherViewController: UIViewController {
     private let currentLocationButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(systemName: "location.fill"), for: .normal)
+        button.backgroundColor = .white
+        button.tintColor = .systemBlue
+        button.layer.cornerRadius = 25
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOffset = CGSize(width: 0, height: 2)
+        button.layer.shadowOpacity = 0.2
+        button.layer.shadowRadius = 4
+        return button
+    }()
+    
+    private let photoButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(systemName: "photo.fill"), for: .normal)
         button.backgroundColor = .white
         button.tintColor = .systemBlue
         button.layer.cornerRadius = 25
@@ -69,7 +88,7 @@ final class WeatherViewController: UIViewController {
     private func setupUI() {
         view.backgroundColor = .white
         
-        [mapView, weatherInfoLabel, currentLocationButton, refreshButton].forEach {
+        [mapView, photoImageView, weatherInfoLabel, currentLocationButton, refreshButton, photoButton].forEach {
             view.addSubview($0)
         }
     }
@@ -78,6 +97,11 @@ final class WeatherViewController: UIViewController {
         mapView.snp.makeConstraints { make in
             make.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             make.height.equalTo(view.snp.height).multipliedBy(0.5)
+        }
+        
+        photoImageView.snp.makeConstraints { make in
+            make.top.equalTo(mapView.snp.bottom)
+            make.horizontalEdges.bottom.equalToSuperview()
         }
         
         weatherInfoLabel.snp.makeConstraints { make in
@@ -91,6 +115,12 @@ final class WeatherViewController: UIViewController {
             make.width.height.equalTo(50)
         }
         
+        photoButton.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-20)
+            make.width.height.equalTo(50)
+        }
+        
         refreshButton.snp.makeConstraints { make in
             make.trailing.equalToSuperview().offset(-20)
             make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-20)
@@ -100,6 +130,7 @@ final class WeatherViewController: UIViewController {
     
     private func setupActions() {
         currentLocationButton.addTarget(self, action: #selector(currentLocationButtonTapped), for: .touchUpInside)
+        photoButton.addTarget(self, action: #selector(tappedPhotoButton), for: .touchUpInside)
         refreshButton.addTarget(self, action: #selector(refreshButtonTapped), for: .touchUpInside)
     }
     
@@ -214,6 +245,15 @@ final class WeatherViewController: UIViewController {
     @objc private func currentLocationButtonTapped() {
         // 현재 위치 가져오기 구현
         checkDeviceLocation()
+    }
+    
+    @objc private func tappedPhotoButton() {
+        let photoViewController = PhotoViewController()
+        photoViewController.completion = { [weak self] image in
+            self?.photoImageView.image = image
+        }
+        
+        navigationController?.pushViewController(photoViewController, animated: true)
     }
     
     @objc private func refreshButtonTapped() {

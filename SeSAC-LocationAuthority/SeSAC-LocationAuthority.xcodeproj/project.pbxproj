@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37584A862D5245D60092925A /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37584A852D5245D60092925A /* PhotoViewController.swift */; };
+		37584A882D524A010092925A /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37584A872D524A010092925A /* PhotoCollectionViewCell.swift */; };
 		379297E82D50B8AC00D638DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379297DE2D50B8AC00D638DB /* AppDelegate.swift */; };
 		379297E92D50B8AC00D638DB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379297E52D50B8AC00D638DB /* SceneDelegate.swift */; };
 		379297EB2D50B8AC00D638DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 379297DF2D50B8AC00D638DB /* Assets.xcassets */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		37584A852D5245D60092925A /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		37584A872D524A010092925A /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		379297C62D50B78000D638DB /* SeSAC-LocationAuthority.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SeSAC-LocationAuthority.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		379297DE2D50B8AC00D638DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		379297DF2D50B8AC00D638DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,6 +74,8 @@
 				37F6F9DB2D50EE1B003D49D1 /* WeatherResponse.swift */,
 				37F6F9D72D50EB21003D49D1 /* NetworkManager.swift */,
 				379297F32D50B96C00D638DB /* WeatherViewController.swift */,
+				37584A872D524A010092925A /* PhotoCollectionViewCell.swift */,
+				37584A852D5245D60092925A /* PhotoViewController.swift */,
 				379297DF2D50B8AC00D638DB /* Assets.xcassets */,
 				379297E02D50B8AC00D638DB /* Info.plist */,
 				379297E22D50B8AC00D638DB /* LaunchScreen.storyboard */,
@@ -161,7 +167,9 @@
 				37F6F9DC2D50EE1B003D49D1 /* WeatherResponse.swift in Sources */,
 				379297E82D50B8AC00D638DB /* AppDelegate.swift in Sources */,
 				379297F42D50B96C00D638DB /* WeatherViewController.swift in Sources */,
+				37584A882D524A010092925A /* PhotoCollectionViewCell.swift in Sources */,
 				379297E92D50B8AC00D638DB /* SceneDelegate.swift in Sources */,
+				37584A862D5245D60092925A /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
