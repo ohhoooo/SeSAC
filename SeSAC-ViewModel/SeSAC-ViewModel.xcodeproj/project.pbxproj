@@ -18,6 +18,9 @@
 		3774D9822D5351E5007F239F /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3774D9812D5351E5007F239F /* Observable.swift */; };
 		3774D9842D5358C8007F239F /* WordCounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3774D9832D5358C8007F239F /* WordCounterViewController.swift */; };
 		3774D9862D5358DA007F239F /* WordCounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3774D9852D5358DA007F239F /* WordCounterViewModel.swift */; };
+		3774D9882D53611D007F239F /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3774D9872D53611D007F239F /* UserViewController.swift */; };
+		3774D98A2D536131007F239F /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3774D9892D536131007F239F /* UserViewModel.swift */; };
+		3774D98C2D53623C007F239F /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3774D98B2D53623C007F239F /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,9 @@
 		3774D9812D5351E5007F239F /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		3774D9832D5358C8007F239F /* WordCounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCounterViewController.swift; sourceTree = "<group>"; };
 		3774D9852D5358DA007F239F /* WordCounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCounterViewModel.swift; sourceTree = "<group>"; };
+		3774D9872D53611D007F239F /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		3774D9892D536131007F239F /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		3774D98B2D53623C007F239F /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +90,7 @@
 			children = (
 				3774D97B2D535092007F239F /* CurrencyViewController.swift */,
 				3774D9832D5358C8007F239F /* WordCounterViewController.swift */,
+				3774D9872D53611D007F239F /* UserViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -93,6 +100,7 @@
 			children = (
 				3774D97D2D5350FD007F239F /* CurrencyViewModel.swift */,
 				3774D9852D5358DA007F239F /* WordCounterViewModel.swift */,
+				3774D9892D536131007F239F /* UserViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -100,6 +108,7 @@
 		3774D9802D5351D6007F239F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3774D98B2D53623C007F239F /* Person.swift */,
 				3774D9812D5351E5007F239F /* Observable.swift */,
 			);
 			path = Model;
@@ -183,12 +192,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3774D98C2D53623C007F239F /* Person.swift in Sources */,
 				3774D96F2D534C8E007F239F /* AppDelegate.swift in Sources */,
+				3774D9882D53611D007F239F /* UserViewController.swift in Sources */,
 				3774D9822D5351E5007F239F /* Observable.swift in Sources */,
 				3774D9862D5358DA007F239F /* WordCounterViewModel.swift in Sources */,
 				3774D97E2D5350FD007F239F /* CurrencyViewModel.swift in Sources */,
 				3774D9842D5358C8007F239F /* WordCounterViewController.swift in Sources */,
 				3774D97C2D535092007F239F /* CurrencyViewController.swift in Sources */,
+				3774D98A2D536131007F239F /* UserViewModel.swift in Sources */,
 				3774D9702D534C8E007F239F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
