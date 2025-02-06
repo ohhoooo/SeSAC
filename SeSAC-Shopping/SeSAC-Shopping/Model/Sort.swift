@@ -10,6 +10,6 @@ import Foundation
 enum Sort: String {
     case accuracy = "sim"
     case date = "date"
-    case sortByHighPrice = "asc"
-    case sortByLowPrice = "dsc"
+    case sortByHighPrice = "dsc"
+    case sortByLowPrice = "asc"
 }

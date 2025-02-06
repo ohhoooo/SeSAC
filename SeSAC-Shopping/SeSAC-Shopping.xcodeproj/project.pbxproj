@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3774DA0E2D549C60007F239F /* ShoppingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3774DA0B2D549C60007F239F /* ShoppingView.swift */; };
+		3774DA0F2D549C60007F239F /* ShoppingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3774DA0C2D549C60007F239F /* ShoppingViewController.swift */; };
+		3774DA162D549CD0007F239F /* ShoppingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3774DA152D549CD0007F239F /* ShoppingViewModel.swift */; };
+		3774DA182D549CF3007F239F /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3774DA172D549CF3007F239F /* Observable.swift */; };
+		3774DA1A2D549DB1007F239F /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3774DA192D549DB1007F239F /* ResultViewModel.swift */; };
 		37A3F0BB2D391D930085C9F8 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A3F0B92D391D930085C9F8 /* BaseView.swift */; };
 		37A3F0BD2D391FFE0085C9F8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A3F0BC2D391FFE0085C9F8 /* BaseViewController.swift */; };
 		37A3F0BF2D39220F0085C9F8 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A3F0BE2D39220F0085C9F8 /* BaseCollectionViewCell.swift */; };
@@ -22,8 +27,6 @@
 		37ACC0762D37E685005933CE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 37ACC0752D37E685005933CE /* .gitignore */; };
 		37ACC07F2D37E6E3005933CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37ACC07B2D37E6E3005933CE /* Assets.xcassets */; };
 		37ACC0802D37E6E3005933CE /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 37ACC07C2D37E6E3005933CE /* Config.xcconfig */; };
-		37ACC0852D37E6F1005933CE /* ShoppingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ACC0832D37E6F1005933CE /* ShoppingViewController.swift */; };
-		37ACC0892D37EB91005933CE /* ShoppingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ACC0882D37EB91005933CE /* ShoppingView.swift */; };
 		37ACC08B2D37F6BD005933CE /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ACC08A2D37F6BD005933CE /* ResultViewController.swift */; };
 		37ACC08D2D37F6C9005933CE /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ACC08C2D37F6C9005933CE /* ResultView.swift */; };
 		37ACC08F2D37FE0F005933CE /* ResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ACC08E2D37FE0F005933CE /* ResultCollectionViewCell.swift */; };
@@ -32,6 +35,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3774DA0B2D549C60007F239F /* ShoppingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingView.swift; sourceTree = "<group>"; };
+		3774DA0C2D549C60007F239F /* ShoppingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewController.swift; sourceTree = "<group>"; };
+		3774DA152D549CD0007F239F /* ShoppingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewModel.swift; sourceTree = "<group>"; };
+		3774DA172D549CF3007F239F /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		3774DA192D549DB1007F239F /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
 		37A3F0B92D391D930085C9F8 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		37A3F0BC2D391FFE0085C9F8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		37A3F0BE2D39220F0085C9F8 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -45,8 +53,6 @@
 		37ACC07B2D37E6E3005933CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37ACC07C2D37E6E3005933CE /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		37ACC07D2D37E6E3005933CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		37ACC0832D37E6F1005933CE /* ShoppingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewController.swift; sourceTree = "<group>"; };
-		37ACC0882D37EB91005933CE /* ShoppingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingView.swift; sourceTree = "<group>"; };
 		37ACC08A2D37F6BD005933CE /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		37ACC08C2D37F6C9005933CE /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		37ACC08E2D37FE0F005933CE /* ResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -69,6 +75,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3774DA0D2D549C60007F239F /* Shopping */ = {
+			isa = PBXGroup;
+			children = (
+				3774DA0B2D549C60007F239F /* ShoppingView.swift */,
+				3774DA0C2D549C60007F239F /* ShoppingViewController.swift */,
+			);
+			path = Shopping;
+			sourceTree = "<group>";
+		};
+		3774DA112D549C6E007F239F /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				37ACC08C2D37F6C9005933CE /* ResultView.swift */,
+				37ACC08E2D37FE0F005933CE /* ResultCollectionViewCell.swift */,
+				37ACC08A2D37F6BD005933CE /* ResultViewController.swift */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
+		3774DA142D549CBE007F239F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3774DA152D549CD0007F239F /* ShoppingViewModel.swift */,
+				3774DA192D549DB1007F239F /* ResultViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		37A3F0B52D391D6A0085C9F8 /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,8 +154,8 @@
 				37ACC05F2D37E630005933CE /* SceneDelegate.swift */,
 				37A3F0B52D391D6A0085C9F8 /* Util */,
 				37ACC0912D380D07005933CE /* Model */,
+				3774DA142D549CBE007F239F /* ViewModel */,
 				37ACC0872D37EB84005933CE /* View */,
-				37ACC0842D37E6F1005933CE /* Controller */,
 				37ACC07E2D37E6E3005933CE /* Resource */,
 			);
 			path = "SeSAC-Shopping";
@@ -138,21 +172,11 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		37ACC0842D37E6F1005933CE /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				37ACC0832D37E6F1005933CE /* ShoppingViewController.swift */,
-				37ACC08A2D37F6BD005933CE /* ResultViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		37ACC0872D37EB84005933CE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				37ACC0882D37EB91005933CE /* ShoppingView.swift */,
-				37ACC08C2D37F6C9005933CE /* ResultView.swift */,
-				37ACC08E2D37FE0F005933CE /* ResultCollectionViewCell.swift */,
+				3774DA0D2D549C60007F239F /* Shopping */,
+				3774DA112D549C6E007F239F /* Result */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -163,6 +187,7 @@
 				37A3F0CA2D395BCD0085C9F8 /* Sort.swift */,
 				37ACC0922D380DEA005933CE /* Shopping.swift */,
 				37ACC0942D381159005933CE /* NetworkManager.swift */,
+				3774DA172D549CF3007F239F /* Observable.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -252,14 +277,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3774DA182D549CF3007F239F /* Observable.swift in Sources */,
+				3774DA1A2D549DB1007F239F /* ResultViewModel.swift in Sources */,
 				37ACC0952D381159005933CE /* NetworkManager.swift in Sources */,
 				37A3F0C52D3926B40085C9F8 /* UIViewController+Extension.swift in Sources */,
 				37ACC08B2D37F6BD005933CE /* ResultViewController.swift in Sources */,
+				3774DA0E2D549C60007F239F /* ShoppingView.swift in Sources */,
+				3774DA0F2D549C60007F239F /* ShoppingViewController.swift in Sources */,
 				37A3F0BD2D391FFE0085C9F8 /* BaseViewController.swift in Sources */,
 				37ACC0932D380DEA005933CE /* Shopping.swift in Sources */,
-				37ACC0892D37EB91005933CE /* ShoppingView.swift in Sources */,
+				3774DA162D549CD0007F239F /* ShoppingViewModel.swift in Sources */,
 				37A3F0BF2D39220F0085C9F8 /* BaseCollectionViewCell.swift in Sources */,
-				37ACC0852D37E6F1005933CE /* ShoppingViewController.swift in Sources */,
 				37ACC0662D37E630005933CE /* AppDelegate.swift in Sources */,
 				37ACC08F2D37FE0F005933CE /* ResultCollectionViewCell.swift in Sources */,
 				37A3F0BB2D391D930085C9F8 /* BaseView.swift in Sources */,

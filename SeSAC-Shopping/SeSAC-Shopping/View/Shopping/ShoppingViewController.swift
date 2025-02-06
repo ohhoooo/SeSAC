@@ -7,20 +7,15 @@
 
 import UIKit
 
-final class ShoppingViewController: UIViewController {
+final class ShoppingViewController: BaseViewController {
     
     // MARK: - properties
     private let shoppingView = ShoppingView()
+    private let viewModel = ShoppingViewModel()
     
     // MARK: - life cycles
     override func loadView() {
         view = shoppingView
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        configureUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,22 +23,26 @@ final class ShoppingViewController: UIViewController {
         
         configureNavigation()
     }
-}
-
-// MARK: - extensions
-extension ShoppingViewController {
-    private func configureUI() {
-        configureView()
-        configureSearchBar()
-        configureNavigation()
+    
+    // MARK: - methods
+    override func configureDelegate() {
+        shoppingView.searchBar.delegate = self
     }
     
-    private func configureView() {
+    override func configureAddTarget() {
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tappedTapGesture)))
     }
     
-    private func configureSearchBar() {
-        shoppingView.searchBar.delegate = self
+    override func bind() {
+        viewModel.outputPushViewController.lazyBind { [weak self] query in
+            let resultVC = ResultViewController()
+            resultVC.viewModel.inputQuery.value = query
+            self?.navigationController?.pushViewController(resultVC, animated: true)
+        }
+        
+        viewModel.outputShowAlert.lazyBind { [weak self] _ in
+            self?.showAlert(title: "알림", message: "두 글자 이상 입력하세요.", button: "확인")
+        }
     }
     
     private func configureNavigation() {
@@ -56,16 +55,9 @@ extension ShoppingViewController {
     }
 }
 
+// MARK: - extensions
 extension ShoppingViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if let query = searchBar.text, query.count > 1 {
-            let resultVC = ResultViewController()
-            resultVC.query = query
-            navigationController?.pushViewController(resultVC, animated: true)
-        } else {
-            showAlert(title: "알림", message: "두 글자 이상 입력하세요.", button: "확인") {
-                print(#function)
-            }
-        }
+        viewModel.inputSearchButtonClicked.value = searchBar.text
     }
 }

@@ -10,7 +10,7 @@ import Kingfisher
 import SnapKit
 import Then
 
-final class ResultCollectionViewCell: UICollectionViewCell {
+final class ResultCollectionViewCell: BaseCollectionViewCell {
     
     // MARK: - properties
     static let identifier = "ResultCollectionViewCell"
@@ -47,33 +47,19 @@ final class ResultCollectionViewCell: UICollectionViewCell {
         priceLabel.text = nil
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        configureUI()
-        configureHierarchy()
-        configureConstraints()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
-// MARK: - extensions
-extension ResultCollectionViewCell {
-    private func configureUI() {
+    // MARK: - methods
+    override func configureUI() {
         backgroundColor = .white
     }
     
-    private func configureHierarchy() {
+    override func configureHierarchy() {
         contentView.addSubview(imageView)
         contentView.addSubview(mallLabel)
         contentView.addSubview(titleLabel)
         contentView.addSubview(priceLabel)
     }
     
-    private func configureConstraints() {
+    override func configureConstraints() {
         imageView.snp.makeConstraints {
             $0.top.horizontalEdges.equalToSuperview()
             $0.height.equalTo(imageView.snp.width)

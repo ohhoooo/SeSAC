@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class ResultView: UIView {
+final class ResultView: BaseView {
     
     // MARK: - properties
     private let totalLabel = UILabel().then {
@@ -75,27 +75,12 @@ final class ResultView: UIView {
     
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
     
-    // MARK: - life cycles
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        configureUI()
-        configureHierarchy()
-        configureConstraints()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
-// MARK: - extensions
-extension ResultView {
-    private func configureUI() {
+    // MARK: - methods
+    override func configureUI() {
         backgroundColor = .white
     }
     
-    private func configureHierarchy() {
+    override func configureHierarchy() {
         addSubview(totalLabel)
         addSubview(accuracyButton)
         addSubview(dateButton)
@@ -104,7 +89,7 @@ extension ResultView {
         addSubview(collectionView)
     }
     
-    private func configureConstraints() {
+    override func configureConstraints() {
         totalLabel.snp.makeConstraints {
             $0.top.equalTo(safeAreaLayoutGuide).offset(4)
             $0.horizontalEdges.equalToSuperview().inset(12)
