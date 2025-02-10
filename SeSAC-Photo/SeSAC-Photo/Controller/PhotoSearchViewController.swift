@@ -95,7 +95,7 @@ extension PhotoSearchViewController: UISearchBarDelegate {
 extension PhotoSearchViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let photoDetailVC = PhotoDetailViewController()
-        photoDetailVC.photo = photos[indexPath.row]
+        photoDetailVC.viewModel.input.triggeredViewDidLoad.value = photos[indexPath.item]
         
         navigationItem.title = ""
         navigationController?.navigationBar.prefersLargeTitles = false

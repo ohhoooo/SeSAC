@@ -11,7 +11,7 @@ final class PhotoDetailViewController: BaseViewController {
     
     // MARK: - properties
     private let photoDetailView = PhotoDetailView()
-    var photo: Photo?
+    let viewModel = PhotoDetailViewModel()
     
     // MARK: - life cycles
     override func loadView() {
@@ -24,16 +24,12 @@ final class PhotoDetailViewController: BaseViewController {
     }
     
     override func bind() {
-        guard let photo else { return }
-        guard let photoId = photo.id else { return photoDetailView.bind(photo: photo) }
+        viewModel.output.photo.bind { [weak self] photo in
+            self?.photoDetailView.bindPhoto(photo: photo)
+        }
         
-        NetworkManager.shared.request(PhotoStatistic.self, router: .fetchPhotoStatistic(photoId: photoId)) { [weak self] result in
-            switch result {
-            case .success(let photoStatistic):
-                self?.photoDetailView.bind(photo: photo, photoStatistic: photoStatistic)
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
+        viewModel.output.photoStatistic.lazyBind { [weak self] photoStatistic in
+            self?.photoDetailView.bindPhotoStatistic(photoStatistic: photoStatistic)
         }
     }
     

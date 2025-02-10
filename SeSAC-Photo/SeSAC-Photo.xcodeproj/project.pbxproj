@@ -49,6 +49,9 @@
 		37D798862D4296FB00D12460 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D798852D4296FB00D12460 /* OnboardingView.swift */; };
 		37DAB7E22D3D9B6B00CC6701 /* PhotoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DAB7E12D3D9B6B00CC6701 /* PhotoDetailView.swift */; };
 		37DAB7E42D3D9B8A00CC6701 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DAB7E32D3D9B8A00CC6701 /* PhotoDetailViewController.swift */; };
+		37F460ED2D59E77800D27613 /* PhotoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F460EC2D59E77800D27613 /* PhotoDetailViewModel.swift */; };
+		37F460EF2D59E89A00D27613 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F460EE2D59E89A00D27613 /* BaseViewModel.swift */; };
+		37F460F12D59EC4C00D27613 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F460F02D59EC4C00D27613 /* Observable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +95,9 @@
 		37D798852D4296FB00D12460 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		37DAB7E12D3D9B6B00CC6701 /* PhotoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailView.swift; sourceTree = "<group>"; };
 		37DAB7E32D3D9B8A00CC6701 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		37F460EC2D59E77800D27613 /* PhotoDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewModel.swift; sourceTree = "<group>"; };
+		37F460EE2D59E89A00D27613 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		37F460F02D59EC4C00D27613 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +138,7 @@
 				37023CE72D3B73E800602100 /* Application */,
 				37023CE92D3B771800602100 /* Util */,
 				37023CFD2D3B883900602100 /* Model */,
+				37F460EB2D59E74200D27613 /* ViewModel */,
 				37023CF42D3B78C100602100 /* View */,
 				37023CF52D3B78C200602100 /* Controller */,
 				37023CD72D3B727800602100 /* Resource */,
@@ -174,6 +181,7 @@
 				37023CEC2D3B774700602100 /* BaseView.swift */,
 				37023CF02D3B777300602100 /* BaseCollectionViewCell.swift */,
 				37023CEE2D3B775B00602100 /* BaseViewController.swift */,
+				37F460EE2D59E89A00D27613 /* BaseViewModel.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -212,6 +220,7 @@
 				37023D052D3BC6FB00602100 /* Photo.swift */,
 				37023D002D3B8F4D00602100 /* PhotoSearch.swift */,
 				379FC4472D3E5C7800DEE589 /* PhotoStatistic.swift */,
+				37F460F02D59EC4C00D27613 /* Observable.swift */,
 				37C41ED92D3F8D6800211FD6 /* Network */,
 			);
 			path = Model;
@@ -257,6 +266,14 @@
 				37023CFE2D3B886A00602100 /* NetworkManager.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		37F460EB2D59E74200D27613 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				37F460EC2D59E77800D27613 /* PhotoDetailViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,6 +365,8 @@
 				37023D062D3BC6FB00602100 /* Photo.swift in Sources */,
 				37C41EDB2D3F8D7500211FD6 /* NetworkRouter.swift in Sources */,
 				37A7E6F42D40F7E200680B08 /* NetworkError.swift in Sources */,
+				37F460ED2D59E77800D27613 /* PhotoDetailViewModel.swift in Sources */,
+				37F460EF2D59E89A00D27613 /* BaseViewModel.swift in Sources */,
 				37DAB7E42D3D9B8A00CC6701 /* PhotoDetailViewController.swift in Sources */,
 				375241242D3D693A001018C6 /* PhotoTopicCollectionViewCell.swift in Sources */,
 				375241202D3D4EBF001018C6 /* UIImage+Extension.swift in Sources */,
@@ -372,6 +391,7 @@
 				37023CD42D3B721A00602100 /* SceneDelegate.swift in Sources */,
 				37023CD52D3B721A00602100 /* PhotoSearchViewController.swift in Sources */,
 				37023CED2D3B774700602100 /* BaseView.swift in Sources */,
+				37F460F12D59EC4C00D27613 /* Observable.swift in Sources */,
 				37023CF12D3B777300602100 /* BaseCollectionViewCell.swift in Sources */,
 				37023CF72D3B793A00602100 /* PhotoSearchView.swift in Sources */,
 				37D798782D42544D00D12460 /* NicknameViewController.swift in Sources */,

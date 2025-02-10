@@ -85,11 +85,11 @@ extension PhotoTopicViewController: UICollectionViewDelegate {
         let photoDetailVC = PhotoDetailViewController()
         
         if collectionView == photoTopicView.goldenHourCollectionView {
-            photoDetailVC.photo = photos[0][indexPath.row]
+            photoDetailVC.viewModel.input.triggeredViewDidLoad.value = photos[0][indexPath.row]
         } else if collectionView == photoTopicView.businessWorkCollectionView {
-            photoDetailVC.photo = photos[1][indexPath.row]
+            photoDetailVC.viewModel.input.triggeredViewDidLoad.value = photos[1][indexPath.row]
         } else {
-            photoDetailVC.photo = photos[2][indexPath.row]
+            photoDetailVC.viewModel.input.triggeredViewDidLoad.value = photos[2][indexPath.row]
         }
         
         navigationItem.title = ""

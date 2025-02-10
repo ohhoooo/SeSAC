@@ -93,6 +93,10 @@ final class PhotoDetailView: BaseView {
     }
     
     // MARK: - methods
+    override func configureUI() {
+        backgroundColor = .white
+    }
+    
     override func configureHierarchy() {
         addSubview(profileImageView)
         addSubview(nicknameLabel)
@@ -143,23 +147,26 @@ final class PhotoDetailView: BaseView {
         }
     }
     
-    func bind(photo: Photo, photoStatistic: PhotoStatistic? = nil) {
-        nicknameLabel.text = photo.user?.name
-        dateLabel.text = photo.createdAt?.format()
-        sizeContentLabel.text = "\(photo.width ?? 0) x \(photo.height ?? 0)"
-        viewContentLabel.text = String((photoStatistic?.views?.total ?? 0).formatted(.number))
-        downloadContentLabel.text = String((photoStatistic?.downloads?.total ?? 0).formatted(.number))
+    func bindPhoto(photo: Photo?) {
+        nicknameLabel.text = photo?.user?.name
+        dateLabel.text = photo?.createdAt?.format()
+        sizeContentLabel.text = "\(photo?.width ?? 0) x \(photo?.height ?? 0)"
         
-        if let profileUrl = photo.user?.profileImage?.medium {
+        if let profileUrl = photo?.user?.profileImage?.medium {
             profileImageView.kf.setImage(with: URL(string: profileUrl))
         } else {
             profileImageView.image = UIImage(systemName: "photo")
         }
         
-        if let photoUrl = photo.urls?.raw {
+        if let photoUrl = photo?.urls?.raw {
             photoImageView.kf.setImage(with: URL(string: photoUrl))
         } else {
             photoImageView.image = UIImage(systemName: "photo")
         }
+    }
+    
+    func bindPhotoStatistic(photoStatistic: PhotoStatistic?) {
+        viewContentLabel.text = String((photoStatistic?.views?.total ?? 0).formatted(.number))
+        downloadContentLabel.text = String((photoStatistic?.downloads?.total ?? 0).formatted(.number))
     }
 }
