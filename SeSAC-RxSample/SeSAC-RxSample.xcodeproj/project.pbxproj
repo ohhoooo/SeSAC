@@ -20,6 +20,7 @@
 		371116932D64D41900CB417D /* NumbersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371116922D64D41900CB417D /* NumbersViewController.swift */; };
 		371116952D64D42300CB417D /* SimpleValidationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371116942D64D42300CB417D /* SimpleValidationViewController.swift */; };
 		371116972D64D42E00CB417D /* BirthDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371116962D64D42E00CB417D /* BirthDayViewController.swift */; };
+		3711169B2D650B7800CB417D /* PointButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3711169A2D650B7800CB417D /* PointButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		371116922D64D41900CB417D /* NumbersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersViewController.swift; sourceTree = "<group>"; };
 		371116942D64D42300CB417D /* SimpleValidationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleValidationViewController.swift; sourceTree = "<group>"; };
 		371116962D64D42E00CB417D /* BirthDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthDayViewController.swift; sourceTree = "<group>"; };
+		3711169A2D650B7800CB417D /* PointButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				371116922D64D41900CB417D /* NumbersViewController.swift */,
 				371116942D64D42300CB417D /* SimpleValidationViewController.swift */,
 				371116962D64D42E00CB417D /* BirthDayViewController.swift */,
+				3711169A2D650B7800CB417D /* PointButton.swift */,
 				371116732D64C6AE00CB417D /* Assets.xcassets */,
 				371116742D64C6AE00CB417D /* Info.plist */,
 				371116762D64C6AE00CB417D /* LaunchScreen.storyboard */,
@@ -167,6 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3711169B2D650B7800CB417D /* PointButton.swift in Sources */,
 				3711167C2D64C6AE00CB417D /* AppDelegate.swift in Sources */,
 				371116972D64D42E00CB417D /* BirthDayViewController.swift in Sources */,
 				371116932D64D41900CB417D /* NumbersViewController.swift in Sources */,
