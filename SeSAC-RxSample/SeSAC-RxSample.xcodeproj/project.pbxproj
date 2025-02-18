@@ -13,6 +13,13 @@
 		371116812D64C6AE00CB417D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 371116762D64C6AE00CB417D /* LaunchScreen.storyboard */; };
 		371116842D64C83A00CB417D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 371116832D64C83A00CB417D /* .gitignore */; };
 		371116862D64C89B00CB417D /* SimpleTableViewExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371116852D64C89B00CB417D /* SimpleTableViewExampleViewController.swift */; };
+		371116892D64CA7A00CB417D /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 371116882D64CA7A00CB417D /* RxCocoa */; };
+		3711168B2D64CA7A00CB417D /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3711168A2D64CA7A00CB417D /* RxSwift */; };
+		3711168E2D64CA8300CB417D /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 3711168D2D64CA8300CB417D /* Then */; };
+		371116912D64CA9700CB417D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 371116902D64CA9700CB417D /* SnapKit */; };
+		371116932D64D41900CB417D /* NumbersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371116922D64D41900CB417D /* NumbersViewController.swift */; };
+		371116952D64D42300CB417D /* SimpleValidationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371116942D64D42300CB417D /* SimpleValidationViewController.swift */; };
+		371116972D64D42E00CB417D /* BirthDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371116962D64D42E00CB417D /* BirthDayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +31,9 @@
 		371116792D64C6AE00CB417D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		371116832D64C83A00CB417D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		371116852D64C89B00CB417D /* SimpleTableViewExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewExampleViewController.swift; sourceTree = "<group>"; };
+		371116922D64D41900CB417D /* NumbersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersViewController.swift; sourceTree = "<group>"; };
+		371116942D64D42300CB417D /* SimpleValidationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleValidationViewController.swift; sourceTree = "<group>"; };
+		371116962D64D42E00CB417D /* BirthDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthDayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +41,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3711168B2D64CA7A00CB417D /* RxSwift in Frameworks */,
+				371116912D64CA9700CB417D /* SnapKit in Frameworks */,
+				3711168E2D64CA8300CB417D /* Then in Frameworks */,
+				371116892D64CA7A00CB417D /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +74,9 @@
 				371116722D64C6AE00CB417D /* AppDelegate.swift */,
 				371116792D64C6AE00CB417D /* SceneDelegate.swift */,
 				371116852D64C89B00CB417D /* SimpleTableViewExampleViewController.swift */,
+				371116922D64D41900CB417D /* NumbersViewController.swift */,
+				371116942D64D42300CB417D /* SimpleValidationViewController.swift */,
+				371116962D64D42E00CB417D /* BirthDayViewController.swift */,
 				371116732D64C6AE00CB417D /* Assets.xcassets */,
 				371116742D64C6AE00CB417D /* Info.plist */,
 				371116762D64C6AE00CB417D /* LaunchScreen.storyboard */,
@@ -84,6 +101,10 @@
 			);
 			name = "SeSAC-RxSample";
 			packageProductDependencies = (
+				371116882D64CA7A00CB417D /* RxCocoa */,
+				3711168A2D64CA7A00CB417D /* RxSwift */,
+				3711168D2D64CA8300CB417D /* Then */,
+				371116902D64CA9700CB417D /* SnapKit */,
 			);
 			productName = "SeSAC-RxSample";
 			productReference = 3711165A2D64C6AA00CB417D /* SeSAC-RxSample.app */;
@@ -113,6 +134,11 @@
 			);
 			mainGroup = 371116512D64C6AA00CB417D;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				371116872D64CA7A00CB417D /* XCRemoteSwiftPackageReference "RxSwift" */,
+				3711168C2D64CA8300CB417D /* XCRemoteSwiftPackageReference "Then" */,
+				3711168F2D64CA9700CB417D /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 3711165B2D64C6AA00CB417D /* Products */;
 			projectDirPath = "";
@@ -142,8 +168,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3711167C2D64C6AE00CB417D /* AppDelegate.swift in Sources */,
+				371116972D64D42E00CB417D /* BirthDayViewController.swift in Sources */,
+				371116932D64D41900CB417D /* NumbersViewController.swift in Sources */,
 				3711167D2D64C6AE00CB417D /* SceneDelegate.swift in Sources */,
 				371116862D64C89B00CB417D /* SimpleTableViewExampleViewController.swift in Sources */,
+				371116952D64D42300CB417D /* SimpleValidationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +393,56 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		371116872D64CA7A00CB417D /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.9.0;
+			};
+		};
+		3711168C2D64CA8300CB417D /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		3711168F2D64CA9700CB417D /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		371116882D64CA7A00CB417D /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 371116872D64CA7A00CB417D /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		3711168A2D64CA7A00CB417D /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 371116872D64CA7A00CB417D /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		3711168D2D64CA8300CB417D /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3711168C2D64CA8300CB417D /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+		371116902D64CA9700CB417D /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3711168F2D64CA9700CB417D /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 371116522D64C6AA00CB417D /* Project object */;
 }
