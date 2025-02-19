@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct Person: Decodable {
+    let name: String
+    let email: String
+    let profileImage: String
+}

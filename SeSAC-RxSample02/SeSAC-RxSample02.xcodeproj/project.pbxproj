@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		377443052D66EBA2002D8CF1 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377443042D66EBA2002D8CF1 /* Person.swift */; };
 		37D6FBC42D65CC9600619E12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D6FBBA2D65CC9600619E12 /* AppDelegate.swift */; };
 		37D6FBC52D65CC9600619E12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D6FBC12D65CC9600619E12 /* SceneDelegate.swift */; };
 		37D6FBC72D65CC9600619E12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37D6FBBB2D65CC9600619E12 /* Assets.xcassets */; };
@@ -18,9 +19,16 @@
 		37D6FBD62D65CDC800619E12 /* HomeworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D6FBD52D65CDC800619E12 /* HomeworkViewController.swift */; };
 		37D6FBD82D65CDD800619E12 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D6FBD72D65CDD800619E12 /* PersonTableViewCell.swift */; };
 		37D6FBDA2D65CDE300619E12 /* UserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D6FBD92D65CDE300619E12 /* UserCollectionViewCell.swift */; };
+		37D6FBDC2D65CF9000619E12 /* HomeworkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D6FBDB2D65CF9000619E12 /* HomeworkViewModel.swift */; };
+		37D6FBDF2D65D73600619E12 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 37D6FBDE2D65D73600619E12 /* Kingfisher */; };
+		37D6FBE12D669BC600619E12 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D6FBE02D669BC600619E12 /* DetailViewController.swift */; };
+		37F22FA22D7043D900C1DB19 /* HomeworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F22FA12D7043D900C1DB19 /* HomeworkView.swift */; };
+		37F22FA52D7045E800C1DB19 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 37F22FA42D7045E800C1DB19 /* Then */; };
+		37F22FA72D7048CD00C1DB19 /* Person.json in Resources */ = {isa = PBXBuildFile; fileRef = 37F22FA62D7048CD00C1DB19 /* Person.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		377443042D66EBA2002D8CF1 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		37D6FBA22D65CC8400619E12 /* SeSAC-RxSample02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SeSAC-RxSample02.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37D6FBBA2D65CC9600619E12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37D6FBBB2D65CC9600619E12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -31,6 +39,10 @@
 		37D6FBD52D65CDC800619E12 /* HomeworkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkViewController.swift; sourceTree = "<group>"; };
 		37D6FBD72D65CDD800619E12 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		37D6FBD92D65CDE300619E12 /* UserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionViewCell.swift; sourceTree = "<group>"; };
+		37D6FBDB2D65CF9000619E12 /* HomeworkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkViewModel.swift; sourceTree = "<group>"; };
+		37D6FBE02D669BC600619E12 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		37F22FA12D7043D900C1DB19 /* HomeworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkView.swift; sourceTree = "<group>"; };
+		37F22FA62D7048CD00C1DB19 /* Person.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Person.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +50,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37F22FA52D7045E800C1DB19 /* Then in Frameworks */,
+				37D6FBDF2D65D73600619E12 /* Kingfisher in Frameworks */,
 				37D6FBD42D65CD6400619E12 /* RxSwift in Frameworks */,
 				37D6FBD22D65CD6400619E12 /* RxCocoa in Frameworks */,
 				37D6FBCF2D65CD4800619E12 /* SnapKit in Frameworks */,
@@ -47,6 +61,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		377443012D66EB7A002D8CF1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				377443042D66EBA2002D8CF1 /* Person.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		377443022D66EB7C002D8CF1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				37D6FBDB2D65CF9000619E12 /* HomeworkViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		377443032D66EB7F002D8CF1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				37F22F9F2D70425B00C1DB19 /* Home */,
+				37F22FA02D70426900C1DB19 /* Detail */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		37D6FB992D65CC8400619E12 = {
 			isa = PBXGroup;
 			children = (
@@ -69,14 +108,34 @@
 			children = (
 				37D6FBBA2D65CC9600619E12 /* AppDelegate.swift */,
 				37D6FBC12D65CC9600619E12 /* SceneDelegate.swift */,
-				37D6FBD52D65CDC800619E12 /* HomeworkViewController.swift */,
-				37D6FBD72D65CDD800619E12 /* PersonTableViewCell.swift */,
-				37D6FBD92D65CDE300619E12 /* UserCollectionViewCell.swift */,
+				377443012D66EB7A002D8CF1 /* Model */,
+				377443022D66EB7C002D8CF1 /* ViewModel */,
+				377443032D66EB7F002D8CF1 /* View */,
 				37D6FBBB2D65CC9600619E12 /* Assets.xcassets */,
 				37D6FBBC2D65CC9600619E12 /* Info.plist */,
 				37D6FBBE2D65CC9600619E12 /* LaunchScreen.storyboard */,
+				37F22FA62D7048CD00C1DB19 /* Person.json */,
 			);
 			path = "SeSAC-RxSample02";
+			sourceTree = "<group>";
+		};
+		37F22F9F2D70425B00C1DB19 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				37D6FBD72D65CDD800619E12 /* PersonTableViewCell.swift */,
+				37D6FBD92D65CDE300619E12 /* UserCollectionViewCell.swift */,
+				37F22FA12D7043D900C1DB19 /* HomeworkView.swift */,
+				37D6FBD52D65CDC800619E12 /* HomeworkViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		37F22FA02D70426900C1DB19 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				37D6FBE02D669BC600619E12 /* DetailViewController.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,6 +158,8 @@
 				37D6FBCE2D65CD4800619E12 /* SnapKit */,
 				37D6FBD12D65CD6400619E12 /* RxCocoa */,
 				37D6FBD32D65CD6400619E12 /* RxSwift */,
+				37D6FBDE2D65D73600619E12 /* Kingfisher */,
+				37F22FA42D7045E800C1DB19 /* Then */,
 			);
 			productName = "SeSAC-RxSample02";
 			productReference = 37D6FBA22D65CC8400619E12 /* SeSAC-RxSample02.app */;
@@ -131,6 +192,8 @@
 			packageReferences = (
 				37D6FBCD2D65CD4800619E12 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				37D6FBD02D65CD6400619E12 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				37D6FBDD2D65D73600619E12 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				37F22FA32D7045E800C1DB19 /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 37D6FBA32D65CC8400619E12 /* Products */;
@@ -149,6 +212,7 @@
 			files = (
 				37D6FBC72D65CC9600619E12 /* Assets.xcassets in Resources */,
 				37D6FBCC2D65CCBA00619E12 /* .gitignore in Resources */,
+				37F22FA72D7048CD00C1DB19 /* Person.json in Resources */,
 				37D6FBC92D65CC9600619E12 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,11 +224,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37D6FBDC2D65CF9000619E12 /* HomeworkViewModel.swift in Sources */,
 				37D6FBC42D65CC9600619E12 /* AppDelegate.swift in Sources */,
 				37D6FBC52D65CC9600619E12 /* SceneDelegate.swift in Sources */,
 				37D6FBD82D65CDD800619E12 /* PersonTableViewCell.swift in Sources */,
 				37D6FBD62D65CDC800619E12 /* HomeworkViewController.swift in Sources */,
 				37D6FBDA2D65CDE300619E12 /* UserCollectionViewCell.swift in Sources */,
+				37F22FA22D7043D900C1DB19 /* HomeworkView.swift in Sources */,
+				377443052D66EBA2002D8CF1 /* Person.swift in Sources */,
+				37D6FBE12D669BC600619E12 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +471,22 @@
 				minimumVersion = 6.9.0;
 			};
 		};
+		37D6FBDD2D65D73600619E12 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.2.0;
+			};
+		};
+		37F22FA32D7045E800C1DB19 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -420,6 +504,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 37D6FBD02D65CD6400619E12 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		37D6FBDE2D65D73600619E12 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 37D6FBDD2D65D73600619E12 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		37F22FA42D7045E800C1DB19 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 37F22FA32D7045E800C1DB19 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
