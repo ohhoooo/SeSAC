@@ -12,28 +12,76 @@ import RxCocoa
 final class HomeworkViewModel {
     
     // MARK: - properties
-    let disposeBag = DisposeBag()
-    
     struct Input {
-        let tableViewDatas: BehaviorSubject<[Person]>
-        let collectionViewDatas: BehaviorSubject<[Person]>
-        let modelSelected: ControlEvent<Person>
+        let changedText: ControlProperty<String?>
         let searchButtonClicked: ControlEvent<Void>
+        let modelSelected: ControlEvent<Person>
     }
     
     struct Output {
-        let tableViewDatas: BehaviorSubject<[Person]>
-        let collectionViewDatas: BehaviorSubject<[Person]>
-        let modelSelected: ControlEvent<Person>
-        let searchButtonClicked: ControlEvent<Void>
+        let tableViewPersons: BehaviorRelay<[Person]>
+        let collectionViewPersons: PublishRelay<[Person]>
     }
+    
+    private let tableViewPersons = BehaviorRelay<[Person]>(value: [])
+    private let collectionViewPersons = PublishRelay<[Person]>()
+    
+    private var query = ""
+    private var tableViewItems: [Person] = []
+    private var collectionViewItems: [Person] = []
+    
+    private let disposeBag = DisposeBag()
     
     // MARK: - methods
     func transform(input: Input) -> Output {
-        return Output(tableViewDatas: input.tableViewDatas,
-                      collectionViewDatas: input.collectionViewDatas,
-                      modelSelected: input.modelSelected,
-                      searchButtonClicked: input.searchButtonClicked
+        tableViewItems = fetchPersons()
+        tableViewPersons.accept(tableViewItems)
+        
+        input.changedText
+            .orEmpty
+            .distinctUntilChanged()
+            .bind(with: self) { owner, value in
+                owner.query = value
+            }
+            .disposed(by: disposeBag)
+        
+        input.searchButtonClicked
+            .bind(with: self) { owner, _ in
+                let persons = owner.tableViewItems.filter { $0.name.contains(owner.query) }
+                owner.tableViewPersons.accept(persons)
+            }
+            .disposed(by: disposeBag)
+        
+        input.modelSelected
+            .bind(with: self) { owner, value in
+                owner.collectionViewItems.append(value)
+                owner.collectionViewPersons.accept(owner.collectionViewItems)
+            }
+            .disposed(by: disposeBag)
+        
+        return Output(
+            tableViewPersons: tableViewPersons,
+            collectionViewPersons: collectionViewPersons
         )
+    }
+    
+    private func fetchPersons() -> [Person] {
+        guard let data = loadData() else { return [] }
+        
+        do {
+            return try JSONDecoder().decode([Person].self, from: data)
+        } catch {
+            return []
+        }
+    }
+    
+    private func loadData() -> Data? {
+        guard let url = Bundle.main.url(forResource: "Person", withExtension: "json") else { return nil }
+        
+        do {
+            return try Data(contentsOf: url)
+        } catch {
+            return nil
+        }
     }
 }
