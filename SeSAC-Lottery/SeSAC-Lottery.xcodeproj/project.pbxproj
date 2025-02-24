@@ -20,6 +20,9 @@
 		3724FBBA2D3644A5003815DC /* Lottery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3724FBB92D3644A5003815DC /* Lottery.swift */; };
 		3724FBC22D365903003815DC /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3724FBC02D365903003815DC /* UIImage+Extension.swift */; };
 		3724FBC42D368321003815DC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3724FBC32D368321003815DC /* NetworkManager.swift */; };
+		37A8E7A62D6CEAE600096852 /* LotteryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A8E7A52D6CEAE600096852 /* LotteryViewModel.swift */; };
+		37A8E7A92D6CEB8400096852 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 37A8E7A82D6CEB8400096852 /* RxCocoa */; };
+		37A8E7AB2D6CEB8400096852 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 37A8E7AA2D6CEB8400096852 /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +38,7 @@
 		3724FBB92D3644A5003815DC /* Lottery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lottery.swift; sourceTree = "<group>"; };
 		3724FBC02D365903003815DC /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		3724FBC32D368321003815DC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		37A8E7A52D6CEAE600096852 /* LotteryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +48,8 @@
 			files = (
 				3724FBB62D363F55003815DC /* Alamofire in Frameworks */,
 				3724FBB02D363F18003815DC /* SnapKit in Frameworks */,
+				37A8E7AB2D6CEB8400096852 /* RxSwift in Frameworks */,
+				37A8E7A92D6CEB8400096852 /* RxCocoa in Frameworks */,
 				3724FBB32D363F37003815DC /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -76,7 +82,7 @@
 				3724FBC12D365903003815DC /* Extension */,
 				3724FBB82D36449F003815DC /* Model */,
 				3724FBAA2D363BEF003815DC /* View */,
-				3724FBAB2D363BF1003815DC /* Controller */,
+				37A8E7A42D6CEAD400096852 /* ViewModel */,
 				3724FBBC2D3652E5003815DC /* Resource */,
 			);
 			path = "SeSAC-Lottery";
@@ -86,16 +92,9 @@
 			isa = PBXGroup;
 			children = (
 				3724FBAC2D363C2B003815DC /* LotteryView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		3724FBAB2D363BF1003815DC /* Controller */ = {
-			isa = PBXGroup;
-			children = (
 				3724FB9D2D3639C0003815DC /* LotteryViewController.swift */,
 			);
-			path = Controller;
+			path = View;
 			sourceTree = "<group>";
 		};
 		3724FBB82D36449F003815DC /* Model */ = {
@@ -125,6 +124,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		37A8E7A42D6CEAD400096852 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				37A8E7A52D6CEAE600096852 /* LotteryViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -145,6 +152,8 @@
 				3724FBAF2D363F18003815DC /* SnapKit */,
 				3724FBB22D363F37003815DC /* Then */,
 				3724FBB52D363F55003815DC /* Alamofire */,
+				37A8E7A82D6CEB8400096852 /* RxCocoa */,
+				37A8E7AA2D6CEB8400096852 /* RxSwift */,
 			);
 			productName = "SeSAC-Lottery";
 			productReference = 3724FB7D2D3639A4003815DC /* SeSAC-Lottery.app */;
@@ -178,6 +187,7 @@
 				3724FBAE2D363F18003815DC /* XCRemoteSwiftPackageReference "SnapKit" */,
 				3724FBB12D363F37003815DC /* XCRemoteSwiftPackageReference "Then" */,
 				3724FBB42D363F55003815DC /* XCRemoteSwiftPackageReference "Alamofire" */,
+				37A8E7A72D6CEB8400096852 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 3724FB7E2D3639A4003815DC /* Products */;
@@ -207,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37A8E7A62D6CEAE600096852 /* LotteryViewModel.swift in Sources */,
 				3724FBA32D3639C0003815DC /* AppDelegate.swift in Sources */,
 				3724FBA42D3639C0003815DC /* SceneDelegate.swift in Sources */,
 				3724FBAD2D363C2B003815DC /* LotteryView.swift in Sources */,
@@ -460,6 +471,14 @@
 				minimumVersion = 5.10.2;
 			};
 		};
+		37A8E7A72D6CEB8400096852 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.9.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -477,6 +496,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3724FBB42D363F55003815DC /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		37A8E7A82D6CEB8400096852 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 37A8E7A72D6CEB8400096852 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		37A8E7AA2D6CEB8400096852 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 37A8E7A72D6CEB8400096852 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

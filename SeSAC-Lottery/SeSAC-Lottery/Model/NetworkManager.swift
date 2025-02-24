@@ -7,6 +7,8 @@
 
 import Foundation
 import Alamofire
+import RxSwift
+import RxCocoa
 
 final class NetworkManager {
     
@@ -18,16 +20,38 @@ final class NetworkManager {
     private let baseUrl = "https://www.dhlottery.co.kr/common.do"
     
     // MARK: - methods
-    func fetchLottery(drwNo: String, completion: @escaping ((Result<Lottery, Error>) -> Void)) {
-        let parameters: Parameters = ["method": "getLottoNumber", "drwNo": drwNo]
-        
-        AF.request(baseUrl, parameters: parameters).responseDecodable(of: Lottery.self) { response in
-            switch response.result {
-            case .success(let lottery):
-                completion(.success(lottery))
-            case .failure(let error):
-                completion(.failure(error))
+    func fetchObservableLottery(drwNo: String) -> Observable<Lottery> {
+        return Observable<Lottery>.create { value in
+            let parameters: Parameters = ["method": "getLottoNumber", "drwNo": drwNo]
+            
+            AF.request(self.baseUrl, parameters: parameters).responseDecodable(of: Lottery.self) { response in
+                switch response.result {
+                case .success(let lottery):
+                    value.onNext(lottery)
+                    value.onCompleted()
+                case .failure(let error):
+                    value.onError(error)
+                }
             }
+            
+            return Disposables.create()
+        }
+    }
+    
+    func fetchSingleLottery(drwNo: String) -> Single<Lottery> {
+        return Single<Lottery>.create { value in
+            let parameters: Parameters = ["method": "getLottoNumber", "drwNo": drwNo]
+            
+            AF.request(self.baseUrl, parameters: parameters).responseDecodable(of: Lottery.self) { response in
+                switch response.result {
+                case .success(let lottery):
+                    value(.success(lottery))
+                case .failure(let error):
+                    value(.failure(error))
+                }
+            }
+            
+            return Disposables.create()
         }
     }
 }

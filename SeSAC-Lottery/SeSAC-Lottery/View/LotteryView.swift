@@ -114,6 +114,16 @@ final class LotteryView: UIView {
         $0.textAlignment = .center
     }
     
+    let observableButton = UIButton().then {
+        $0.setTitle("Observable Button", for: .normal)
+        $0.setTitleColor(.black, for: .normal)
+    }
+    
+    let singleButton = UIButton().then {
+        $0.setTitle("Single Button", for: .normal)
+        $0.setTitleColor(.black, for: .normal)
+    }
+    
     // MARK: - life cycles
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -140,6 +150,8 @@ final class LotteryView: UIView {
         addSubview(drwNoResultLabel)
         addSubview(drwtNoStackView)
         addSubview(bnusLabel)
+        addSubview(observableButton)
+        addSubview(singleButton)
         plusImageBasedView.addSubview(plusImageView)
         drwtNoStackView.addArrangedSubview(drwtNo1Label)
         drwtNoStackView.addArrangedSubview(drwtNo2Label)
@@ -200,6 +212,16 @@ final class LotteryView: UIView {
             view.snp.makeConstraints {
                 $0.size.equalTo(40)
             }
+        }
+        
+        observableButton.snp.makeConstraints {
+            $0.top.equalTo(bnusLabel.snp.bottom).offset(20)
+            $0.leading.equalToSuperview().offset(20)
+        }
+        
+        singleButton.snp.makeConstraints {
+            $0.top.equalTo(bnusLabel.snp.bottom).offset(20)
+            $0.trailing.equalToSuperview().offset(-20)
         }
     }
 }
