@@ -6,12 +6,16 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class ShoppingViewController: BaseViewController {
     
     // MARK: - properties
     private let shoppingView = ShoppingView()
     private let viewModel = ShoppingViewModel()
+    
+    private let disposeBag = DisposeBag()
     
     // MARK: - life cycles
     override func loadView() {
@@ -25,24 +29,31 @@ final class ShoppingViewController: BaseViewController {
     }
     
     // MARK: - methods
-    override func configureDelegate() {
-        shoppingView.searchBar.delegate = self
-    }
-    
     override func configureAddTarget() {
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tappedTapGesture)))
     }
     
     override func bind() {
-        viewModel.outputPushViewController.lazyBind { [weak self] query in
-            let resultVC = ResultViewController()
-            resultVC.viewModel.inputQuery.value = query
-            self?.navigationController?.pushViewController(resultVC, animated: true)
-        }
+        let input = ShoppingViewModel.Input(
+            text: shoppingView.searchBar.rx.text,
+            searchButtonClicked: shoppingView.searchBar.rx.searchButtonClicked
+        )
         
-        viewModel.outputShowAlert.lazyBind { [weak self] _ in
-            self?.showAlert(title: "알림", message: "두 글자 이상 입력하세요.", button: "확인")
-        }
+        let output = viewModel.transform(input: input)
+        
+        output.alert
+            .bind(with: self) { owner, _ in
+                owner.showAlert(title: "알림", message: "두 글자 이상 입력하세요.", button: "확인")
+            }
+            .disposed(by: disposeBag)
+        
+        output.query
+            .bind(with: self) { owner, value in
+                let resultVM = ResultViewModel(query: value)
+                let resultVC = ResultViewController(viewModel: resultVM)
+                owner.navigationController?.pushViewController(resultVC, animated: true)
+            }
+            .disposed(by: disposeBag)
     }
     
     private func configureNavigation() {
@@ -52,12 +63,5 @@ final class ShoppingViewController: BaseViewController {
     @objc
     private func tappedTapGesture() {
         view.endEditing(true)
-    }
-}
-
-// MARK: - extensions
-extension ShoppingViewController: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        viewModel.inputSearchButtonClicked.value = searchBar.text
     }
 }

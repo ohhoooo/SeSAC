@@ -6,28 +6,51 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 final class ShoppingViewModel {
     
     // MARK: - properties
-    let inputSearchButtonClicked: Observable<String?> = Observable(nil)
-    
-    let outputPushViewController: Observable<String> = Observable("")
-    let outputShowAlert: Observable<Void?> = Observable(nil)
-    
-    // MARK: - life cycles
-    init() {
-        inputSearchButtonClicked.bind { [weak self] text in
-            self?.clickedSearchButton(text: text)
-        }
+    struct Input {
+        let text: ControlProperty<String?>
+        let searchButtonClicked: ControlEvent<Void>
     }
     
+    struct Output {
+        let alert: PublishRelay<Void>
+        let query: PublishRelay<String>
+    }
+    
+    private var text = ""
+    
+    private let disposeBag = DisposeBag()
+    
     // MARK: - methods
-    private func clickedSearchButton(text: String?) {
-        if let query = text, query.count > 1 {
-            outputPushViewController.value = query
-        } else {
-            outputShowAlert.value = ()
-        }
+    func transform(input: Input) -> Output {
+        let alert = PublishRelay<Void>()
+        let query = PublishRelay<String>()
+        
+        input.text
+            .compactMap { $0 }
+            .bind(with: self) { owner, value in
+                owner.text = value
+            }
+            .disposed(by: disposeBag)
+        
+        input.searchButtonClicked
+            .bind(with: self) { owner, _ in
+                if owner.text.count > 1 {
+                    query.accept(owner.text)
+                } else {
+                    alert.accept(())
+                }
+            }
+            .disposed(by: disposeBag)
+        
+        return Output(
+            alert: alert,
+            query: query
+        )
     }
 }
