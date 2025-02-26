@@ -73,7 +73,9 @@ final class ResultView: BaseView {
         $0.layer.cornerRadius = 8
     }
     
-    lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
+    lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout()).then {
+        $0.register(ResultCollectionViewCell.self, forCellWithReuseIdentifier: ResultCollectionViewCell.identifier)
+    }
     
     // MARK: - methods
     override func configureUI() {

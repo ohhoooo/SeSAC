@@ -6,84 +6,141 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
+import Alamofire
 
 final class ResultViewModel {
     
     // MARK: - properties
-    private var query = ""
-    private var start = 1
-    private var sort: Sort = .accuracy
-    private var shoppingItems: [Item] = []
+    struct Input {
+        let tapAccuracyButton: ControlEvent<Void>
+        let tapDateButton: ControlEvent<Void>
+        let tapSortByHighPriceButton: ControlEvent<Void>
+        let tapSortByLowPriceButton: ControlEvent<Void>
+    }
     
-    var inputQuery: Observable<String> = Observable("")
-    var inputStart: Observable<Void?> = Observable(nil)
-    var inputSort: Observable<Int> = Observable(0)
+    struct Output {
+        let title: Observable<String>
+        let tag: PublishRelay<Int>
+        let count: BehaviorRelay<Int>
+        let error: PublishRelay<String>
+        let items: PublishRelay<[Item]>
+    }
     
-    var outputNavigationTitle: Observable<String> = Observable("")
-    var outputTotalItemsCount: Observable<Int> = Observable(0)
-    var outputShoppingItems: Observable<[Item]> = Observable([])
-    var outputScrollToTop: Observable<Void?> = Observable(nil)
-    var outputSelectedButtonTag: Observable<Int> = Observable(0)
+    private let count = BehaviorRelay(value: 0)
+    private let error = PublishRelay<String>()
+    private let items = PublishRelay<[Item]>()
+    
+    private let query: String
+    
+    private let disposeBag = DisposeBag()
     
     // MARK: - life cycles
-    init() {
-        inputQuery.lazyBind { [weak self] query in
-            self?.query = query
-            self?.outputNavigationTitle.value = query
-            self?.fetchShopping()
-        }
+    init(query: String) {
+        self.query = query
         
-        inputStart.lazyBind { [weak self] _ in
-            self?.start += 30
-            self?.fetchShopping()
-        }
-        
-        inputSort.lazyBind { [weak self] tag in
-            self?.tappedSortButton(tag: tag)
-        }
+        NetworkManager.shared.fetchShopping(query: query, sort: .accuracy)
+            .catch { error in
+                self.handleError(error: error)
+                
+                return Observable.just(Shopping(total: 0, items: []))
+            }
+            .bind(with: self) { owner, value in
+                owner.count.accept(value.items.count)
+                owner.items.accept(value.items)
+            }
+            .disposed(by: disposeBag)
     }
     
     // MARK: - methods
-    private func fetchShopping() {
-        NetworkManager.shared.fetchShopping(query: query, start: start, sort: sort) { [weak self] result in
-            switch result {
-            case .success(let shopping):
-                self?.shoppingItems.append(contentsOf: shopping.items)
-                self?.outputShoppingItems.value = self?.shoppingItems ?? []
-                self?.outputTotalItemsCount.value = shopping.total
-            case .failure(let error):
-                print(error)
+    func transform(input: Input) -> Output {
+        let title = Observable.just(query)
+        let tag = PublishRelay<Int>()
+        
+        input.tapAccuracyButton
+            .flatMap {
+                NetworkManager.shared.fetchShopping(query: self.query, sort: .accuracy)
+                    .catch { error in
+                        self.handleError(error: error)
+                        
+                        return Observable.just(Shopping(total: 0, items: []))
+                    }
             }
-        }
+            .bind(with: self) { owner, value in
+                tag.accept(0)
+                owner.count.accept(value.items.count)
+                owner.items.accept(value.items)
+            }
+            .disposed(by: disposeBag)
+        
+        input.tapDateButton
+            .flatMap {
+                NetworkManager.shared.fetchShopping(query: self.query, sort: .date)
+                    .catch { error in
+                        self.handleError(error: error)
+                        
+                        return Observable.just(Shopping(total: 0, items: []))
+                    }
+            }
+            .bind(with: self) { owner, value in
+                tag.accept(1)
+                owner.count.accept(value.items.count)
+                owner.items.accept(value.items)
+            }
+            .disposed(by: disposeBag)
+        
+        input.tapSortByHighPriceButton
+            .flatMap {
+                NetworkManager.shared.fetchShopping(query: self.query, sort: .sortByHighPrice)
+                    .catch { error in
+                        self.handleError(error: error)
+                        
+                        return Observable.just(Shopping(total: 0, items: []))
+                    }
+            }
+            .bind(with: self) { owner, value in
+                tag.accept(2)
+                owner.count.accept(value.items.count)
+                owner.items.accept(value.items)
+            }
+            .disposed(by: disposeBag)
+        
+        input.tapSortByLowPriceButton
+            .flatMap {
+                NetworkManager.shared.fetchShopping(query: self.query, sort: .sortByLowPrice)
+                    .catch { error in
+                        self.handleError(error: error)
+                        
+                        return Observable.just(Shopping(total: 0, items: []))
+                    }
+            }
+            .bind(with: self) { owner, value in
+                tag.accept(3)
+                owner.count.accept(value.items.count)
+                owner.items.accept(value.items)
+            }
+            .disposed(by: disposeBag)
+        
+        return Output(
+            title: title,
+            tag: tag,
+            count: count,
+            error: error,
+            items: items
+        )
     }
     
-    private func tappedSortButton(tag: Int) {
-        switch tag {
-        case 0:
-            if sort != .accuracy {
-                changeData(tag: 0, sort: .accuracy)
-            }
-        case 1:
-            if sort != .date {
-                changeData(tag: 1, sort: .date)
-            }
-        case 2:
-            if sort != .sortByHighPrice {
-                changeData(tag: 2, sort: .sortByHighPrice)
-            }
+    private func handleError(error: Error) {
+        switch error {
+        case APIError.requestParameterError:
+            self.error.accept("요청 변수 오류")
+        case APIError.callLimitExceededError:
+            self.error.accept("호출 한도 초과 오류")
+        case APIError.serverError:
+            self.error.accept("서버 오류")
         default:
-            if sort != .sortByLowPrice {
-                changeData(tag: 3, sort: .sortByLowPrice)
-            }
+            self.error.accept("알 수 없는 오류")
         }
-    }
-    
-    private func changeData(tag: Int, sort: Sort) {
-        self.sort = sort
-        start = 1
-        shoppingItems.removeAll()
-        fetchShopping()
-        outputScrollToTop.value = ()
-        outputSelectedButtonTag.value = tag
     }
 }

@@ -6,85 +6,77 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class ResultViewController: BaseViewController {
     
     // MARK: - properties
     private let resultView = ResultView()
-    let viewModel = ResultViewModel()
+    private let viewModel: ResultViewModel
+    
+    private let disposeBag = DisposeBag()
     
     // MARK: - life cycles
+    init(viewModel: ResultViewModel) {
+        self.viewModel = viewModel
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func loadView() {
         view = resultView
     }
     
     // MARK: - methods
-    override func configureDelegate() {
-        resultView.collectionView.delegate = self
-        resultView.collectionView.dataSource = self
-        resultView.collectionView.register(ResultCollectionViewCell.self, forCellWithReuseIdentifier: ResultCollectionViewCell.identifier)
-    }
-    
-    override func configureAddTarget() {
-        resultView.accuracyButton.addTarget(self, action: #selector(tappedSortButton), for: .touchUpInside)
-        resultView.dateButton.addTarget(self, action: #selector(tappedSortButton), for: .touchUpInside)
-        resultView.sortByHighPriceButton.addTarget(self, action: #selector(tappedSortButton), for: .touchUpInside)
-        resultView.sortByLowPriceButton.addTarget(self, action: #selector(tappedSortButton), for: .touchUpInside)
-    }
-    
     override func bind() {
-        viewModel.outputNavigationTitle.bind { [weak self] title in
-            self?.navigationItem.title = title
-            self?.navigationController?.navigationBar.tintColor = .black
-            self?.navigationController?.navigationBar.topItem?.title = ""
-        }
+        let input = ResultViewModel.Input(
+            tapAccuracyButton: resultView.accuracyButton.rx.tap,
+            tapDateButton: resultView.dateButton.rx.tap,
+            tapSortByHighPriceButton: resultView.sortByHighPriceButton.rx.tap,
+            tapSortByLowPriceButton: resultView.sortByLowPriceButton.rx.tap
+        )
         
-        viewModel.outputTotalItemsCount.bind { [weak self] count in
-            self?.resultView.configureData(total: count)
-        }
+        let output = viewModel.transform(input: input)
         
-        viewModel.outputShoppingItems.bind { [weak self] _ in
-            self?.resultView.collectionView.reloadData()
-        }
+        output.title
+            .bind(with: self) { owner, value in
+                owner.navigationItem.title = value
+                owner.navigationController?.navigationBar.tintColor = .black
+                owner.navigationController?.navigationBar.topItem?.title = ""
+            }
+            .disposed(by: disposeBag)
         
-        viewModel.outputScrollToTop.lazyBind { [weak self] _ in
-            self?.resultView.collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
-        }
+        output.tag
+            .bind(with: self) { owner, value in
+                owner.resultView.collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+                owner.resultView.changeButtonColor(tag: value)
+            }
+            .disposed(by: disposeBag)
         
-        viewModel.outputSelectedButtonTag.bind { [weak self] tag in
-            self?.resultView.changeButtonColor(tag: tag)
-        }
-    }
-    
-    @objc
-    private func tappedSortButton(_ sender: UIButton) {
-        viewModel.inputSort.value = sender.tag
-    }
-}
-
-// MARK: - extensions
-extension ResultViewController: UICollectionViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let contentOffsetY = scrollView.contentOffset.y
-        let collectionViewHeight = resultView.collectionView.contentSize.height
-        let pagination = collectionViewHeight * 0.2
+        output.count
+            .bind(with: self) { owner, value in
+                owner.resultView.configureData(total: value)
+            }
+            .disposed(by: disposeBag)
         
-        if contentOffsetY > collectionViewHeight - pagination {
-            viewModel.inputStart.value = ()
-        }
-    }
-}
-
-extension ResultViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.outputShoppingItems.value.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ResultCollectionViewCell.identifier, for: indexPath) as? ResultCollectionViewCell else { return UICollectionViewCell() }
+        output.error
+            .bind(with: self) { owner, value in
+                owner.showAlert(title: "알림", message: value, button: "확인")
+            }
+            .disposed(by: disposeBag)
         
-        cell.configureData(item: viewModel.outputShoppingItems.value[indexPath.item])
-        
-        return cell
+        output.items
+            .bind(to: resultView.collectionView.rx.items(
+                cellIdentifier: ResultCollectionViewCell.identifier,
+                cellType: ResultCollectionViewCell.self)
+            ) { (row, element, cell) in
+                cell.configureData(item: element)
+            }
+            .disposed(by: disposeBag)
     }
 }
