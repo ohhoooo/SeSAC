@@ -35,11 +35,18 @@ final class ShoppingViewController: BaseViewController {
     
     override func bind() {
         let input = ShoppingViewModel.Input(
+            tapWishListBarButtonItem: shoppingView.wishListBarButtonItem.rx.tap,
             text: shoppingView.searchBar.rx.text,
             searchButtonClicked: shoppingView.searchBar.rx.searchButtonClicked
         )
         
         let output = viewModel.transform(input: input)
+        
+        output.wishListView
+            .bind(with: self) { owner, _ in
+                owner.navigationController?.pushViewController(WishListViewController(), animated: true)
+            }
+            .disposed(by: disposeBag)
         
         output.alert
             .bind(with: self) { owner, _ in
@@ -58,6 +65,7 @@ final class ShoppingViewController: BaseViewController {
     
     private func configureNavigation() {
         navigationItem.title = "정호의 쇼핑쇼핑"
+        navigationItem.rightBarButtonItem = shoppingView.wishListBarButtonItem
     }
     
     @objc

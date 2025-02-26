@@ -13,11 +13,13 @@ final class ShoppingViewModel {
     
     // MARK: - properties
     struct Input {
+        let tapWishListBarButtonItem: ControlEvent<Void>
         let text: ControlProperty<String?>
         let searchButtonClicked: ControlEvent<Void>
     }
     
     struct Output {
+        let wishListView: ControlEvent<Void>
         let alert: PublishRelay<Void>
         let query: PublishRelay<String>
     }
@@ -49,6 +51,7 @@ final class ShoppingViewModel {
             .disposed(by: disposeBag)
         
         return Output(
+            wishListView: input.tapWishListBarButtonItem,
             alert: alert,
             query: query
         )

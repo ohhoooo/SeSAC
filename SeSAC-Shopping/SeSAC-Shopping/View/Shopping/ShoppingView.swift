@@ -12,6 +12,11 @@ import Then
 final class ShoppingView: BaseView {
     
     // MARK: - properties
+    let wishListBarButtonItem = UIBarButtonItem().then {
+        $0.style = .done
+        $0.image = UIImage(systemName: "person.crop.circle")
+    }
+    
     let searchBar = UISearchBar().then {
         $0.placeholder = "브랜드, 상품, 프로필, 태그 등"
         $0.searchBarStyle = .minimal
