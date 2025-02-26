@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct WishList: Hashable, Identifiable {
+    let id = UUID()
+    let title: String
+    let date = Date()
+}

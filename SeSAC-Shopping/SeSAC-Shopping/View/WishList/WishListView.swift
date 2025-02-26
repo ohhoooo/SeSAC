@@ -6,15 +6,44 @@
 //
 
 import UIKit
+import SnapKit
+import Then
 
-class WishListView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+final class WishListView: BaseView {
+    
+    // MARK: - properties
+    let searchBar = UISearchBar()
+    
+    lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
+    
+    // MARK: - methods
+    override func configureUI() {
+        backgroundColor = .white
     }
-    */
-
+    
+    override func configureHierarchy() {
+        addSubview(searchBar)
+        addSubview(collectionView)
+    }
+    
+    override func configureConstraints() {
+        searchBar.snp.makeConstraints {
+            $0.top.horizontalEdges.equalTo(safeAreaLayoutGuide)
+        }
+        
+        collectionView.snp.makeConstraints {
+            $0.top.equalTo(searchBar.snp.bottom)
+            $0.horizontalEdges.bottom.equalToSuperview()
+        }
+    }
+    
+    private func createLayout() -> UICollectionViewLayout {
+        var configuration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
+        configuration.showsSeparators = false
+        configuration.backgroundColor = .green
+        
+        let layout = UICollectionViewCompositionalLayout.list(using: configuration)
+        
+        return layout
+    }
 }
