@@ -18,4 +18,13 @@ extension UIViewController {
         
         present(alert, animated: true)
     }
+    
+    func presentToast(message: String) {
+        view.makeToast(message,
+                       duration: 2.0,
+                       position: .bottom,
+                       title: "알림",
+                       image: nil,
+                       style: .init())
+    }
 }

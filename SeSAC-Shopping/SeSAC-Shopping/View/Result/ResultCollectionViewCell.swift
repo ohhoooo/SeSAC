@@ -9,6 +9,8 @@ import UIKit
 import Kingfisher
 import SnapKit
 import Then
+import RxSwift
+import RxCocoa
 
 final class ResultCollectionViewCell: BaseCollectionViewCell {
     
@@ -19,6 +21,14 @@ final class ResultCollectionViewCell: BaseCollectionViewCell {
         $0.contentMode = .scaleAspectFill
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 12
+    }
+    
+    let likeButton = UIButton().then {
+        var config = UIButton.Configuration.filled()
+        config.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+        config.baseForegroundColor = .red
+        config.background.backgroundColor = .clear
+        $0.configuration = config
     }
     
     private let mallLabel = UILabel().then {
@@ -37,6 +47,8 @@ final class ResultCollectionViewCell: BaseCollectionViewCell {
         $0.textColor = .black
     }
     
+    var disposeBag = DisposeBag()
+    
     // MARK: - life cycles
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -45,6 +57,9 @@ final class ResultCollectionViewCell: BaseCollectionViewCell {
         mallLabel.text = nil
         titleLabel.text = nil
         priceLabel.text = nil
+        likeButton.tag = 0
+        
+        disposeBag = DisposeBag()
     }
     
     // MARK: - methods
@@ -54,6 +69,7 @@ final class ResultCollectionViewCell: BaseCollectionViewCell {
     
     override func configureHierarchy() {
         contentView.addSubview(imageView)
+        contentView.addSubview(likeButton)
         contentView.addSubview(mallLabel)
         contentView.addSubview(titleLabel)
         contentView.addSubview(priceLabel)
@@ -63,6 +79,10 @@ final class ResultCollectionViewCell: BaseCollectionViewCell {
         imageView.snp.makeConstraints {
             $0.top.horizontalEdges.equalToSuperview()
             $0.height.equalTo(imageView.snp.width)
+        }
+        
+        likeButton.snp.makeConstraints {
+            $0.trailing.bottom.equalTo(imageView).inset(8)
         }
         
         mallLabel.snp.makeConstraints {
@@ -98,5 +118,9 @@ final class ResultCollectionViewCell: BaseCollectionViewCell {
         } else {
             imageView.image = UIImage(systemName: "photo")
         }
+    }
+    
+    func bindLike(like: Bool) {
+        likeButton.configuration?.image = UIImage(systemName: like ? "heart.fill" : "heart")
     }
 }
