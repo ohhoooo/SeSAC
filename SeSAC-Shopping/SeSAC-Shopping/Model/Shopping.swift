@@ -17,11 +17,13 @@ struct Item: Decodable {
     let image: String?
     let price: String?
     let mallName: String?
+    let productId: String?
     
     enum CodingKeys: String, CodingKey {
         case title
         case image
         case price = "lprice"
         case mallName
+        case productId
     }
 }
