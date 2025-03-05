@@ -12,7 +12,7 @@ import Then
 final class ShoppingView: BaseView {
     
     // MARK: - properties
-    let wishListBarButtonItem = UIBarButtonItem().then {
+    let folderBarButtonItem = UIBarButtonItem().then {
         $0.style = .done
         $0.image = UIImage(systemName: "person.crop.circle")
     }

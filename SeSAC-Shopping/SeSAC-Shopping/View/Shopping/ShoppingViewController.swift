@@ -36,7 +36,7 @@ final class ShoppingViewController: BaseViewController {
     override func bind() {
         let input = ShoppingViewModel.Input(
             tapLikeBarButtonItem: shoppingView.likeBarButtonItem.rx.tap,
-            tapWishListBarButtonItem: shoppingView.wishListBarButtonItem.rx.tap,
+            tapFolderBarButtonItem: shoppingView.folderBarButtonItem.rx.tap,
             text: shoppingView.searchBar.rx.text,
             searchButtonClicked: shoppingView.searchBar.rx.searchButtonClicked
         )
@@ -49,9 +49,9 @@ final class ShoppingViewController: BaseViewController {
             }
             .disposed(by: disposeBag)
         
-        output.wishListView
+        output.folderView
             .bind(with: self) { owner, _ in
-                owner.navigationController?.pushViewController(WishListViewController(), animated: true)
+                owner.navigationController?.pushViewController(FolderViewController(), animated: true)
             }
             .disposed(by: disposeBag)
         
@@ -72,7 +72,7 @@ final class ShoppingViewController: BaseViewController {
     
     private func configureNavigation() {
         navigationItem.title = "정호의 쇼핑쇼핑"
-        navigationItem.rightBarButtonItems = [shoppingView.wishListBarButtonItem, shoppingView.likeBarButtonItem]
+        navigationItem.rightBarButtonItems = [shoppingView.folderBarButtonItem, shoppingView.likeBarButtonItem]
         navigationController?.navigationBar.tintColor = .black
     }
     
