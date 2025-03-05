@@ -6,24 +6,69 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-class LikeViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+final class LikeViewController: BaseViewController {
+    
+    // MARK: - properties
+    private let likeView = LikeView()
+    private let viewModel = LikeViewModel()
+    
+    private let tapLikeButton = PublishRelay<Like>()
+    
+    private let disposeBag = DisposeBag()
+    
+    // MARK: - life cycles
+    override func loadView() {
+        view = likeView
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - methods
+    override func configureStyle() {
+        configureNavigation()
     }
-    */
-
+    
+    override func bind() {
+        let input = LikeViewModel.Input(
+            changedSearchBarText: likeView.searchBar.rx.text.orEmpty,
+            tapLikeButton: tapLikeButton
+        )
+        
+        let output = viewModel.transform(input: input)
+        
+        output.items
+            .bind(to: likeView.collectionView.rx.items(
+                cellIdentifier: ResultCollectionViewCell.identifier,
+                cellType: ResultCollectionViewCell.self)
+            ) { (row, element, cell) in
+                let item = Item(title: element.title,
+                                image: element.image,
+                                price: element.price,
+                                mallName: element.mallName,
+                                productId: element.productId)
+                
+                cell.configureData(item: item)
+                cell.bindLike(like: true)
+                
+                cell.likeButton.rx.tap
+                    .bind(with: self) { owner, _ in
+                        owner.tapLikeButton.accept(element)
+                    }
+                    .disposed(by: cell.disposeBag)
+            }
+            .disposed(by: disposeBag)
+        
+        output.toast
+            .bind(with: self) { owner, value in
+                owner.presentToast(message: value)
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    private func configureNavigation() {
+        navigationItem.title = "좋아요 목록"
+        navigationController?.navigationBar.topItem?.title = ""
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black]
+    }
 }

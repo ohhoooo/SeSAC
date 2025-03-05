@@ -41,6 +41,7 @@
 		37E85AF42D76E561004A6930 /* Like.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E85AF32D76E561004A6930 /* Like.swift */; };
 		37E85AF72D76E5E5004A6930 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 37E85AF62D76E5E5004A6930 /* RealmSwift */; };
 		37E85AFA2D770521004A6930 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 37E85AF92D770521004A6930 /* Toast */; };
+		37E85AFC2D776F4D004A6930 /* LikeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E85AFB2D776F4D004A6930 /* LikeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		37E85AE62D76DD7E004A6930 /* LikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeViewController.swift; sourceTree = "<group>"; };
 		37E85AE82D76DD9B004A6930 /* LikeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeView.swift; sourceTree = "<group>"; };
 		37E85AF32D76E561004A6930 /* Like.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Like.swift; sourceTree = "<group>"; };
+		37E85AFB2D776F4D004A6930 /* LikeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 			children = (
 				3774DA152D549CD0007F239F /* ShoppingViewModel.swift */,
 				3774DA192D549DB1007F239F /* ResultViewModel.swift */,
+				37E85AFB2D776F4D004A6930 /* LikeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				37ACC08F2D37FE0F005933CE /* ResultCollectionViewCell.swift in Sources */,
 				37A3F0BB2D391D930085C9F8 /* BaseView.swift in Sources */,
 				37A3F0CB2D395BCD0085C9F8 /* Sort.swift in Sources */,
+				37E85AFC2D776F4D004A6930 /* LikeViewModel.swift in Sources */,
 				37ACC0672D37E630005933CE /* SceneDelegate.swift in Sources */,
 				37ACC08D2D37F6C9005933CE /* ResultView.swift in Sources */,
 				37E85AE72D76DD7E004A6930 /* LikeViewController.swift in Sources */,
