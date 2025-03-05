@@ -6,36 +6,63 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class WishListViewController: BaseViewController {
     
     // MARK: - properties
     private let wishListView = WishListView()
+    private let viewModel: WishListViewModel
     
     private var dataSource: UICollectionViewDiffableDataSource<Int, WishList>!
-    
     private var registration: UICollectionView.CellRegistration<UICollectionViewListCell, WishList>!
     
-    private var list = [
-        WishList(title: "여행")
-    ]
+    private let disposeBag = DisposeBag()
     
     // MARK: - life cycles
+    init(viewModel: WishListViewModel) {
+        self.viewModel = viewModel
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func loadView() {
         view = wishListView
     }
     
     // MARK: - methods
     override func configureStyle() {
-        configureNavigation()
-    }
-    
-    override func configureDelegate() {
-        wishListView.searchBar.delegate = self
-        wishListView.collectionView.delegate = self
+        configureCollectionView()
     }
     
     override func bind() {
+        let input = WishListViewModel.Input(
+            changedSearchBarText: wishListView.searchBar.rx.text.orEmpty,
+            searchButtonClicked: wishListView.searchBar.rx.searchButtonClicked,
+            modelSelected: wishListView.collectionView.rx.itemSelected
+        )
+        
+        let output = viewModel.transform(input: input)
+        
+        output.title
+            .bind(with: self) { owner, value in
+                owner.configureNavigation(title: value)
+            }
+            .disposed(by: disposeBag)
+        
+        output.items
+            .bind(with: self) { owner, value in
+                owner.updateSnapshot(list: value)
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    private func configureCollectionView() {
         registration = UICollectionView.CellRegistration<UICollectionViewListCell, WishList> { cell, indexPath, itemIdentifier in
             var content = UIListContentConfiguration.valueCell()
             
@@ -65,36 +92,17 @@ final class WishListViewController: BaseViewController {
             
             return cell
         })
-        
-        updateSnapshot()
     }
     
-    private func configureNavigation() {
-        navigationItem.title = "WishList"
+    private func configureNavigation(title: String) {
+        navigationItem.title = title
     }
     
-    private func updateSnapshot() {
+    private func updateSnapshot(list: [WishList]) {
         var snapshot = NSDiffableDataSourceSnapshot<Int, WishList>()
         snapshot.appendSections([0])
         snapshot.appendItems(list, toSection: 0)
         
         dataSource.apply(snapshot)
-    }
-}
-
-// MARK: - extensions
-extension WishListViewController: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if let text = searchBar.text {
-            list.append(WishList(title: text))
-            updateSnapshot()
-        }
-    }
-}
-
-extension WishListViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        list.remove(at: indexPath.row)
-        updateSnapshot()
     }
 }
