@@ -6,9 +6,15 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct WishList: Hashable, Identifiable {
-    let id = UUID()
-    let title: String
-    let date = Date()
+class WishList: Object {
+    @Persisted var id: ObjectId
+    @Persisted var title: String
+    @Persisted var date = Date()
+    
+    convenience init(title: String) {
+        self.init()
+        self.title = title
+    }
 }
