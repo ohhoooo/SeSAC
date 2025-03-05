@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		374197002D787801002577C6 /* FolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374196FF2D787801002577C6 /* FolderViewController.swift */; };
+		374197022D787811002577C6 /* FolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374197012D787811002577C6 /* FolderView.swift */; };
+		374197042D787825002577C6 /* FolderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374197032D787825002577C6 /* FolderViewModel.swift */; };
+		374197082D787DF5002577C6 /* FolderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374197072D787DF5002577C6 /* FolderCell.swift */; };
+		3741970A2D787E23002577C6 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374197092D787E23002577C6 /* BaseTableViewCell.swift */; };
+		374197102D7883E1002577C6 /* FolderTableRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3741970F2D7883E1002577C6 /* FolderTableRepository.swift */; };
+		374197122D7886B4002577C6 /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374197112D7886B4002577C6 /* Folder.swift */; };
+		374197142D789044002577C6 /* WishListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374197132D789044002577C6 /* WishListViewModel.swift */; };
+		374197162D78A309002577C6 /* WishListTableRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374197152D78A309002577C6 /* WishListTableRepository.swift */; };
 		375C6E9C2D6E143400E4EDA2 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 375C6E9B2D6E143400E4EDA2 /* RxCocoa */; };
 		375C6E9E2D6E143400E4EDA2 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 375C6E9D2D6E143400E4EDA2 /* RxSwift */; };
 		3774DA0E2D549C60007F239F /* ShoppingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3774DA0B2D549C60007F239F /* ShoppingView.swift */; };
@@ -45,6 +54,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		374196FF2D787801002577C6 /* FolderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderViewController.swift; sourceTree = "<group>"; };
+		374197012D787811002577C6 /* FolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderView.swift; sourceTree = "<group>"; };
+		374197032D787825002577C6 /* FolderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderViewModel.swift; sourceTree = "<group>"; };
+		374197072D787DF5002577C6 /* FolderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderCell.swift; sourceTree = "<group>"; };
+		374197092D787E23002577C6 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		3741970F2D7883E1002577C6 /* FolderTableRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderTableRepository.swift; sourceTree = "<group>"; };
+		374197112D7886B4002577C6 /* Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
+		374197132D789044002577C6 /* WishListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewModel.swift; sourceTree = "<group>"; };
+		374197152D78A309002577C6 /* WishListTableRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListTableRepository.swift; sourceTree = "<group>"; };
 		3774DA0B2D549C60007F239F /* ShoppingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingView.swift; sourceTree = "<group>"; };
 		3774DA0C2D549C60007F239F /* ShoppingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewController.swift; sourceTree = "<group>"; };
 		3774DA152D549CD0007F239F /* ShoppingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewModel.swift; sourceTree = "<group>"; };
@@ -95,6 +113,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		374196FE2D7877ED002577C6 /* Folder */ = {
+			isa = PBXGroup;
+			children = (
+				374197072D787DF5002577C6 /* FolderCell.swift */,
+				374197012D787811002577C6 /* FolderView.swift */,
+				374196FF2D787801002577C6 /* FolderViewController.swift */,
+			);
+			path = Folder;
+			sourceTree = "<group>";
+		};
+		3741970B2D7882A2002577C6 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				37ACC0942D381159005933CE /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		3741970C2D7882C9002577C6 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				3741970F2D7883E1002577C6 /* FolderTableRepository.swift */,
+				374197152D78A309002577C6 /* WishListTableRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		3774DA0D2D549C60007F239F /* Shopping */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +165,8 @@
 				3774DA152D549CD0007F239F /* ShoppingViewModel.swift */,
 				3774DA192D549DB1007F239F /* ResultViewModel.swift */,
 				37E85AFB2D776F4D004A6930 /* LikeViewModel.swift */,
+				374197032D787825002577C6 /* FolderViewModel.swift */,
+				374197132D789044002577C6 /* WishListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -138,6 +185,7 @@
 			children = (
 				37A3F0B92D391D930085C9F8 /* BaseView.swift */,
 				37A3F0BC2D391FFE0085C9F8 /* BaseViewController.swift */,
+				374197092D787E23002577C6 /* BaseTableViewCell.swift */,
 				37A3F0BE2D39220F0085C9F8 /* BaseCollectionViewCell.swift */,
 			);
 			path = Base;
@@ -199,6 +247,7 @@
 				3774DA0D2D549C60007F239F /* Shopping */,
 				3774DA112D549C6E007F239F /* Result */,
 				37E85AE52D76DD5B004A6930 /* Like */,
+				374196FE2D7877ED002577C6 /* Folder */,
 				37C448F82D6F2C2300F3B0E0 /* WishList */,
 			);
 			path = View;
@@ -210,8 +259,10 @@
 				37A3F0CA2D395BCD0085C9F8 /* Sort.swift */,
 				37ACC0922D380DEA005933CE /* Shopping.swift */,
 				37E85AF32D76E561004A6930 /* Like.swift */,
+				374197112D7886B4002577C6 /* Folder.swift */,
 				37C448FD2D6F2F8B00F3B0E0 /* WishList.swift */,
-				37ACC0942D381159005933CE /* NetworkManager.swift */,
+				3741970B2D7882A2002577C6 /* Network */,
+				3741970C2D7882C9002577C6 /* Repository */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -330,17 +381,26 @@
 				3774DA1A2D549DB1007F239F /* ResultViewModel.swift in Sources */,
 				37ACC0952D381159005933CE /* NetworkManager.swift in Sources */,
 				37A3F0C52D3926B40085C9F8 /* UIViewController+Extension.swift in Sources */,
+				3741970A2D787E23002577C6 /* BaseTableViewCell.swift in Sources */,
 				37C448FA2D6F2C3900F3B0E0 /* WishListViewController.swift in Sources */,
+				374197022D787811002577C6 /* FolderView.swift in Sources */,
+				374197042D787825002577C6 /* FolderViewModel.swift in Sources */,
 				37ACC08B2D37F6BD005933CE /* ResultViewController.swift in Sources */,
 				3774DA0E2D549C60007F239F /* ShoppingView.swift in Sources */,
 				37C448FE2D6F2F8B00F3B0E0 /* WishList.swift in Sources */,
+				374197122D7886B4002577C6 /* Folder.swift in Sources */,
+				374197002D787801002577C6 /* FolderViewController.swift in Sources */,
+				374197102D7883E1002577C6 /* FolderTableRepository.swift in Sources */,
+				374197082D787DF5002577C6 /* FolderCell.swift in Sources */,
 				3774DA0F2D549C60007F239F /* ShoppingViewController.swift in Sources */,
 				37A3F0BD2D391FFE0085C9F8 /* BaseViewController.swift in Sources */,
 				37ACC0932D380DEA005933CE /* Shopping.swift in Sources */,
 				3774DA162D549CD0007F239F /* ShoppingViewModel.swift in Sources */,
+				374197142D789044002577C6 /* WishListViewModel.swift in Sources */,
 				37A3F0BF2D39220F0085C9F8 /* BaseCollectionViewCell.swift in Sources */,
 				37E85AF42D76E561004A6930 /* Like.swift in Sources */,
 				37C448FC2D6F2C4100F3B0E0 /* WishListView.swift in Sources */,
+				374197162D78A309002577C6 /* WishListTableRepository.swift in Sources */,
 				37ACC0662D37E630005933CE /* AppDelegate.swift in Sources */,
 				37ACC08F2D37FE0F005933CE /* ResultCollectionViewCell.swift in Sources */,
 				37A3F0BB2D391D930085C9F8 /* BaseView.swift in Sources */,
